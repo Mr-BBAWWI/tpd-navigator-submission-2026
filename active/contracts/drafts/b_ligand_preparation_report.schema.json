@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-ligand-preparation-report:0.1.0-draft",
+  "title": "Ligand preparation evidence, never contact validation or approval",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "data_mode", "binding", "request_sha256", "status", "error", "chemistry", "runtime", "prepared_structure", "method", "hydrogen_convention", "limitations", "contact_quality_status", "probe_atom_typing", "human_review", "automatic_acceptance", "digest"],
+  "properties": {
+    "format": {"const": "tpd-ligand-preparation-report/0.1.0-draft"},
+    "data_mode": {"enum": ["real", "synthetic_test"]},
+    "binding": {"$ref": "#/$defs/binding"},
+    "request_sha256": {"$ref": "#/$defs/sha"}, "digest": {"$ref": "#/$defs/sha"},
+    "status": {"enum": ["prepared_for_review", "not_prepared"]},
+    "error": {"type": ["string", "null"], "pattern": "^LIGAND_"},
+    "chemistry": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/chemistry"}]},
+    "runtime": {"type": "object", "additionalProperties": false, "properties": {"rdkit": {"const": "2026.03.6"}, "gemmi": {"const": "0.7.5"}}},
+    "prepared_structure": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"const": "prepared/ligand.sdf"}, "sha256": {"$ref": "#/$defs/sha"}}}]},
+    "method": {"const": "RDKit AddHs(addCoords=True), unchanged input chemical state and heavy coordinates"},
+    "hydrogen_convention": {"const": "rdkit_geometry_not_xray_or_neutron_calibrated"},
+    "limitations": {"const": ["PROTONATION_NOT_PREDICTED", "HYDROGEN_ORIENTATION_NOT_OPTIMIZED", "PROBE_ATOM_TYPING_UNVERIFIED", "CONTACT_VALIDATION_NOT_RUN", "WHOLE_COMPLEX_NOT_PREPARED", "NOT_A_SCIENTIFIC_APPROVAL"]},
+    "contact_quality_status": {"const": "not_assessed"}, "probe_atom_typing": {"const": "unverified"},
+    "human_review": {"const": "pending"}, "automatic_acceptance": {"const": false}
+  },
+  "allOf": [{
+    "if": {"properties": {"status": {"const": "prepared_for_review"}}},
+    "then": {"properties": {"error": {"type": "null"}, "chemistry": {"$ref": "#/$defs/chemistry"}, "prepared_structure": {"type": "object"}, "runtime": {"required": ["rdkit", "gemmi"]}}},
+    "else": {"properties": {"error": {"type": "string"}, "chemistry": {"type": "null"}, "prepared_structure": {"type": "null"}}}
+  }],
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["compound_id", "molecule_id", "run_id", "model_rank", "input_sha256", "structure_sha256"],
+      "properties": {
+        "compound_id": {"type": "string", "minLength": 1}, "molecule_id": {"type": "string", "minLength": 1},
+        "run_id": {"type": "string", "minLength": 1}, "model_rank": {"type": "integer", "minimum": 0},
+        "input_sha256": {"$ref": "#/$defs/sha"}, "structure_sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "xyz": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+    "atom": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sdf_atom_index", "element", "atom_map", "source_or_generated_name", "formal_charge", "parent_heavy_atom_map", "xyz_A"],
+      "properties": {
+        "sdf_atom_index": {"type": "integer", "minimum": 0}, "element": {"enum": ["H", "B", "C", "N", "O", "F", "P", "S", "Cl", "Br", "I"]},
+        "atom_map": {"type": "integer", "minimum": 0}, "source_or_generated_name": {"type": "string", "minLength": 1},
+        "formal_charge": {"type": "integer"}, "parent_heavy_atom_map": {"type": ["integer", "null"], "minimum": 1}, "xyz_A": {"$ref": "#/$defs/xyz"}
+      },
+      "allOf": [{"if": {"properties": {"element": {"const": "H"}}}, "then": {"properties": {"atom_map": {"const": 0}, "formal_charge": {"const": 0}, "parent_heavy_atom_map": {"type": "integer"}}}, "else": {"properties": {"atom_map": {"minimum": 1}, "parent_heavy_atom_map": {"type": "null"}}}}]
+    },
+    "chemistry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["canonical_isomeric_smiles", "formula", "formal_charge", "heavy_atom_count", "expected_hydrogen_count", "generated_hydrogen_count", "hydrogens_by_heavy_atom_map", "max_serialized_heavy_displacement_A", "hydrogen_bond_length_range_A", "atom_inventory"],
+      "properties": {
+        "canonical_isomeric_smiles": {"type": "string", "minLength": 1}, "formula": {"type": "string", "minLength": 1},
+        "formal_charge": {"type": "integer"}, "heavy_atom_count": {"type": "integer", "minimum": 1},
+        "expected_hydrogen_count": {"type": "integer", "minimum": 0}, "generated_hydrogen_count": {"type": "integer", "minimum": 0},
+        "hydrogens_by_heavy_atom_map": {"type": "object", "minProperties": 1, "propertyNames": {"pattern": "^[1-9][0-9]*$"}, "additionalProperties": {"type": "integer", "minimum": 0}},
+        "max_serialized_heavy_displacement_A": {"type": "number", "minimum": 0, "exclusiveMaximum": 0.00001},
+        "hydrogen_bond_length_range_A": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "exclusiveMinimum": 0}}]},
+        "atom_inventory": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/atom"}}
+      }
+    }
+  }
+}

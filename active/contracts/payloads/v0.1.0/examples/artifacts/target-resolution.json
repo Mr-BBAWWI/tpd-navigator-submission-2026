@@ -1,0 +1,63 @@
+{
+  "payload_type": "TargetResolution",
+  "payload_version": "0.1.0",
+  "query_ref": {
+    "artifact_id": "fixture-target-query",
+    "version": 1,
+    "sha256": "da2efeb9be0c1f9c704faff343d59b24323f1f677cedc553536ddc6defd6df80",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetQuery",
+    "provenance": "test_fixture"
+  },
+  "resolution_status": "resolved",
+  "candidates": [
+    {
+      "candidate_id": "candidate-alpha",
+      "identity": {
+        "uniprot_accession": "FIXTURE_ALPHA",
+        "taxon_id": 9606,
+        "label": "Synthetic target Alpha",
+        "gene_symbol": {
+          "state": "known",
+          "value": "FIXTURE_ALPHA",
+          "reason": null
+        },
+        "isoform": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        },
+        "mutation": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        },
+        "construct": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        }
+      },
+      "source_refs": [
+        {
+          "artifact_id": "fixture-target-source",
+          "version": 1,
+          "sha256": "d5c1c43525efba6226f21ca7f2c5b9a1a2a9b4ec1c5021fb0c98acc148ec70cd",
+          "media_type": "application/json",
+          "schema_id": "urn:tpd-navigator:raw:test-fixture",
+          "provenance": "test_fixture"
+        }
+      ],
+      "match_reason": "Synthetic unique match."
+    }
+  ],
+  "selected_candidate_id": "candidate-alpha",
+  "selection": {
+    "kind": "unique_match",
+    "annotation_ref": null,
+    "reason": "One synthetic candidate."
+  },
+  "scope_status": "within_current_scope",
+  "scope_reasons": [],
+  "issues": []
+}

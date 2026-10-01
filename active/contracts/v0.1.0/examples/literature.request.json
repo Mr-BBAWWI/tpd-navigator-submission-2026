@@ -1,0 +1,55 @@
+{
+  "contract_version": "0.1.0",
+  "project_id": "fixture.project",
+  "run_id": "fixture.run",
+  "job_id": "fixture.job",
+  "attempt": 1,
+  "input_revision": 1,
+  "input_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "operation_id": "collect_literature",
+  "execution_mode": "development_live",
+  "data_mode": "test_fixture",
+  "input_manifest": {
+    "artifact_id": "art.fixture.InputManifest",
+    "version": 1,
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "media_type": "application/json",
+    "schema_id": "InputManifest.v0.1.draft",
+    "provenance": "test_fixture"
+  },
+  "input_artifacts": [
+    {
+      "artifact_id": "art.fixture.TargetResolution",
+      "version": 1,
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "media_type": "application/json",
+      "schema_id": "TargetResolution.v0.1.draft",
+      "provenance": "test_fixture"
+    }
+  ],
+  "parameters_ref": {
+    "artifact_id": "art.fixture.LiteratureCollectionRequest",
+    "version": 1,
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "media_type": "application/json",
+    "schema_id": "LiteratureCollectionRequest.v0.1.draft",
+    "provenance": "test_fixture"
+  },
+  "policy_ref": {
+    "artifact_id": "art.fixture.PolicySnapshot",
+    "version": 1,
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "media_type": "application/json",
+    "schema_id": "PolicySnapshot.v0.1.draft",
+    "provenance": "test_fixture"
+  },
+  "approval_ref": null,
+  "reservation_id": null,
+  "limits": {
+    "wall_time_seconds": 30,
+    "max_llm_requests": 0,
+    "max_llm_tokens": 0,
+    "max_gpu_seconds": 0,
+    "max_output_bytes": 65536
+  }
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>연구 비교실 · TPD Navigator</title>
+<style>{{CSS}}</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#overview" aria-label="TPD Navigator 홈"><span class="mark">T</span><span>TPD Navigator</span></a>
+  <span class="header-label">저장된 실제 계산 · 연구 가설</span>
+  <div class="header-state"><span class="dot"></span><span id="approvalHeader">과학 승인 아님</span></div>
+</header>
+<main>
+  <section class="hero" id="overview">
+    <div><p class="eyebrow">OFFLINE RESEARCH WORKSPACE</p><h1>연구 비교실</h1><p class="lede">검증된 계산 기록을 탐색하고 후보, 실패 진단, 후속 실험 제안을 분리해 검토합니다.</p></div>
+    <div class="scope"><strong>판정 범위</strong><span id="scopeText"></span><small>무결성 확인은 과학적 검증이나 인간 승인이 아닙니다.</small></div>
+  </section>
+  <section class="metrics" id="metrics"></section>
+  <section class="query-panel card">
+    <div><p class="eyebrow">저장 결과 빠른 조회</p><h2>무엇을 확인할까요?</h2></div>
+    <div class="query-actions">
+      <button data-query="compare">CRBN·VHL 후보와 linker 비교</button>
+      <button data-query="failures">도킹 실패와 재실험 항목 확인</button>
+      <button data-query="gates">14개 기준과 AI 개선 제안 확인</button>
+    </div>
+    <p id="actionReceipt" class="receipt" aria-live="polite">조회 버튼은 저장된 결과의 필터와 화면만 변경합니다.</p>
+  </section>
+  <nav class="tabs" aria-label="연구 화면">
+    <button class="active" data-tab="candidates">후보 비교</button>
+    <button data-tab="ai">실험·AI 심사</button>
+    <button data-tab="gates">수용 기준</button>
+    <button data-tab="guide">실행 안내</button>
+  </nav>
+
+  <section class="panel active" id="panel-candidates">
+    <div class="section-head"><div><p class="eyebrow">CANDIDATE RECORDS</p><h2>후보 비교</h2></div><p>후보 키는 job 범위입니다. E3 간 종합 점수나 승자를 만들지 않습니다.</p></div>
+    <div class="filters card">
+      <label>부모 화합물<select id="parentFilter"><option value="">전체 부모</option></select></label>
+      <label>E3<select id="e3Filter"><option value="">전체 E3</option><option>CRBN</option><option>VHL</option></select></label>
+      <label class="search">후보 ID 또는 job lineage<input id="candidateSearch" type="search" placeholder="D-… / job-…"></label>
+    </div>
+    <div id="familySummary" class="notice"></div>
+    <div id="compareTray" class="compare card"></div>
+    <div id="candidateList" class="candidate-grid"></div>
+    <div class="pager"><button id="prevPage">이전</button><span id="pageInfo"></span><button id="nextPage">다음</button></div>
+    <section id="failureSection" class="subsection card">
+      <div class="section-head"><div><p class="eyebrow">DIAGNOSTICS</p><h2>도킹 실패와 pose 제외</h2></div><p id="failureSummary"></p></div>
+      <div class="table-wrap"><table><thead><tr><th>부모 / 후보</th><th>구분</th><th>수량·상태</th><th>제공된 오류</th></tr></thead><tbody id="failureRows"></tbody></table></div>
+    </section>
+  </section>
+
+  <section class="panel" id="panel-ai">
+    <div class="section-head"><div><p class="eyebrow">EXPERIMENT REVIEW</p><h2>실험·AI 심사</h2></div><p>“AI 실험 검토 준비”는 다음 실험 제안이며 과학적 승인이 아닙니다.</p></div>
+    <div id="aiStatus" class="notice"></div><div id="rounds"></div>
+  </section>
+
+  <section class="panel" id="panel-gates">
+    <div class="section-head"><div><p class="eyebrow">ORIGINAL SNAPSHOT</p><h2>14개 수용 기준</h2></div><p>원본 상태를 그대로 표시하며 부모 집계가 기준 상태를 덮어쓰지 않습니다.</p></div>
+    <div id="gateSummary" class="metrics compact"></div><div id="gates" class="gate-list"></div>
+  </section>
+
+  <section class="panel" id="panel-guide">
+    <div class="section-head"><div><p class="eyebrow">PORTABLE 10/01 LAUNCH</p><h2>실행 안내</h2></div></div>
+    <div class="guide-grid">
+      <article class="card"><h3>먼저 오프라인으로 확인</h3><p>휴대본 루트의 <code>10_연구비교실_열기.cmd</code>를 실행하면 저장된 비교 자료를 API 호출 없이 열 수 있습니다. 저장 campaign을 다시 렌더링하려면 PowerShell에서 아래 명령을 실행하십시오. 재실행할 때마다 존재하지 않는 새 출력 디렉터리를 선택해야 합니다.</p><pre>.\runtime\python.exe .\program\scripts\render_research_campaign.py --campaign-dir .\evidence\sprint\campaign-final --output-dir .\my-dashboard</pre><p>완료 후 <code>.\my-dashboard\index.html</code>을 브라우저로 엽니다.</p></article>
+      <article class="card"><h3>Live API는 개발자 명시적 선택</h3><p>기본 실행은 API를 호출하지 않습니다. Live 실행에는 패키지의 assessment와 검증 가능한 parent-export 디렉터리가 필요합니다. parent export는 JSON 파일 하나가 아니라 manifest, job receipt, blobs를 포함한 디렉터리입니다. 키는 PowerShell 환경변수로만 제공하고, 재실행할 때는 <code>.\my-campaign</code> 대신 새로운 디렉터리 이름을 사용하십시오.</p><pre>$env:DACON_API_KEY="&lt;VALID_DACON_API_KEY&gt;"
+.\runtime\python.exe .\program\scripts\run_research_campaign.py --assessment .\evidence\final-reports\raw\assessment.json --parent-export .\evidence\sprint\parent-exports\SMARCA2-9D12-A1A1P --output .\my-campaign --rounds 2 --live-api</pre><p class="callout">Live API는 개발자 opt-in이며, 입력 export 검증 뒤에만 provider를 구성합니다.</p></article>
+    </div>
+    <div class="card downloads"><h3>원본과 무결성</h3><a download href="raw/evidence.json">evidence.json</a><a download href="raw/rounds-result.json">rounds/result.json</a><a download href="raw/token-report.json">token-report.json</a><a download href="manifest.json">hash manifest</a></div>
+    <div id="sources" class="sources"></div>
+  </section>
+</main>
+<footer><span>TPD Navigator · 저장된 연구 기록</span><span id="footerDigest"></span></footer>
+<script id="campaign-data" type="application/json">{{DATA}}</script>
+<script>{{JS}}</script>
+</body>
+</html>

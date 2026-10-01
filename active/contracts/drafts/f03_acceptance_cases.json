@@ -1,0 +1,158 @@
+{
+  "catalog_version": "0.1.0-draft",
+  "document_kind": "acceptance_scenario_catalog_not_json_schema",
+  "status": "proposed_not_implemented_not_scientifically_validated",
+  "data_mode": "test_fixture",
+  "operation_id": "assess_exit_vectors",
+  "input_payload": "ExitVectorRequest",
+  "output_payload": "ExitVectorAssessment",
+  "design_document": "../../../docs/design/notes/attachment_sar.md",
+  "payload_schema_status": "pending",
+  "live_execution_ready": false,
+  "implemented_behavior_verified": false,
+  "notes": [
+    "All given facts and values are synthetic scenario assumptions, not evidence from real papers or molecules.",
+    "must and must_not specify intended future behavior; no classifier, atom mapper, or workflow was executed.",
+    "Counts and successful JSON parsing do not establish chemical or pharmacological correctness.",
+    "The catalog is not an approved policy, training dataset, independent evaluation set, or submission replay artifact."
+  ],
+  "rule_ids": ["R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09", "R10", "R11", "R12"],
+  "cases": [
+    {
+      "id": "C01",
+      "title": "같은 scaffold 개수만 충분한 경우",
+      "rules": ["R01", "R04"],
+      "given": {"same_scaffold_compounds": 8, "changes": "different_sites_or_multiple_sites", "qualifying_local_comparisons": 0},
+      "must": ["보유 화합물 수와 해당 위치 비교 수를 별도로 반환", "현재 위치의 허용 주장은 unassessed"],
+      "must_not": ["8개라는 이유로 tolerance=high를 생성", "다른 위치의 비교를 현재 위치 비교로 집계"]
+    },
+    {
+      "id": "C02",
+      "title": "5개 미만이지만 조건이 맞는 국소 비교",
+      "rules": ["R01", "R02", "R04", "R05"],
+      "given": {"compounds": 2, "target_and_assay": "matched", "transformation": "one_mapped_site", "endpoint": "Kd", "parent": {"value": 10, "unit": "nM", "relation": "="}, "modified": {"value": 20, "unit": "nM", "relation": "="}, "tolerance_policy": null},
+      "must": ["local_sar_comparison을 보존", "endpoint_ratio=2를 modified/parent로 표시", "관측된 변화와 임의 허용 판정을 분리"],
+      "must_not": ["화합물 수가 5 미만이라는 이유로 비교를 폐기", "2배라는 값만으로 임의 linker 허용 또는 효능 성공을 선언"]
+    },
+    {
+      "id": "C03",
+      "title": "비교 전 분자가 없는 직접 부착 선례",
+      "rules": ["R02", "R06"],
+      "given": {"target": "current_target", "linked_compound_structure_and_site": "resolved", "linked_compound_binding_observation": "reported", "parent_binding_observation": null},
+      "must": ["direct_attachment_precedent를 기록", "parent 대비 endpoint_ratio=null", "관측한 부착 분자·조건으로 claim_scope를 제한"],
+      "must_not": ["비교 쌍이 없다는 이유로 실제 선례를 삭제", "parent 대비 결합력 보존을 주장"]
+    },
+    {
+      "id": "C04",
+      "title": "다른 표적의 같은 scaffold 분해 선례",
+      "rules": ["R03", "R06"],
+      "given": {"scaffold": "shared", "target_relation": "same_family_different_target", "degradation": "reported_for_other_target"},
+      "must": ["cross_target_precedent와 TARGET_SCOPE_MISMATCH를 표시", "현재 표적의 직접 결합/분해 주장은 unassessed"],
+      "must_not": ["현재 표적의 direct_attachment_precedent로 승격", "deg=0.5 또는 동등한 지지 점수를 자동 가산"]
+    },
+    {
+      "id": "C05",
+      "title": "같은 원자라도 연결 화학이 다른 경우",
+      "rules": ["R04"],
+      "given": {"anchor_mapping": "same", "observed_change": "amine_alkylation", "proposed_change": "amine_amidation"},
+      "must": ["관측 변화와 제안 변화가 다름을 기록", "원 관측을 그 변화의 근거로 보존"],
+      "must_not": ["같은 anchor라는 이유로 제안 변화에 직접적 결합 보존 근거를 부여"]
+    },
+    {
+      "id": "C06",
+      "title": "단위는 같지만 endpoint가 다른 경우",
+      "rules": ["R05"],
+      "given": {"parent_endpoint": "Kd", "modified_endpoint": "IC50", "units": "nM"},
+      "must": ["comparison_status=not_comparable", "ENDPOINT_MISMATCH", "endpoint_ratio=null"],
+      "must_not": ["Kd와 IC50를 같은 관측값으로 나누어 결합력 변화로 표시"]
+    },
+    {
+      "id": "C07",
+      "title": "부등호가 있는 관측값",
+      "rules": ["R05"],
+      "given": {"target_endpoint_assay": "matched", "parent": {"value": 10, "unit": "nM", "relation": "="}, "modified": {"value": 1000, "unit": "nM", "relation": ">"}},
+      "must": ["CENSORED_OBSERVATION", "원문 부등호와 값을 보존", "v1 endpoint_ratio=null"],
+      "must_not": ["1000을 정확한 값으로 간주", "정확히 100배 변화라고 표시"]
+    },
+    {
+      "id": "C08",
+      "title": "PDF에 구조 그림이 있으나 확인하지 못함",
+      "rules": ["R04", "R08"],
+      "given": {"attachment_text": "R1", "figure_structure": "unresolved", "text_location": "available", "alternative_validated_mapping": false},
+      "must": ["SOURCE_STRUCTURE_UNRESOLVED", "해당 근거 매핑은 unavailable", "원문 위치와 보완 입력 요청을 유지"],
+      "must_not": ["LLM이 제품 atom_map_id를 발명", "미확인을 부착 실패 실험으로 표시"]
+    },
+    {
+      "id": "C09",
+      "title": "비동등 매핑 복수 또는 탐색 미완료",
+      "rules": ["R04", "R08", "R12"],
+      "given": {"mapping_condition": "multiple_non_equivalent_mappings_or_unverified_search_completion", "resolved_selection": null},
+      "must": ["ATOM_MAPPING_AMBIGUOUS 또는 ATOM_MAPPING_INCOMPLETE", "review_disposition=hold_mapping", "후보 매핑과 해결 조건 보존"],
+      "must_not": ["첫 RDKit 매칭을 무조건 선택", "검증되지 않은 위치로 후속 조립을 실행"]
+    },
+    {
+      "id": "C10",
+      "title": "분자 버전과 입체화학 변경 후 이전 매핑 참조",
+      "rules": ["R04", "R11"],
+      "given": {"molecule_revision": "changed_with_stereochemistry", "mapping_revision": "previous", "atom_reference": "old_local_index"},
+      "must": ["STALE_INPUT", "현재 분자 버전에 대한 새 매핑 요구"],
+      "must_not": ["같은 인덱스 숫자라는 이유로 같은 원자로 간주", "이전 connection 판정을 현재 후보에 적용"]
+    },
+    {
+      "id": "C11",
+      "title": "계산 노출도만 있는 위치 가설",
+      "rules": ["R06", "R07", "R12"],
+      "given": {"computed_exposure": "favorable_in_one_pose", "experimental_binding_or_sar": null, "assessment_scope": "site", "selection_policy": null},
+      "must": ["computed_structure_hypothesis로 표시", "계산 입력/pose/버전 유지", "needs_evidence_review"],
+      "must_not": ["실측 부착 허용 또는 분해 성공으로 표시", "정책·승인 없이 후속 실행 허가"]
+    },
+    {
+      "id": "C12",
+      "title": "현재 주장과 같은 조건의 반대 근거",
+      "rules": ["R02", "R05", "R10"],
+      "given": {"claim_scope": "specific_transformation_target_and_assay", "supporting_observation": "present", "contrary_observation": "present_in_same_scope"},
+      "must": ["해당 claim은 mixed 및 CLAIM_CONFLICT", "찬반 원문과 범위를 함께 제시", "needs_evidence_review"],
+      "must_not": ["양성만 남김", "그 위치의 모든 치환을 화학적으로 invalid라고 판정"]
+    },
+    {
+      "id": "C13",
+      "title": "결합 측정과 분해 미측정",
+      "rules": ["R06"],
+      "given": {"current_linked_compound_binding": "reported", "degradation": "not_measured"},
+      "must": ["binding 관측만 해당 범위에서 지지", "degradation claim은 unassessed"],
+      "must_not": ["결합 양성으로 분해 양성을 생성", "분해 미측정을 음성으로 기록"]
+    },
+    {
+      "id": "C14",
+      "title": "같은 실험이 세 출처에 중복 수록",
+      "rules": ["R09"],
+      "given": {"source_documents": 3, "verified_original_experiments": 1},
+      "must": ["문서 수 3과 독립 실험 수 1을 분리", "DUPLICATE_EXPERIMENT와 원 실험 연결 보존"],
+      "must_not": ["출처 3개를 독립 검증 3회로 표시"]
+    },
+    {
+      "id": "C15",
+      "title": "세포와 처리 시간이 다른 관측",
+      "rules": ["R05", "R06", "R10"],
+      "given": {"compound": "same", "degradation_results": "different", "assay_context": "different_cells_and_durations", "claim": "each_result_within_its_own_context"},
+      "must": ["관측별 세포·시간과 비교 제한 보존", "조건 차이를 연구자에게 제시"],
+      "must_not": ["자동으로 같은 claim의 모순으로 분류", "부착 위치 자체의 결합 파괴로 원인을 확정"]
+    },
+    {
+      "id": "C16",
+      "title": "승인 후 연결 조각 또는 정책 변경",
+      "rules": ["R11", "R12"],
+      "given": {"approval": "for_previous_connection_and_policy", "changed_dependency": "introduced_fragment_or_policy"},
+      "must": ["M2가 영향받는 평가/승인 범위를 재검사", "새 revision 평가와 필요한 승인 완료 전 종속 실행 차단"],
+      "must_not": ["부착 원자가 같다는 이유로 기존 connection 승인을 재사용"]
+    },
+    {
+      "id": "C17",
+      "title": "유효하지 않은 화학 구조와 인간 승인",
+      "rules": ["R12"],
+      "given": {"chemical_validation": "invalid_valence", "human_wants_to_proceed": true},
+      "must": ["INVALID_CONNECTION", "chemical_status=invalid", "review_disposition=invalid_chemistry", "구조 수정과 재검사 요구"],
+      "must_not": ["인간 승인으로 데이터 무결성 오류를 우회", "invalid를 evidence unknown과 혼동"]
+    }
+  ]
+}

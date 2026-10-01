@@ -1,0 +1,46 @@
+{
+  "payload_type": "InputManifest",
+  "payload_version": "0.1.0",
+  "boundary_version": "0.1.0",
+  "payload_ref": {
+    "artifact_id": "fixture-target-query",
+    "version": 1,
+    "sha256": "da2efeb9be0c1f9c704faff343d59b24323f1f677cedc553536ddc6defd6df80",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetQuery",
+    "provenance": "test_fixture"
+  },
+  "project_id": "fixture-project",
+  "run_id": "fixture-run",
+  "job_id": "fixture-job-target",
+  "input_revision": 1,
+  "operation_id": "resolve_target",
+  "execution_mode": "development_live",
+  "data_mode": "test_fixture",
+  "input_artifacts": [
+    {
+      "artifact_id": "fixture-target-query",
+      "version": 1,
+      "sha256": "da2efeb9be0c1f9c704faff343d59b24323f1f677cedc553536ddc6defd6df80",
+      "media_type": "application/json",
+      "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetQuery",
+      "provenance": "test_fixture"
+    }
+  ],
+  "parameters_ref": {
+    "artifact_id": "fixture-parameters",
+    "version": 1,
+    "sha256": "ffd85ccf315853b9d8bfd3bdb3f0a83b8fbebdf8115768da862b996b16513dad",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/OperationParameters",
+    "provenance": "test_fixture"
+  },
+  "policy_ref": {
+    "artifact_id": "fixture-target-policy",
+    "version": 1,
+    "sha256": "946189674dddeb308c295dea4e0f4fb83116d65f6a5e7a7f6b0b682b64279dde",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:raw:test-fixture",
+    "provenance": "test_fixture"
+  }
+}

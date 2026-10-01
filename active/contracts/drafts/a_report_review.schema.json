@@ -1,0 +1,488 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:report-human-review:0.1.0-draft",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "request"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^hreview-[a-f0-9]{32}$"
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "const": {
+            "human_approved": false,
+            "dispatch_authorized": false,
+            "efficacy_claim": "not_established",
+            "public_release_ready": false
+          }
+        },
+        "report_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "report_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "report_input_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "scopes": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 4,
+          "propertyNames": {
+            "enum": [
+              "chemical_state",
+              "structural_comparison",
+              "literature_conditions",
+              "synthesis_evidence"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "acknowledgements": {
+          "type": "object",
+          "properties": {
+            "scope_only": {
+              "type": "string",
+              "minLength": 1
+            },
+            "no_efficacy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "no_execution": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "scope_only",
+            "no_efficacy",
+            "no_execution"
+          ],
+          "additionalProperties": false
+        },
+        "assigned_reviewer": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "name"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "supersedes_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "policy": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          },
+          "required": [
+            "version",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "project_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "const": "human"
+                },
+                "identity_basis": {
+                  "const": "operator_registered_local_account"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "project_id",
+                "kind",
+                "identity_basis"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "project_id",
+        "authority",
+        "report_id",
+        "run_id",
+        "result_id",
+        "created_at",
+        "report_ref",
+        "report_input_digest",
+        "scopes",
+        "acknowledgements",
+        "assigned_reviewer",
+        "supersedes_ref",
+        "policy",
+        "created_by"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "submission"
+        },
+        "expected_request_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "expected_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "idempotency_key": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{8,100}$"
+        },
+        "action": {
+          "enum": [
+            "record",
+            "withdraw"
+          ]
+        },
+        "judgments": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "scope_id": {
+                "enum": [
+                  "chemical_state",
+                  "structural_comparison",
+                  "literature_conditions",
+                  "synthesis_evidence"
+                ]
+              },
+              "verdict": {
+                "enum": [
+                  "accept_scope",
+                  "request_changes",
+                  "defer"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 5000
+              }
+            },
+            "required": [
+              "scope_id",
+              "verdict",
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "acknowledgement_ids": {
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "scope_only",
+              "no_efficacy",
+              "no_execution"
+            ]
+          }
+        },
+        "withdrawal_reason": {
+          "type": "string",
+          "maxLength": 5000
+        }
+      },
+      "required": [
+        "kind",
+        "expected_request_sha256",
+        "expected_revision",
+        "idempotency_key",
+        "action",
+        "judgments",
+        "acknowledgement_ids",
+        "withdrawal_reason"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "decision"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^hdecision-[a-f0-9]{32}$"
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "const": {
+            "human_approved": false,
+            "dispatch_authorized": false,
+            "efficacy_claim": "not_established",
+            "public_release_ready": false
+          }
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "request_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "previous_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actor": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "project_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "kind": {
+              "const": "human"
+            },
+            "identity_basis": {
+              "const": "operator_registered_local_account"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "project_id",
+            "kind",
+            "identity_basis"
+          ],
+          "additionalProperties": false
+        },
+        "recorded_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "enum": [
+            "record",
+            "withdraw"
+          ]
+        },
+        "judgments": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "scope_id": {
+                "enum": [
+                  "chemical_state",
+                  "structural_comparison",
+                  "literature_conditions",
+                  "synthesis_evidence"
+                ]
+              },
+              "verdict": {
+                "enum": [
+                  "accept_scope",
+                  "request_changes",
+                  "defer"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 5000
+              }
+            },
+            "required": [
+              "scope_id",
+              "verdict",
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "acknowledgement_ids": {
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "scope_only",
+              "no_efficacy",
+              "no_execution"
+            ]
+          }
+        },
+        "withdrawal_reason": {
+          "type": "string",
+          "maxLength": 5000
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "project_id",
+        "authority",
+        "request_id",
+        "request_ref",
+        "revision",
+        "previous_ref",
+        "actor",
+        "recorded_at",
+        "action",
+        "judgments",
+        "acknowledgement_ids",
+        "withdrawal_reason"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "version",
+        "sha256",
+        "media_type",
+        "schema_id",
+        "provenance"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^a-[a-f0-9]{32}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "version": {
+          "const": 1
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "schema_id": {
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "computed",
+            "source"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

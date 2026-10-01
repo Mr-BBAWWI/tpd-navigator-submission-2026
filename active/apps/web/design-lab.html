@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang='ko'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <title>TPD 설계 Agent · SMARCA2</title>
+  <link rel='stylesheet' href='/static/design-lab.css'>
+  <link rel='stylesheet' href='/static/design-evidence.css'>
+</head>
+<body>
+  <header class='topbar'>
+    <a class='brand' href='/' aria-label='워크벤치로 돌아가기'>
+      <span class='brand-mark' aria-hidden='true'>T</span>
+      <span><b>TPD Design Lab</b><small>Local Research</small></span>
+    </a>
+    <a class='return-link' href='/'>← 워크벤치로 돌아가기</a>
+  </header>
+
+  <main>
+    <section class='hero'>
+      <div>
+        <p class='eyebrow'>SMARCA2 · 가설 생성 워크플로</p>
+        <h1>Warhead에서 두 E3 후보군까지</h1>
+        <p class='hero-copy'>검증된 SMARCA2 literature parent를 선택해 CRBN·VHL 분기를 구성합니다. 기본값은 기존 중성 SMARCA2-FX5입니다. 결과는 설계 가설이며, 합성 가능성·삼중복합체 형성·효능을 확정하지 않습니다.</p>
+      </div>
+      <div class='hero-note'><b>검토 원칙</b><span>실험 3D 구조의 노출도와 SAR 표시는 우선순위 보조 정보이며 과학적 승인 판정이 아닙니다.</span></div>
+    </section>
+
+    <div id='globalError' class='alert error hidden' role='alert'></div>
+    <div id='notice' class='alert hidden' role='status'></div>
+
+    <section class='workspace'>
+      <aside class='setup card' aria-labelledby='setupTitle'>
+        <div class='section-heading'><div><p class='kicker'>01 · Setup</p><h2 id='setupTitle'>설계 조건</h2></div><span id='healthBadge' class='badge neutral'>연결 확인 중</span></div>
+        <div class='fixed-field'><span>Target</span><strong>SMARCA2</strong><small>현재 워크플로에서 고정</small></div>
+        <form id='designForm'>
+          <label class='field' for='parentId'><span>Literature parent</span><select id='parentId'><option value='SMARCA2-FX5' selected>SMARCA2-FX5 · 기존 중성 기본값</option></select><small id='parentHelp'>ready는 기술 입력 상태이며 과학적 승인이 아닙니다.</small></label>
+          <label class='check-row'><input id='exploratory' type='checkbox' checked><span><b>탐색적 위치 포함</b><small>선택 parent의 SAR가 알려지지 않은 비보호 위치도 후보화</small></span></label>
+          <p id='sarWarning' class='warning'>주의: SAR 미확인 위치는 실험 검증 전까지 허용 가능성으로 해석할 수 없습니다.</p>
+          <label class='check-row'><input id='dock' type='checkbox' checked><span><b>도킹 단계 요청</b><small>지원되는 analog에 한해 수행</small></span></label>
+          <label class='check-row'><input id='useApi' type='checkbox' disabled><span><b>구성된 LLM API 사용</b><small id='apiHelp'>서버 상태 확인 중</small></span></label>
+          <label class='field' for='panelSize'><span>패널 크기</span><select id='panelSize'><option value='10' selected>10</option><option value='12'>12</option><option value='16'>16</option><option value='20'>20</option></select></label>
+          <label class='field' for='linkerProfile'><span>Linker 구성</span><select id='linkerProfile'><option value='six' selected>원본 6종 · 기본</option><option value='all'>전체 18종</option><option value='custom'>계열·길이 선택</option></select></label>
+          <label class='field' for='linkerFamily'><span>Linker 계열</span><select id='linkerFamily' class='multi-select' multiple><option value='PEG' selected>PEG</option><option value='alkyl' selected>Alkyl</option><option value='PEG-alkyl' selected>PEG–alkyl</option><option value='piperazine' selected>Piperazine</option><option value='triazole' selected>Triazole</option><option value='rigid-aromatic' selected>Rigid aromatic</option></select></label>
+          <label class='field' for='linkerLength'><span>상대 길이</span><select id='linkerLength' multiple><option value='short' selected>짧음</option><option value='medium' selected>중간 · 원본</option><option value='long' selected>김</option></select></label>
+          <p class='field-help'>계열·길이는 catalog의 실제 template ID만 선택합니다. 원본 6종은 기존 ID를 유지합니다.</p>
+          <button id='runButton' class='primary wide' type='submit'>설계 Agent 실행</button>
+          <button id='cancelButton' class='secondary wide hidden' type='button'>실행 취소</button>
+        </form>
+        <div class='examples'>
+          <h3>실행 preset</h3>
+          <button id='strictExample' type='button'>엄격 · 10개 · 원본 6 linker</button>
+          <button id='dualExample' type='button'>탐색 · 12개 · 선택 linker 계열</button>
+          <button id='previewExample' type='button'>No-dock graph preview · microstates</button>
+          <p class='preset-note'>Preset은 조건만 채웁니다. 확인 후 실행 버튼을 눌러야 작업이 시작됩니다.</p>
+          <button id='referenceExample' type='button'>수집 근거 카탈로그 보기</button>
+        </div>
+      </aside>
+
+      <section class='main-column'>
+        <section class='card job-card' aria-labelledby='jobTitle'>
+          <div class='section-heading'><div><p class='kicker'>02 · Run</p><h2 id='jobTitle'>실행 상태</h2></div><button id='refreshButton' class='text-button' type='button'>새로고침</button></div>
+          <div class='job-grid'>
+            <label class='field' for='jobHistory'><span>작업 기록</span><select id='jobHistory'><option value=''>작업을 선택하세요</option></select></label>
+            <div><span class='label'>상태</span><div id='jobState' class='state-line'>실행 대기</div><a id='scientificReviewLink' class='hidden' href='#'>과학적 준비도 검토 →</a></div>
+          </div>
+          <div id='progressWrap' class='progress-wrap hidden'><progress id='progress' max='100'></progress><div><b id='stageText'>준비 중</b><span id='progressText'>진행률 확인 중</span></div></div>
+        </section>
+
+        <section id='catalogPanel' class='card hidden' aria-labelledby='catalogTitle'>
+          <div class='section-heading'><div><p class='kicker'>Reference</p><h2 id='catalogTitle'>설계 카탈로그</h2></div><button id='closeCatalog' class='text-button' type='button'>닫기</button></div>
+          <div id='catalogContent' class='catalog-grid'></div>
+        </section>
+
+        <section id='resultPanel' class='hidden' aria-labelledby='resultTitle'>
+          <div class='result-header card'>
+            <div><p class='kicker'>03 · Result</p><h2 id='resultTitle'>설계 가설 · 검토 대기</h2><p id='resultId' class='muted'></p></div>
+            <div><div id='downloads' class='downloads' aria-label='결과 다운로드'></div><button id='clearResultButton' class='clear-button wide' type='button'>현재 결과 상태 지우기</button></div>
+          </div>
+          <div id='scorecards' class='scorecards'></div>
+          <div class='caution-line'>GPU 삼중복합체·합성·효능은 미검증</div>
+
+          <section class='card' aria-labelledby='e3Title'>
+            <div class='section-heading'><div><p class='kicker'>E3 branches</p><h3 id='e3Title'>CRBN · VHL 후보</h3></div><div id='calibration' class='calibration'></div></div>
+            <div id='branchSummary' class='branch-summary'></div>
+            <div class='filters'>
+              <label for='e3Filter'>E3 <select id='e3Filter'><option value='all'>전체</option><option value='CRBN'>CRBN</option><option value='VHL'>VHL</option></select></label>
+              <label for='linkerFilter'>Linker <select id='linkerFilter'><option value='all'>전체</option></select></label>
+            </div>
+            <div id='candidateGrid' class='candidate-grid'></div>
+            <div id='pagination' class='pagination'></div>
+          </section>
+
+          <section class='card' aria-labelledby='analogTitle'>
+            <div class='section-heading'><div><p class='kicker'>Warhead</p><h3 id='analogTitle'>선택 analog</h3></div><span id='warheadState' class='badge neutral'></span></div>
+            <div class='table-wrap'><table><thead><tr><th scope='col'>2D</th><th scope='col'>Analog</th><th scope='col'>변환</th><th scope='col'>Tier / 신뢰도</th><th scope='col'>위치 상태</th><th scope='col'>도킹</th><th scope='col'>가설</th></tr></thead><tbody id='analogRows'></tbody></table></div>
+          </section>
+
+          <details class='card'><summary>원자 위치 · 3D SASA · SAR 근거</summary><p class='detail-note'>SASA와 SAR 상태는 원자별 근거와 개발용 선별 기준이며 승인 또는 결합 보장의 의미가 아닙니다.</p><div id='atomList' class='atom-list'></div></details>
+          <details class='card'><summary>출처 · 검토 질문 · 한계</summary><div id='reviewContent' class='review-grid'></div></details>
+        </section>
+
+        <section id='designEvidencePanel' class='design-evidence-shell hidden' aria-labelledby='designEvidenceTitle'>
+          <div class='section-heading card'><div><p class='kicker'>Evidence review</p><h2 id='designEvidenceTitle'>출처 근거 · acceptance 검토</h2><p class='muted'>각 근거 섹션은 기본적으로 접혀 있습니다.</p></div><span class='badge neutral'>자동 과학 승인 없음</span></div>
+          <div id='designEvidenceContent'></div>
+        </section>
+      </section>
+    </section>
+  </main>
+  <script src='/static/design-evidence.js' defer></script>
+  <script src='/static/design-lab.js' defer></script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-review-material:0.1.0-draft",
+  "description": "Offline B H1/H2 material. Consumer confirmation pending; not Phase1Result, GatePacket or approval.",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "tpd-b-review-material/0.1.0-draft"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_mode": {
+      "const": "real"
+    },
+    "source_snapshot": {
+      "type": "object",
+      "properties": {
+        "handoff_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "case_input_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "b_run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_sha256": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      },
+      "required": [
+        "handoff_sha256",
+        "case_input_sha256",
+        "b_run_id",
+        "raw_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "h1": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "object"
+        },
+        "compounds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Compound"
+          },
+          "minItems": 1
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "observation_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "original": {
+                "type": "object",
+                "required": [
+                  "candidate_id",
+                  "paper_name",
+                  "paper_compound_number",
+                  "endpoint",
+                  "target",
+                  "value",
+                  "unit",
+                  "relation",
+                  "locator",
+                  "kind",
+                  "review_status"
+                ],
+                "properties": {
+                  "candidate_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "paper_name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "paper_compound_number": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "endpoint": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "target": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "unit": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relation": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "locator": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "kind": {
+                    "enum": [
+                      "literature_observation",
+                      "missing"
+                    ]
+                  },
+                  "review_status": {
+                    "const": "pending"
+                  }
+                }
+              },
+              "citation": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Citation"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "observation_id",
+              "original",
+              "citation"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coverage": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "target",
+        "compounds",
+        "observations",
+        "provenance",
+        "coverage"
+      ],
+      "additionalProperties": false
+    },
+    "h2": {
+      "type": "object",
+      "properties": {
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_molecule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attachment_literature": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "citation": {
+              "$ref": "#/$defs/Citation"
+            },
+            "review_status": {
+              "const": "pending"
+            }
+          },
+          "required": [
+            "summary",
+            "citation",
+            "review_status"
+          ],
+          "additionalProperties": false
+        },
+        "descriptive_geometry": {
+          "type": "object",
+          "required": [
+            "kind",
+            "attachment_ccd_atom",
+            "method",
+            "interpretation"
+          ],
+          "properties": {
+            "kind": {
+              "const": "computed_descriptive_geometry"
+            }
+          }
+        },
+        "reference_reconstructions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "compound_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "molecule_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "warhead_mapping": {
+                "type": "object",
+                "required": [
+                  "status",
+                  "equivalent_mapping_count",
+                  "mapping_choice",
+                  "normalization_for_matching_only",
+                  "atoms"
+                ],
+                "properties": {
+                  "status": {
+                    "const": "computed_pending_human_review"
+                  },
+                  "equivalent_mapping_count": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "atoms": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "source_ccd_atom": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "candidate_ccd_atom": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "candidate_map": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "source_ccd_atom",
+                        "candidate_ccd_atom",
+                        "candidate_map"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 1
+                  }
+                }
+              },
+              "boundary_bonds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 1
+              },
+              "parts": {
+                "$ref": "#/$defs/File"
+              },
+              "meaning": {
+                "type": "string",
+                "minLength": 1
+              },
+              "human_review": {
+                "const": "pending"
+              }
+            },
+            "required": [
+              "compound_id",
+              "molecule_id",
+              "warhead_mapping",
+              "boundary_bonds",
+              "parts",
+              "meaning",
+              "human_review"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "proposed_scope": {
+          "type": "object",
+          "properties": {
+            "reference_compound_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            },
+            "new_analog_design": {
+              "const": false
+            },
+            "recruiter": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scope_status": {
+              "const": "proposal_pending_G1"
+            }
+          },
+          "required": [
+            "reference_compound_ids",
+            "new_analog_design",
+            "recruiter",
+            "scope_status"
+          ],
+          "additionalProperties": false
+        },
+        "unresolved": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "hypothesis_id",
+        "subject_molecule_id",
+        "attachment_literature",
+        "descriptive_geometry",
+        "reference_reconstructions",
+        "proposed_scope",
+        "unresolved"
+      ],
+      "additionalProperties": false
+    },
+    "authority": {
+      "type": "object",
+      "properties": {
+        "human_review": {
+          "const": "pending"
+        },
+        "approval_record_created": {
+          "const": false
+        },
+        "dispatch_authorized": {
+          "const": false
+        },
+        "scientific_validation": {
+          "const": "not_established_by_handoff_checks"
+        }
+      },
+      "required": [
+        "human_review",
+        "approval_record_created",
+        "dispatch_authorized",
+        "scientific_validation"
+      ],
+      "additionalProperties": false
+    },
+    "material_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "required": [
+    "format",
+    "case_id",
+    "case_version",
+    "data_mode",
+    "source_snapshot",
+    "h1",
+    "h2",
+    "authority",
+    "material_digest"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "File": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ref": {
+          "$ref": "urn:tpd-navigator:module-boundary:0.1.0#/$defs/ArtifactRef"
+        }
+      },
+      "required": [
+        "path",
+        "bytes",
+        "ref"
+      ],
+      "additionalProperties": false
+    },
+    "Citation": {
+      "type": "object",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "doi",
+        "source_file",
+        "source_sha256",
+        "locator",
+        "text_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "Compound": {
+      "type": "object",
+      "properties": {
+        "compound_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "starting_ligand",
+            "known_reference_protac"
+          ]
+        },
+        "paper": {
+          "type": "object",
+          "properties": {
+            "doi": {
+              "type": "string",
+              "minLength": 1
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "compound_number": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "doi",
+            "name",
+            "compound_number"
+          ],
+          "additionalProperties": false
+        },
+        "molecule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "molecule_version": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "identity": {
+          "type": "object",
+          "required": [
+            "canonical_isomeric_smiles",
+            "inchikey",
+            "formal_charge",
+            "heavy_atom_count"
+          ],
+          "properties": {
+            "canonical_isomeric_smiles": {
+              "type": "string",
+              "minLength": 1
+            },
+            "inchikey": {
+              "type": "string",
+              "minLength": 1
+            },
+            "formal_charge": {
+              "type": "integer"
+            },
+            "heavy_atom_count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "structure": {
+          "type": "object",
+          "properties": {
+            "pdb": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ccd": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ligand_label_asym_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "pdb",
+            "ccd",
+            "ligand_label_asym_id"
+          ],
+          "additionalProperties": false
+        },
+        "attachment_atom": {
+          "type": "object",
+          "required": [
+            "ccd_atom_id",
+            "atom_map",
+            "rdkit_index_zero_based",
+            "label_asym_id",
+            "auth_asym_id",
+            "auth_seq_id"
+          ],
+          "properties": {
+            "ccd_atom_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "atom_map": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "rdkit_index_zero_based": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "label_asym_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "files": {
+          "type": "object",
+          "properties": {
+            "sdf_2d": {
+              "$ref": "#/$defs/File"
+            },
+            "depiction_2d": {
+              "$ref": "#/$defs/File"
+            },
+            "atom_map": {
+              "$ref": "#/$defs/File"
+            }
+          },
+          "required": [
+            "sdf_2d",
+            "depiction_2d",
+            "atom_map"
+          ],
+          "additionalProperties": false
+        },
+        "review_status": {
+          "const": "pending"
+        },
+        "prediction_status": {
+          "const": "not_run"
+        }
+      },
+      "required": [
+        "compound_id",
+        "role",
+        "paper",
+        "molecule_id",
+        "molecule_version",
+        "identity",
+        "structure",
+        "attachment_atom",
+        "files",
+        "review_status",
+        "prediction_status"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

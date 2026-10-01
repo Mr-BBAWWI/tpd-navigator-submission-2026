@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-boltz-run:0.1.0-draft",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "run_id", "compound_id", "origin", "requested_samples", "exit_code", "weights_sha256", "environment", "settings", "msa_files_sha256", "log_sha256"],
+  "properties": {
+    "format": {"const": "tpd-boltz-run/0.1.0-draft"},
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+    "compound_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+    "origin": {"enum": ["boltz_inference_reported", "synthetic_test"]},
+    "requested_samples": {"type": "integer", "minimum": 1},
+    "exit_code": {"type": ["integer", "null"]},
+    "weights_sha256": {"anyOf": [{"$ref": "#/$defs/hash"}, {"type": "null"}]},
+    "environment": {"type": "object", "additionalProperties": false, "required": ["boltz", "rdkit", "torch", "cuda", "gpu"], "properties": {
+      "boltz": {"const": "2.2.1"}, "rdkit": {"type": "string", "minLength": 1}, "torch": {"type": "string", "minLength": 1},
+      "cuda": {"type": ["string", "null"]}, "gpu": {"type": "string", "minLength": 1}
+    }},
+    "settings": {"type": "object", "additionalProperties": false,
+      "required": ["model", "recycling_steps", "sampling_steps", "step_scale", "max_parallel_samples", "seed", "use_potentials", "no_kernels", "msa_mode", "msa_pairing_strategy", "msa_server_url"],
+      "properties": {
+        "model": {"const": "boltz2"}, "recycling_steps": {"type": "integer", "minimum": 1},
+        "sampling_steps": {"type": "integer", "minimum": 1}, "step_scale": {"type": "number", "exclusiveMinimum": 0},
+        "max_parallel_samples": {"type": "integer", "minimum": 1}, "seed": {"type": ["integer", "null"]},
+        "use_potentials": {"type": "boolean"}, "no_kernels": {"type": "boolean"}, "msa_mode": {"const": "server"},
+        "msa_pairing_strategy": {"enum": ["greedy", "complete"]}, "msa_server_url": {"type": "string", "pattern": "^https://"}
+      }
+    },
+    "msa_files_sha256": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "log_sha256": {"anyOf": [{"$ref": "#/$defs/hash"}, {"type": "null"}]}
+  },
+  "allOf": [{"if": {"properties": {"origin": {"const": "boltz_inference_reported"}, "exit_code": {"const": 0}}}, "then": {"properties": {"weights_sha256": {"$ref": "#/$defs/hash"}}}}],
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

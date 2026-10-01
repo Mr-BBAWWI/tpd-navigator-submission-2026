@@ -1,0 +1,34 @@
+{
+  "files": {
+    "6BOY.cif": "18eff4e76d65482f74beeff70d69e375cda0acb966e834a6a8a7f0d26f44b0d7",
+    "6HAZ.cif": "7752dda8c54b7e56ab45c84e03ca544e383d834fb30e4c0849fc3544278e2c9d",
+    "FX5.cif": "e7ab75bb132a6a1bb19007223846fe4c9631c478fb3740ffdb5afe4cd0d486d3",
+    "RN6.cif": "d54c5e978045ccf6a3ffbd2bcff24964b42a5e1217c016f11b462bb4c854baf3",
+    "SMARCA2-neutral-design.sdf": "50e689f68d455083f2d7432b5928a93f6f7f971c4f2fc3cfda911bc0164ac6ee",
+    "SMARCA2-parent.sdf": "7b39c8e3f36f1c7a94c02a4ddda6c1cda1d672d3746094bb8572b81cd298e9b9",
+    "SMARCA2-prepared.pdb": "ea9c6557786777c156031c15d6e0f6cacb8cbd7e2092bb5e30cfba7fd07359fd",
+    "SMARCA2-receptor.json": "53c4f7c04479037e1565cd24d75ef7bab3e6dd7c2e515afc7c1a13ad6f6d542a",
+    "SMARCA2-receptor.pdb": "2fb3379bc1fe8f09507dbf8ff952eaab995f5492d22d186d67b17df38a6a6e88",
+    "SMARCA2-receptor.pdbqt": "1478f4762c3f538e1098674ed8bff11276eb383d2b62aeba1275d559c8d106cf",
+    "crbn_benchmark.json": "fbd191fb7cd5d716c63f9a1993b4238072f873e46807fb7b25b5dccba326bf70",
+    "recruiters.json": "90f70acdd2e03a71acc76f607e6fa660403b2e50f293747e26470d0cbbae82e3",
+    "warhead.json": "0398358d87a7f6e354d51877fefb61a0ebc9145081e02d3dfda296c266c1629f"
+  },
+  "official_sources": {
+    "6BOY.cif": "https://files.rcsb.org/download/6BOY.cif",
+    "6HAZ.cif": "https://files.rcsb.org/download/6HAZ.cif",
+    "FX5.cif": "https://files.rcsb.org/ligands/download/FX5.cif",
+    "RN6.cif": "https://files.rcsb.org/ligands/download/RN6.cif"
+  },
+  "receptor_preparation": {
+    "charges": "Gasteiger template",
+    "input": "6HAZ chain A heavy atoms",
+    "output": "SMARCA2-receptor.pdbqt",
+    "pH_or_tautomer_population": "not_predicted",
+    "residues_deleted": false,
+    "status": "fixed receptor model for preliminary docking",
+    "tool": "Meeko 0.8.0",
+    "waters_ions_crystal_neighbors": "excluded"
+  },
+  "version": "design-sources/20260930.1"
+}

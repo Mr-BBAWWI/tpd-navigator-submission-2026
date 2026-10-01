@@ -1,0 +1,55 @@
+{
+  "payload_type": "LiteratureCollectionRequest",
+  "payload_version": "0.1.0",
+  "target_resolution_ref": {
+    "artifact_id": "fixture-target-resolution",
+    "version": 1,
+    "sha256": "013d67a4492cfd8e4cad33ccf88fe9fb4125abc087ab1a2a54eac43e1cf22868",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetResolution",
+    "provenance": "test_fixture"
+  },
+  "research_context": {
+    "objective": {
+      "state": "not_provided",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    },
+    "cell_line": {
+      "state": "not_provided",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    },
+    "tissue": {
+      "state": "not_provided",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    }
+  },
+  "questions": [
+    {
+      "question_id": "q-attachment",
+      "question": "What is actually known about attachment?",
+      "query": "FIXTURE_ALPHA attachment",
+      "purpose": "attachment_sar"
+    }
+  ],
+  "attached_source_refs": [
+    {
+      "artifact_id": "fixture-upload",
+      "version": 1,
+      "sha256": "38d5412d9f47309e099b71db57b9fbc52b5f10ffbceea3851bbade117144d180",
+      "media_type": "application/pdf",
+      "schema_id": "urn:tpd-navigator:raw:test-fixture",
+      "provenance": "test_fixture"
+    }
+  ],
+  "collection_policy_ref": {
+    "artifact_id": "fixture-collection-policy",
+    "version": 1,
+    "sha256": "d940948f5809a68b98fd194f85e0628e936f6bd38746a80eb7254af8fc234b7b",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/CollectionPolicy",
+    "provenance": "test_fixture"
+  }
+}

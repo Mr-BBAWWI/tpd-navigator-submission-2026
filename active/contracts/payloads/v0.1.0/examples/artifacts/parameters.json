@@ -1,0 +1,5 @@
+{
+  "payload_type": "OperationParameters",
+  "payload_version": "0.1.0",
+  "profile_id": "fixture-only-no-runtime-profile"
+}

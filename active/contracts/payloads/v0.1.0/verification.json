@@ -1,0 +1,216 @@
+{
+  "scope": "offline_schema_and_semantic_contract_tests_only",
+  "schema_definitions": 38,
+  "positive_checks": 40,
+  "negative_cases": 41,
+  "positive_names": [
+    "hash:fixture-parameters",
+    "payload:fixture-parameters",
+    "hash:fixture-target-policy",
+    "hash:fixture-target-query",
+    "payload:fixture-target-query",
+    "hash:fixture-target-source",
+    "hash:fixture-target-resolution",
+    "payload:fixture-target-resolution",
+    "hash:fixture-target-manifest",
+    "payload:fixture-target-manifest",
+    "hash:fixture-collection-policy",
+    "payload:fixture-collection-policy",
+    "hash:fixture-upload",
+    "hash:fixture-collection-request",
+    "payload:fixture-collection-request",
+    "hash:fixture-literature-manifest",
+    "payload:fixture-literature-manifest",
+    "hash:fixture-article",
+    "hash:fixture-segment-text",
+    "hash:fixture-extraction",
+    "hash:fixture-extraction-activity",
+    "hash:fixture-search-response",
+    "hash:fixture-evidence-bundle",
+    "payload:fixture-evidence-bundle",
+    "exchange:target",
+    "exchange:literature",
+    "ambiguous target is a valid result",
+    "no target is a valid result",
+    "unsupported target identity preserved",
+    "locator shape:pdf",
+    "locator shape:abstract",
+    "locator shape:metadata",
+    "interval preserved",
+    "not detected is an observation",
+    "not measured is not zero",
+    "LLM producer does not change experimental basis",
+    "other target evidence is preserved",
+    "collection can return sources before analysis",
+    "zero search hits is not a failed search",
+    "duplicate evidence counts one original experiment"
+  ],
+  "negative_details": [
+    {
+      "case": "ambiguous cannot select automatically",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "resolved selection must exist",
+      "expected_error": "SELECTED_TARGET_NOT_FOUND"
+    },
+    {
+      "case": "unique match cannot hide second candidate",
+      "expected_error": "MULTIPLE_TARGETS_AUTO_SELECTED"
+    },
+    {
+      "case": "nonhuman cannot be in scope",
+      "expected_error": "NON_HUMAN_SCOPE"
+    },
+    {
+      "case": "unknown with invented value",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "missing measurement cannot become zero",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "negative interval ordering",
+      "expected_error": "REVERSED_INTERVAL"
+    },
+    {
+      "case": "unit must be explicit even if unknown",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "PDF pages start at one",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "XML locator cannot borrow PDF fields",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "bbox ordering",
+      "expected_error": "REVERSED_BBOX"
+    },
+    {
+      "case": "stale extraction snapshot",
+      "expected_error": "STALE_EXTRACTION_REFERENCE"
+    },
+    {
+      "case": "stale document version",
+      "expected_error": "STALE_DOCUMENT_REVISION"
+    },
+    {
+      "case": "unregistered document locator",
+      "expected_error": "LOCATOR_DOCUMENT_NOT_FOUND"
+    },
+    {
+      "case": "cross project document",
+      "expected_error": "CROSS_PROJECT_DOCUMENT"
+    },
+    {
+      "case": "duplicate document IDs",
+      "expected_error": "DUPLICATE_DOCUMENT_ID"
+    },
+    {
+      "case": "coverage must describe returned data",
+      "expected_error": "COVERAGE_MISMATCH"
+    },
+    {
+      "case": "failed extraction has no complete snapshot",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "LLM evidence needs a read trace",
+      "expected_error": "LLM_SOURCE_NOT_MARKED_READ"
+    },
+    {
+      "case": "unknown experiment independence cannot be counted",
+      "expected_error": "UNKNOWN_EXPERIMENT_COUNT_INVENTED"
+    },
+    {
+      "case": "broken comparison reference",
+      "expected_error": "BROKEN_COMPARISON_LINK"
+    },
+    {
+      "case": "unresolved structure cannot pretend to have a file",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "literature cannot invent mapped atom",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "active policy cannot be written in evidence",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "unapproved provider is not silently added",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "zero search budget is invalid",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "wrong payload version",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "completed search cannot say not run",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "manifest primary payload must be declared",
+      "expected_error": "SCHEMA:"
+    },
+    {
+      "case": "duplicate JSON keys",
+      "expected_error": "DUPLICATE_JSON_KEY"
+    },
+    {
+      "case": "NaN",
+      "expected_error": "NON_FINITE_JSON_NUMBER"
+    },
+    {
+      "case": "floating point overflow",
+      "expected_error": "NON_FINITE_JSON_NUMBER"
+    },
+    {
+      "case": "fixture graph forbidden in real run",
+      "expected_error": "FIXTURE_IN_REAL_GRAPH"
+    },
+    {
+      "case": "artifact byte hash",
+      "expected_error": "ARTIFACT_HASH_MISMATCH"
+    },
+    {
+      "case": "manifest digest",
+      "expected_error": "INPUT_DIGEST_MISMATCH"
+    },
+    {
+      "case": "manifest revision",
+      "expected_error": "MANIFEST_MISMATCH:input_revision"
+    },
+    {
+      "case": "late result attempt",
+      "expected_error": "RESULT_CORRELATION_MISMATCH:attempt"
+    },
+    {
+      "case": "wrong module producer",
+      "expected_error": "RESULT_PRODUCER_MISMATCH"
+    },
+    {
+      "case": "success needs typed output",
+      "expected_error": "PRIMARY_OUTPUT_REQUIRED"
+    },
+    {
+      "case": "metadata cannot support experimental record",
+      "expected_error": "METADATA_IS_NOT_EXPERIMENTAL_EVIDENCE"
+    },
+    {
+      "case": "resolved species must match requested species",
+      "expected_error": "RESOLVED_TAXON_MISMATCH"
+    }
+  ],
+  "real_sources_or_models_executed": false,
+  "dispatch_authorized": false
+}

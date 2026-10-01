@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:tpd-navigator:b-candidate-evidence:0.1.0-draft",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "case_id", "data_mode", "material_digest", "collection_digest", "source_files", "starting_ligand", "shared_hypothesis", "candidates", "literature_reconciliation", "authority", "digest"],
+  "properties": {
+    "format": {"const": "tpd-candidate-evidence/0.1.0-draft"}, "case_id": {"type": "string"}, "data_mode": {"enum": ["real", "synthetic_test"]},
+    "material_digest": {"$ref": "#/$defs/hash"}, "collection_digest": {"$ref": "#/$defs/hash"}, "digest": {"$ref": "#/$defs/hash"},
+    "source_files": {"type": "object", "additionalProperties": false, "required": ["material", "collection", "literature_exchange"], "properties": {
+      "material": {"$ref": "#/$defs/file"}, "collection": {"$ref": "#/$defs/file"}, "literature_exchange": {"anyOf": [{"$ref": "#/$defs/file"}, {"type": "null"}]}
+    }},
+    "starting_ligand": {"type": "object"}, "shared_hypothesis": {"type": "object"},
+    "candidates": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false,
+      "required": ["compound", "literature_observations", "reference_reconstruction", "computed_properties", "prediction", "review_items"],
+      "properties": {"compound": {"type": "object"}, "literature_observations": {"type": "array", "items": {"type": "object"}}, "reference_reconstruction": {"type": "object"},
+        "computed_properties": {"type": "object"}, "prediction": {"type": "object"}, "review_items": {"type": "array", "items": {"type": "string"}}
+      }
+    }},
+    "literature_reconciliation": {"type": "object", "additionalProperties": false, "required": ["status", "producer", "records", "meaning"], "properties": {
+      "status": {"enum": ["not_provided", "compared_pending_review"]}, "producer": {"type": ["string", "null"]}, "records": {"type": "array", "items": {"type": "object"}}, "meaning": {"type": "string"}
+    }},
+    "authority": {"type": "object", "additionalProperties": false, "required": ["human_review", "approval_record_created", "dispatch_authorized", "public_release_ready", "efficacy_claim"], "properties": {
+      "human_review": {"const": "pending"}, "approval_record_created": {"const": false}, "dispatch_authorized": {"const": false}, "public_release_ready": {"const": false}, "efficacy_claim": {"const": "not_established"}
+    }}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "file": {"type": "object", "additionalProperties": false, "required": ["path", "ref"], "properties": {
+      "path": {"type": "string"}, "ref": {"$ref": "urn:tpd-navigator:module-boundary:0.1.0#/$defs/ArtifactRef"}
+    }}
+  },
+  "$comment": "Candidate projections are checked for exact equality to validated material, collection and literature inputs by validate_evidence()."
+}

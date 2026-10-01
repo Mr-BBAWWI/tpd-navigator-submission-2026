@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"TPD source-bound design panel v20260930.4",
+  "type":"object",
+  "required":["format","status","input_binding","source_catalog","parent_scope","warhead","sites","analogs","rejections","protac_candidates","summary","chemical_states","acceptance_ledger","authority","calibration","review_questions"],
+  "properties":{
+    "format":{"const":"design-panel/20260930.4"},
+    "status":{"const":"hypotheses_pending_review"},
+    "sites":{"type":"object","required":["atoms","method"]},
+    "summary":{"type":"object","required":["stage_order","stage_counts","qualified_analogs","shortfall","selection_mode","broad_family_coverage","per_site_distinct_graph_counts"]},
+    "acceptance_ledger":{"type":"object","required":["functional_implementation","measured_data","scientific_approval"]},
+    "analogs":{"type":"array","items":{"type":"object","required":["id","mapped_smiles","transformation_class","site_status","stereochemistry","protected_graph_preserved","docking","selected"]}},
+    "protac_candidates":{"type":"array","items":{"type":"object","required":["candidate_id","e3_type","recruiter_id","attachment_metadata","atom_roles","final_candidate","assembly_mode","linker_assessment","route_evidence"],"properties":{"e3_type":{"enum":["CRBN","VHL"]},"final_candidate":{"const":false}}}},
+    "authority":{"type":"object","required":["human_approved","dispatch_authorized","efficacy_claim"],"properties":{"human_approved":{"const":false},"dispatch_authorized":{"const":false},"efficacy_claim":{"const":"not_established"},"public_release_ready":{"const":false}}},
+    "review_questions":{"type":"array","items":{"type":"string"}}
+  }
+}

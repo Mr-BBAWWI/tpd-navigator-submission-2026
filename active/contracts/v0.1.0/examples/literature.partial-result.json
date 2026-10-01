@@ -1,0 +1,43 @@
+{
+  "contract_version": "0.1.0",
+  "project_id": "fixture.project",
+  "run_id": "fixture.run",
+  "job_id": "fixture.job",
+  "attempt": 1,
+  "input_revision": 1,
+  "input_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "operation_id": "collect_literature",
+  "data_mode": "test_fixture",
+  "status": "partial",
+  "output_artifacts": [
+    {
+      "artifact_id": "art.fixture.EvidenceBundle",
+      "version": 1,
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "media_type": "application/json",
+      "schema_id": "EvidenceBundle.v0.1.draft",
+      "provenance": "test_fixture"
+    }
+  ],
+  "issues": [
+    {
+      "code": "FULL_TEXT_UNAVAILABLE",
+      "category": "missing_input",
+      "message": "Contract fixture: abstract available, full text unavailable.",
+      "affected_artifact_ids": [],
+      "retry_hint": "requires_changed_input"
+    }
+  ],
+  "actual_usage": {
+    "wall_time_ms": 0,
+    "llm_requests": 0,
+    "llm_tokens": 0,
+    "gpu_seconds": 0,
+    "usage_complete": true
+  },
+  "producer": {
+    "module": "literature.fixture",
+    "code_version": "contract-fixture-0.1",
+    "tool_versions_ref": null
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "contract_version": "0.1.0",
+  "project_id": "fixture-project",
+  "run_id": "fixture-run",
+  "job_id": "fixture-job-literature",
+  "input_revision": 1,
+  "operation_id": "collect_literature",
+  "execution_mode": "development_live",
+  "data_mode": "test_fixture",
+  "input_artifacts": [
+    {
+      "artifact_id": "fixture-collection-request",
+      "version": 1,
+      "sha256": "30fe6248fa48ee22635dd4f42c349856155e9f6ccfb8024405afe4ad934eda8f",
+      "media_type": "application/json",
+      "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/LiteratureCollectionRequest",
+      "provenance": "test_fixture"
+    },
+    {
+      "artifact_id": "fixture-target-resolution",
+      "version": 1,
+      "sha256": "013d67a4492cfd8e4cad33ccf88fe9fb4125abc087ab1a2a54eac43e1cf22868",
+      "media_type": "application/json",
+      "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetResolution",
+      "provenance": "test_fixture"
+    },
+    {
+      "artifact_id": "fixture-upload",
+      "version": 1,
+      "sha256": "38d5412d9f47309e099b71db57b9fbc52b5f10ffbceea3851bbade117144d180",
+      "media_type": "application/pdf",
+      "schema_id": "urn:tpd-navigator:raw:test-fixture",
+      "provenance": "test_fixture"
+    }
+  ],
+  "parameters_ref": {
+    "artifact_id": "fixture-parameters",
+    "version": 1,
+    "sha256": "ffd85ccf315853b9d8bfd3bdb3f0a83b8fbebdf8115768da862b996b16513dad",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/OperationParameters",
+    "provenance": "test_fixture"
+  },
+  "policy_ref": {
+    "artifact_id": "fixture-collection-policy",
+    "version": 1,
+    "sha256": "d940948f5809a68b98fd194f85e0628e936f6bd38746a80eb7254af8fc234b7b",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/CollectionPolicy",
+    "provenance": "test_fixture"
+  },
+  "approval_ref": null,
+  "attempt": 1,
+  "input_manifest": {
+    "artifact_id": "fixture-literature-manifest",
+    "version": 1,
+    "sha256": "13a26d3e58d842233cd9ff96a120a67435e68566c6eb2bd4eafefc0dc7580c34",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/InputManifest",
+    "provenance": "test_fixture"
+  },
+  "input_digest": "13a26d3e58d842233cd9ff96a120a67435e68566c6eb2bd4eafefc0dc7580c34",
+  "reservation_id": null,
+  "limits": {
+    "wall_time_seconds": 30,
+    "max_llm_requests": 0,
+    "max_llm_tokens": 0,
+    "max_gpu_seconds": 0,
+    "max_output_bytes": 1048576
+  }
+}

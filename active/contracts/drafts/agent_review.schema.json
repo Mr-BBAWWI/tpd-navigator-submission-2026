@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:agent-review:0.1.0-experimental",
+  "description": "Internal review experiment. No execution authority or human approval.",
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "text": {"type": "string", "minLength": 1, "maxLength": 1600},
+    "plan": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_digest", "order", "focus"],
+      "properties": {
+        "input_digest": {"$ref": "#/$defs/digest"},
+        "order": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"enum": ["literature", "molecule"]}},
+        "focus": {"type": "object", "additionalProperties": false, "required": ["literature", "molecule"], "properties": {"literature": {"$ref": "#/$defs/text"}, "molecule": {"$ref": "#/$defs/text"}}}
+      }
+    },
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "candidate_id", "evidence_id", "kind", "interpretation", "citations"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Za-z0-9:_-]{1,80}$"},
+        "candidate_id": {"type": "string", "minLength": 1},
+        "evidence_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["literature_annotation", "literature_observation", "missing", "computed_descriptive_geometry", "reference_reconstruction", "not_run", "design_hypothesis", "chemistry_trial"]},
+        "interpretation": {"$ref": "#/$defs/text"},
+        "citations": {"type": "array", "minItems": 1, "maxItems": 4, "items": {
+          "type": "object", "additionalProperties": false, "required": ["source_id", "quote"],
+          "properties": {"source_id": {"type": "string", "minLength": 1}, "quote": {"type": ["string", "null"], "minLength": 1, "maxLength": 600}}
+        }}
+      }
+    },
+    "assessment": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["input_digest", "action", "source_ids"],
+          "properties": {"input_digest": {"$ref": "#/$defs/digest"}, "action": {"const": "read_sources"}, "source_ids": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}},
+        {"type": "object", "additionalProperties": false, "required": ["input_digest", "action", "claims", "open_questions"],
+          "properties": {"input_digest": {"$ref": "#/$defs/digest"}, "action": {"const": "submit"}, "claims": {"type": "array", "minItems": 1, "maxItems": 16, "items": {"$ref": "#/$defs/claim"}}, "open_questions": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/text"}}}}
+      ]
+    },
+    "source_request": {"$ref": "#/$defs/assessment/oneOf/0"},
+    "submission": {"$ref": "#/$defs/assessment/oneOf/1"},
+    "critique": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_digest", "verdict", "findings"],
+      "properties": {
+        "input_digest": {"$ref": "#/$defs/digest"},
+        "verdict": {"enum": ["no_issues_found", "needs_revision"]},
+        "findings": {"type": "array", "maxItems": 16, "items": {
+          "type": "object", "additionalProperties": false, "required": ["claim_id", "evidence_ids", "problem"],
+          "properties": {"claim_id": {"type": "string", "minLength": 1, "description": "Copy claims[].id, not a candidate ID or evidence ID."}, "evidence_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}, "description": "Use ONLY facts[].id. Source IDs such as paper:F1, b:handoff or artifact:... belong to a different namespace and are forbidden here."}, "problem": {"$ref": "#/$defs/text"}}
+        }}
+      }
+    },
+    "report": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_digest", "claim_order"],
+      "properties": {
+        "input_digest": {"$ref": "#/$defs/digest"},
+        "claim_order": {"type": "array", "minItems": 1, "maxItems": 32, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

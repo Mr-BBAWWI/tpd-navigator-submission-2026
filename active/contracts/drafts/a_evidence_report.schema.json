@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:a-evidence-report:0.1.0-draft",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "project_id",
+    "result_id",
+    "dossier_id",
+    "run_id",
+    "created_at",
+    "input_digest",
+    "binding",
+    "bundle_digest",
+    "content_ref",
+    "markdown_ref",
+    "source_catalog",
+    "verification",
+    "counts",
+    "status",
+    "authority"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^report-[a-f0-9]{32}$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "result_id": {
+      "type": "string"
+    },
+    "dossier_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "input_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "binding": {
+      "type": "object",
+      "required": [
+        "state",
+        "implementation"
+      ],
+      "properties": {
+        "state": {
+          "type": "object",
+          "required": [
+            "run_snapshot",
+            "replay_only",
+            "dossier_ref",
+            "result_ref",
+            "latest_dossier_id",
+            "latest_result_id",
+            "expert_reviews"
+          ],
+          "properties": {
+            "run_snapshot": {
+              "type": "object"
+            },
+            "replay_only": {
+              "type": "boolean"
+            },
+            "dossier_ref": {
+              "$ref": "#/$defs/ref"
+            },
+            "result_ref": {
+              "$ref": "#/$defs/ref"
+            },
+            "latest_dossier_id": {
+              "type": "string"
+            },
+            "latest_result_id": {
+              "type": "string"
+            },
+            "expert_reviews": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "ref"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "ref": {
+                    "$ref": "#/$defs/ref"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "implementation": {
+          "type": "object",
+          "required": [
+            "version",
+            "sha256"
+          ],
+          "properties": {
+            "version": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "bundle_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "content_ref": {
+      "$ref": "#/$defs/ref"
+    },
+    "markdown_ref": {
+      "$ref": "#/$defs/ref"
+    },
+    "source_catalog": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/ref"
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "bundle_files_verified_at_creation",
+        "direct_sources_verified_at_creation"
+      ],
+      "properties": {
+        "bundle_files_verified_at_creation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "direct_sources_verified_at_creation": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "candidates",
+        "samples",
+        "observations",
+        "expert_responses",
+        "expert_questions"
+      ],
+      "properties": {
+        "candidates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "samples": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expert_responses": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expert_questions": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "const": "draft_pending_human_review"
+    },
+    "authority": {
+      "const": {
+        "human_approved": false,
+        "dispatch_authorized": false,
+        "efficacy_claim": "not_established",
+        "public_release_ready": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "version",
+        "sha256",
+        "media_type",
+        "schema_id",
+        "provenance"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^a-[a-f0-9]{32}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "version": {
+          "const": 1
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "schema_id": {
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "computed",
+            "source"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

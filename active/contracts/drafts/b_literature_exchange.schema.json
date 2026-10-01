@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:tpd-navigator:b-literature-exchange:0.1.0-draft",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "producer", "material_digest", "data_mode", "records"],
+  "properties": {
+    "format": {"const": "tpd-b-literature-exchange/0.1.0-draft"}, "producer": {"type": "string", "minLength": 1},
+    "material_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "data_mode": {"enum": ["real", "synthetic_test"]},
+    "records": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["record_id", "query", "observation", "source"], "properties": {
+      "record_id": {"type": "string", "minLength": 1},
+      "query": {"type": "object", "additionalProperties": false, "required": ["doi"], "properties": {"doi": {"type": "string", "minLength": 1}, "paper_name": {"type": "string", "minLength": 1}, "compound_number": {"type": "string", "minLength": 1}}, "anyOf": [{"required": ["paper_name"]}, {"required": ["compound_number"]}]},
+      "observation": {"type": "object", "required": ["endpoint", "kind", "value"], "properties": {"endpoint": {"type": "string"}, "kind": {"type": "string"}, "value": {"type": ["number", "string", "null"]}}},
+      "source": {"type": "object", "additionalProperties": false, "required": ["doi", "sha256", "locator", "review_status"], "properties": {
+        "doi": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "locator": {"type": "string", "minLength": 1}, "review_status": {"type": "string", "minLength": 1}
+      }}
+    }}}
+  }
+}

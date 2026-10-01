@@ -1,0 +1,13 @@
+.env
+.env.*
+.localdata/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+node_modules/
+reports/
+*.log
+*secret*
+*secrets*

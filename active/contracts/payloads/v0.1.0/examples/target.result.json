@@ -1,0 +1,35 @@
+{
+  "contract_version": "0.1.0",
+  "project_id": "fixture-project",
+  "run_id": "fixture-run",
+  "job_id": "fixture-job-target",
+  "attempt": 1,
+  "input_revision": 1,
+  "input_digest": "61222ae39d3b24e0fd686c2300a1faaef8eeb109a1f91e0cb401e66bc6bab157",
+  "operation_id": "resolve_target",
+  "data_mode": "test_fixture",
+  "status": "succeeded",
+  "output_artifacts": [
+    {
+      "artifact_id": "fixture-target-resolution",
+      "version": 1,
+      "sha256": "013d67a4492cfd8e4cad33ccf88fe9fb4125abc087ab1a2a54eac43e1cf22868",
+      "media_type": "application/json",
+      "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetResolution",
+      "provenance": "test_fixture"
+    }
+  ],
+  "issues": [],
+  "actual_usage": {
+    "wall_time_ms": null,
+    "llm_requests": null,
+    "llm_tokens": null,
+    "gpu_seconds": null,
+    "usage_complete": false
+  },
+  "producer": {
+    "module": "science",
+    "code_version": "synthetic-fixture-only",
+    "tool_versions_ref": null
+  }
+}

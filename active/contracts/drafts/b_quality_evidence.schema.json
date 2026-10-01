@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-quality-evidence:0.1.0-draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "data_mode",
+    "case_id",
+    "base_evidence_digest",
+    "base_manifest_sha256",
+    "candidates",
+    "authority",
+    "meaning",
+    "digest"
+  ],
+  "properties": {
+    "format": {
+      "const": "tpd-quality-evidence/0.1.0-draft"
+    },
+    "data_mode": {
+      "enum": [
+        "real",
+        "synthetic_test"
+      ]
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "base_evidence_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "base_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "compound_id",
+          "molecule_id",
+          "prediction_status",
+          "no_prediction_reason",
+          "samples"
+        ],
+        "properties": {
+          "compound_id": {
+            "type": "string"
+          },
+          "molecule_id": {
+            "type": "string"
+          },
+          "prediction_status": {
+            "enum": [
+              "not_run",
+              "available_unreviewed",
+              "needs_review"
+            ]
+          },
+          "no_prediction_reason": {
+            "anyOf": [
+              {
+                "const": "NO_PREDICTION_RECORD_SUPPLIED"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "samples": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "run_id",
+                "rank",
+                "structure_status",
+                "source_warnings",
+                "input_atom_identity",
+                "ligand_stereochemistry",
+                "quality_status",
+                "quality_report",
+                "quality_summary",
+                "analyses"
+              ],
+              "properties": {
+                "run_id": {
+                  "type": "string"
+                },
+                "rank": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "structure_status": {
+                  "enum": [
+                    "parsed",
+                    "missing",
+                    "invalid"
+                  ]
+                },
+                "source_warnings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "input_atom_identity": {
+                  "enum": [
+                    "checked_by_existing_reader",
+                    "not_assessed"
+                  ]
+                },
+                "ligand_stereochemistry": {
+                  "enum": [
+                    "checked_by_existing_reader",
+                    "requires_review",
+                    "not_assessed"
+                  ]
+                },
+                "quality_status": {
+                  "enum": [
+                    "not_assessed",
+                    "review_required",
+                    "no_findings_in_declared_scope"
+                  ]
+                },
+                "quality_report": {
+                  "anyOf": [
+                    {
+                      "$ref": "urn:tpd-navigator:b-structure-quality-request:0.1.0-draft#/$defs/file"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "quality_summary": {
+                  "anyOf": [
+                    {
+                      "$ref": "urn:tpd-navigator:b-structure-quality:0.1.0-draft#/$defs/summary"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "analyses": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:tpd-navigator:b-structure-quality:0.1.0-draft#/$defs/analysis"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_review",
+        "approval_record_created",
+        "dispatch_authorized",
+        "public_release_ready",
+        "efficacy_established"
+      ],
+      "properties": {
+        "human_review": {
+          "const": "pending"
+        },
+        "approval_record_created": {
+          "const": false
+        },
+        "dispatch_authorized": {
+          "const": false
+        },
+        "public_release_ready": {
+          "const": false
+        },
+        "efficacy_established": {
+          "const": false
+        }
+      }
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

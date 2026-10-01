@@ -1,0 +1,210 @@
+{
+  "default_parent_id": null,
+  "format_version": "reference-parents-v1",
+  "limitations": [
+    "This index records deposited co-crystal ligands after validated rigid receptor alignment.",
+    "It does not invent SAR, docking scores, binding measurements, or automatic attachment approvals."
+  ],
+  "not_ready": [
+    {
+      "group_id": "ligand-e35d8813003b5b59",
+      "reason": "Design-source manifest does not cover the verified 6HAZ CIF and warhead.json"
+    }
+  ],
+  "parents": [
+    {
+      "id": "SMARCA2-5DKC-5BW",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-5DKC-5BW.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-5DKC-5BW.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-5DKH-5C0",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-5DKH-5C0.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-5DKH-5C0.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-7Z78-IF8",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-7Z78-IF8.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-7Z78-IF8.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-8QJT-VLC",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-8QJT-VLC.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-8QJT-VLC.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-9D12-A1A1P",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-9D12-A1A1P.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-9D12-A1A1P.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-9DU0-A1BB5",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-9DU0-A1BB5.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-9DU0-A1BB5.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-9QAC-A1I5P",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-9QAC-A1I5P.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-9QAC-A1I5P.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-9QAD-A1I45",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-9QAD-A1I45.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-9QAD-A1I45.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    },
+    {
+      "id": "SMARCA2-9S3R-A1JLV",
+      "limitations": [
+        "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+        "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+        "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+        "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+        "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+        "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+        "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+      ],
+      "metadata": "parents/SMARCA2-9S3R-A1JLV.metadata.json",
+      "ready": true,
+      "sdf": "parents/SMARCA2-9S3R-A1JLV.sdf",
+      "suitability": {
+        "exploratory_design": true,
+        "fixed_receptor_pose_comparison": true,
+        "strict_design": false,
+        "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+      }
+    }
+  ],
+  "reference": {
+    "chain": "A",
+    "pdb": "6HAZ",
+    "sha256": "7752dda8c54b7e56ab45c84e03ca544e383d834fb30e4c0849fc3544278e2c9d"
+  }
+}

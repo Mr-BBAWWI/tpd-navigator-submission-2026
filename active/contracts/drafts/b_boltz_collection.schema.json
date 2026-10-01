@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:tpd-navigator:b-boltz-collection:0.1.0-draft",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "case_id", "material_digest", "receipt_digest", "data_mode", "runs", "aggregation", "human_review", "dispatch_authorized", "digest"],
+  "properties": {
+    "format": {"const": "tpd-boltz-collection/0.1.0-draft"}, "case_id": {"type": "string"}, "material_digest": {"$ref": "#/$defs/hash"},
+    "receipt_digest": {"anyOf": [{"$ref": "#/$defs/hash"}, {"type": "null"}]}, "digest": {"$ref": "#/$defs/hash"},
+    "data_mode": {"enum": ["real", "synthetic_test"]}, "human_review": {"const": "pending"}, "dispatch_authorized": {"const": false},
+    "aggregation": {"const": "all_samples_kept_no_pooled_score_or_automatic_selection"},
+    "runs": {"type": "array", "items": {"$ref": "#/$defs/run"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "file": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "range": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": 0}},
+    "warnings": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "summary": {"type": "object", "additionalProperties": false,
+      "required": ["confidence_score", "target_rmsd_A", "vhl_rmsd_after_target_alignment_A", "ligand_rmsd_range_A", "warhead_rmsd_range_A", "symmetry_mapping_count", "warnings"],
+      "properties": {
+        "confidence_score": {"type": ["number", "null"], "minimum": 0, "maximum": 1}, "target_rmsd_A": {"type": "number", "minimum": 0},
+        "vhl_rmsd_after_target_alignment_A": {"type": "number", "minimum": 0}, "ligand_rmsd_range_A": {"$ref": "#/$defs/range"}, "warhead_rmsd_range_A": {"$ref": "#/$defs/range"},
+        "symmetry_mapping_count": {"type": "integer", "minimum": 1}, "warnings": {"$ref": "#/$defs/warnings"}
+      }
+    },
+    "model": {"type": "object", "additionalProperties": false, "required": ["rank", "expected", "status", "reason", "summary", "comparison_file"],
+      "properties": {
+        "rank": {"type": "integer", "minimum": 0}, "expected": {"type": "boolean"}, "status": {"enum": ["parsed", "missing", "invalid"]},
+        "reason": {"type": ["string", "null"]}, "summary": {"anyOf": [{"$ref": "#/$defs/summary"}, {"type": "null"}]},
+        "comparison_file": {"anyOf": [{"$ref": "#/$defs/file"}, {"type": "null"}]}
+      },
+      "allOf": [{"if": {"properties": {"status": {"const": "parsed"}}}, "then": {"properties": {"reason": {"type": "null"}, "summary": {"$ref": "#/$defs/summary"}, "comparison_file": {"$ref": "#/$defs/file"}}}, "else": {"properties": {"reason": {"type": "string", "minLength": 1}, "summary": {"type": "null"}, "comparison_file": {"type": "null"}}}}]
+    },
+    "run": {"type": "object", "additionalProperties": false,
+      "required": ["run_id", "compound_id", "molecule_id", "origin", "reported_execution", "condition_digest", "input_sha256", "archive_file", "readiness", "warnings", "unrecognized_files", "models"],
+      "properties": {
+        "run_id": {"type": "string"}, "compound_id": {"type": "string"}, "molecule_id": {"type": "string"}, "origin": {"enum": ["boltz_inference_reported", "synthetic_test"]},
+        "reported_execution": {"type": "object", "description": "Validated by b_boltz_run.schema.json and cross-field checks in the consumer."},
+        "condition_digest": {"$ref": "#/$defs/hash"}, "input_sha256": {"$ref": "#/$defs/hash"}, "archive_file": {"$ref": "#/$defs/file"},
+        "readiness": {"enum": ["available_unreviewed", "needs_review"]}, "warnings": {"$ref": "#/$defs/warnings"},
+        "unrecognized_files": {"type": "array", "items": {"type": "string"}}, "models": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/model"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,1695 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:review:0.1.0",
+  "title": "I3-1 offline review and G1 contracts",
+  "$defs": {
+    "ArtifactRef": {
+      "$ref": "urn:tpd-navigator:boundary:0.1.0#/$defs/ArtifactRef"
+    },
+    "Issue": {
+      "$ref": "urn:tpd-navigator:boundary:0.1.0#/$defs/Issue"
+    },
+    "ParameterValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "number"
+            },
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "minLength": 1
+            },
+            "endpoint": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "Kd",
+                    "Ki",
+                    "IC50",
+                    "DC50",
+                    "Dmax",
+                    "other"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "value",
+            "unit",
+            "endpoint"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "integer"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unit": {
+              "const": "count"
+            },
+            "endpoint": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "kind",
+            "value",
+            "unit",
+            "endpoint"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "boolean"
+            },
+            "value": {
+              "type": "boolean"
+            },
+            "unit": {
+              "type": "null"
+            },
+            "endpoint": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "kind",
+            "value",
+            "unit",
+            "endpoint"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "choice"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "unit": {
+              "type": "null"
+            },
+            "endpoint": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "kind",
+            "value",
+            "unit",
+            "endpoint"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "unset"
+            },
+            "value": {
+              "type": "null"
+            },
+            "unit": {
+              "type": "null"
+            },
+            "endpoint": {
+              "type": "null"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "value",
+            "unit",
+            "endpoint",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "PolicyField": {
+      "type": "object",
+      "properties": {
+        "field_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "mutability": {
+          "enum": [
+            "locked",
+            "reviewable"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/ParameterValue"
+        },
+        "scope_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "effect": {
+          "enum": [
+            "fixed_universe_filter",
+            "requires_regeneration"
+          ]
+        },
+        "required_for_execution": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "field_id",
+        "mutability",
+        "value",
+        "scope_ref",
+        "effect",
+        "required_for_execution",
+        "rationale"
+      ],
+      "additionalProperties": false
+    },
+    "PolicySnapshot": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "PolicySnapshot"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "target_resolution_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PolicyField"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "target_resolution_ref",
+        "fields",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "Citation": {
+      "type": "object",
+      "properties": {
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "segment_id",
+        "start",
+        "end",
+        "quote"
+      ],
+      "additionalProperties": false
+    },
+    "Claim": {
+      "type": "object",
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis_kind": {
+          "enum": [
+            "experiment",
+            "computation",
+            "author_interpretation",
+            "researcher_hypothesis"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Citation"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "claim_id",
+        "statement",
+        "basis_kind",
+        "evidence_ids",
+        "citations",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "PolicyProposal": {
+      "type": "object",
+      "properties": {
+        "proposal_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "field_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "before": {
+          "$ref": "#/$defs/ParameterValue"
+        },
+        "proposed": {
+          "$ref": "#/$defs/ParameterValue"
+        },
+        "scope_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "basis_kind": {
+          "enum": [
+            "literature_informed",
+            "researcher_hypothesis"
+          ]
+        },
+        "supporting_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_tradeoff": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "proposal_id",
+        "field_id",
+        "before",
+        "proposed",
+        "scope_ref",
+        "basis_kind",
+        "supporting_claim_ids",
+        "rationale",
+        "expected_tradeoff"
+      ],
+      "additionalProperties": false
+    },
+    "LiteratureAssessmentRequest": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "LiteratureAssessmentRequest"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "input_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "evidence_bundle_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "target_resolution_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "base_policy_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "allowed_field_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "requested_segment_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "research_context_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "max_delivered_segments": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_claims": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_proposals": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "max_delivered_segments",
+            "max_claims",
+            "max_proposals"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "input_revision",
+        "evidence_bundle_ref",
+        "target_resolution_ref",
+        "base_policy_ref",
+        "allowed_field_ids",
+        "requested_segment_ids",
+        "research_context_ref",
+        "limits"
+      ],
+      "additionalProperties": false
+    },
+    "DeliveryReceipt": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "DeliveryReceipt"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "request_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "role": {
+          "const": "LiteratureAnalyst"
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "incomplete",
+            "failed",
+            "refused"
+          ]
+        },
+        "delivered_segment_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "response_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Issue"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "request_ref",
+        "role",
+        "status",
+        "delivered_segment_ids",
+        "response_ref",
+        "model",
+        "prompt_version",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "LiteratureAssessment": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "LiteratureAssessment"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "request_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "receipt_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "annotated_evidence_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "summary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "text",
+              "claim_ids"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+                },
+                "minItems": 2,
+                "uniqueItems": true
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "claim_ids",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "proposals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PolicyProposal"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "unassessed_segment_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Issue"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "request_ref",
+        "receipt_ref",
+        "annotated_evidence_ref",
+        "claims",
+        "summary",
+        "conflicts",
+        "proposals",
+        "unassessed_segment_ids",
+        "limitations",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "CandidateIdentity": {
+      "type": "object",
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "structure_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "structure_ref"
+      ],
+      "additionalProperties": false
+    },
+    "CandidateUniverse": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "CandidateUniverse"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "target_resolution_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CandidateIdentity"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "generation_context_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "target_resolution_ref",
+        "candidates",
+        "generation_context_ref",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "CandidateOutcome": {
+      "type": "object",
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "disposition": {
+          "enum": [
+            "eligible",
+            "excluded",
+            "hold"
+          ]
+        },
+        "mapping_status": {
+          "enum": [
+            "resolved",
+            "ambiguous",
+            "unavailable",
+            "failed"
+          ]
+        },
+        "mapping_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "chemical_status": {
+          "enum": [
+            "valid",
+            "invalid",
+            "unassessed"
+          ]
+        },
+        "evidence_kind": {
+          "enum": [
+            "direct_precedent",
+            "local_sar",
+            "experimental_structure",
+            "computed_hypothesis",
+            "cross_target_reference",
+            "unknown"
+          ]
+        },
+        "assessment_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "candidate_id",
+        "disposition",
+        "mapping_status",
+        "mapping_ref",
+        "chemical_status",
+        "evidence_kind",
+        "assessment_refs",
+        "reasons",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "Phase1Result": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "Phase1Result"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "universe_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "policy_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "assessment_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "evaluation_context_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "failed"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CandidateOutcome"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Issue"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "universe_ref",
+        "policy_ref",
+        "assessment_ref",
+        "evaluation_context_ref",
+        "status",
+        "candidates",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "PreviewRequest": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "PreviewRequest"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "assessment_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "selected_proposal_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "base_policy_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "proposed_policy_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "universe_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "evaluation_context_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "proposal_review_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "assessment_ref",
+        "selected_proposal_ids",
+        "base_policy_ref",
+        "proposed_policy_ref",
+        "universe_ref",
+        "evaluation_context_ref",
+        "proposal_review_ref"
+      ],
+      "additionalProperties": false
+    },
+    "CpuPreview": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "CpuPreview"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "request_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "baseline_result_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "proposed_result_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "added_candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "removed_candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "held_candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "request_ref",
+        "baseline_result_ref",
+        "proposed_result_ref",
+        "added_candidate_ids",
+        "removed_candidate_ids",
+        "held_candidate_ids",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewRequest": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "ReviewRequest"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "subject_kind": {
+          "enum": [
+            "LiteratureAssessment",
+            "CpuPreview"
+          ]
+        },
+        "subject_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "required_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "subject_kind",
+        "subject_ref",
+        "required_claim_ids"
+      ],
+      "additionalProperties": false
+    },
+    "Finding": {
+      "type": "object",
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "severity": {
+          "enum": [
+            "blocking",
+            "warning",
+            "info"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "finding_id",
+        "severity",
+        "message",
+        "subject_refs",
+        "claim_ids"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewRecord": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "ReviewRecord"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "request_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "role": {
+          "const": "Critic"
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "incomplete",
+            "failed",
+            "refused"
+          ]
+        },
+        "reviewed_claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "response_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Finding"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "request_ref",
+        "role",
+        "status",
+        "reviewed_claim_ids",
+        "response_ref",
+        "findings",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "CodeCheckReport": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "CodeCheckReport"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "request_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "validator_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "complete",
+            "incomplete",
+            "failed"
+          ]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "check_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+              },
+              "outcome": {
+                "enum": [
+                  "pass",
+                  "fail",
+                  "not_run"
+                ]
+              }
+            },
+            "required": [
+              "check_id",
+              "outcome"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Finding"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "request_ref",
+        "validator_version",
+        "status",
+        "checks",
+        "findings"
+      ],
+      "additionalProperties": false
+    },
+    "CostScope": {
+      "type": "object",
+      "properties": {
+        "execution_mode": {
+          "enum": [
+            "development_live",
+            "public_explore"
+          ]
+        },
+        "quote_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "max_gpu_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_cost_krw": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "execution_mode",
+        "quote_ref",
+        "max_gpu_seconds",
+        "max_cost_krw"
+      ],
+      "additionalProperties": false
+    },
+    "GatePacket": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "GatePacket"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "gate": {
+          "const": "G1"
+        },
+        "input_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "preview_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "critic_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "code_check_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "selected_candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "cost_scope": {
+          "$ref": "#/$defs/CostScope"
+        },
+        "purpose": {
+          "const": "phase2_candidate_design"
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "gate",
+        "input_revision",
+        "preview_ref",
+        "critic_ref",
+        "code_check_ref",
+        "selected_candidate_ids",
+        "cost_scope",
+        "purpose"
+      ],
+      "additionalProperties": false
+    },
+    "GateDecisionRequest": {
+      "type": "object",
+      "properties": {
+        "packet_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "input_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "decision": {
+          "enum": [
+            "approve",
+            "reject"
+          ]
+        },
+        "acknowledged_warning_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "packet_ref",
+        "input_revision",
+        "decision",
+        "acknowledged_warning_ids",
+        "reason",
+        "idempotency_key"
+      ],
+      "additionalProperties": false
+    },
+    "ApprovalRecord": {
+      "type": "object",
+      "properties": {
+        "payload_type": {
+          "const": "ApprovalRecord"
+        },
+        "payload_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "packet_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "input_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "input_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "decision": {
+          "enum": [
+            "approve",
+            "reject"
+          ]
+        },
+        "acknowledged_warning_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "actor_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decided_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dispatch_authorized": {
+          "const": false
+        }
+      },
+      "required": [
+        "payload_type",
+        "payload_version",
+        "project_id",
+        "run_id",
+        "data_mode",
+        "packet_ref",
+        "input_digest",
+        "input_revision",
+        "decision",
+        "acknowledged_warning_ids",
+        "reason",
+        "actor_id",
+        "actor_name",
+        "decided_at",
+        "idempotency_key",
+        "dispatch_authorized"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/PolicySnapshot"
+    },
+    {
+      "$ref": "#/$defs/LiteratureAssessmentRequest"
+    },
+    {
+      "$ref": "#/$defs/DeliveryReceipt"
+    },
+    {
+      "$ref": "#/$defs/LiteratureAssessment"
+    },
+    {
+      "$ref": "#/$defs/CandidateUniverse"
+    },
+    {
+      "$ref": "#/$defs/Phase1Result"
+    },
+    {
+      "$ref": "#/$defs/PreviewRequest"
+    },
+    {
+      "$ref": "#/$defs/CpuPreview"
+    },
+    {
+      "$ref": "#/$defs/ReviewRequest"
+    },
+    {
+      "$ref": "#/$defs/ReviewRecord"
+    },
+    {
+      "$ref": "#/$defs/CodeCheckReport"
+    },
+    {
+      "$ref": "#/$defs/GatePacket"
+    },
+    {
+      "$ref": "#/$defs/ApprovalRecord"
+    },
+    {
+      "$ref": "#/$defs/GateDecisionRequest"
+    }
+  ]
+}

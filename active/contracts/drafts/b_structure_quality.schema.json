@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-structure-quality-request:0.1.0-draft",
+  "title": "Offline Reduce2/Probe2 diagnostic input, separate from M2 approval",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "data_mode", "binding", "source_structure", "method", "preparation_evidence", "preparation_notes", "analyses"],
+  "properties": {
+    "format": {"const": "tpd-probe-quality-request/0.1.0-draft"},
+    "data_mode": {"enum": ["real", "synthetic_test"]},
+    "binding": {"$ref": "#/$defs/binding"},
+    "source_structure": {"$ref": "#/$defs/file"},
+    "method": {
+      "type": "object", "additionalProperties": false,
+      "required": ["adapter", "tool_version", "settings_note"],
+      "properties": {
+        "adapter": {"const": "cctbx-reduce2-probe2-condensed/1"},
+        "tool_version": {"const": "2025.11"},
+        "settings_note": {"type": "string", "minLength": 1}
+      }
+    },
+    "preparation_evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/file"}},
+    "preparation_notes": {"$ref": "#/$defs/notes"},
+    "analyses": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/analysis"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "text": {"type": "string", "minLength": 1},
+    "file": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "optionalFile": {"anyOf": [{"$ref": "#/$defs/file"}, {"type": "null"}]},
+    "notes": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+    "chains": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Za-z0-9_]+$"}},
+    "binding": {"type": "object", "additionalProperties": false,
+      "required": ["compound_id", "molecule_id", "run_id", "model_rank", "input_sha256", "structure_sha256"],
+      "properties": {"compound_id": {"$ref": "#/$defs/text"}, "molecule_id": {"$ref": "#/$defs/text"},
+        "run_id": {"$ref": "#/$defs/text"}, "model_rank": {"type": "integer", "minimum": 0},
+        "input_sha256": {"$ref": "#/$defs/hash"}, "structure_sha256": {"$ref": "#/$defs/hash"}}},
+    "direction": {"type": "object", "additionalProperties": false, "required": ["execution", "output"],
+      "properties": {"execution": {"$ref": "#/$defs/optionalFile"}, "output": {"$ref": "#/$defs/optionalFile"}}},
+    "analysis": {"type": "object", "additionalProperties": false,
+      "required": ["analysis_id", "scope", "hydrogen_convention", "hydrogen_model", "hydrogen_inventory", "hydrogen_model_source_path", "reduce_execution", "reduce_log", "directions"],
+      "properties": {
+        "analysis_id": {"$ref": "#/$defs/text"},
+        "scope": {"type": "object", "additionalProperties": false,
+          "required": ["description", "source_chains", "target_chains", "atom_typing", "limitations"],
+          "properties": {"description": {"$ref": "#/$defs/text"}, "source_chains": {"$ref": "#/$defs/chains"},
+            "target_chains": {"$ref": "#/$defs/chains"}, "atom_typing": {"enum": ["standard_protein", "unverified"]},
+            "limitations": {"$ref": "#/$defs/notes"}}},
+        "hydrogen_convention": {"enum": ["xray", "nuclear"]},
+        "hydrogen_model": {"$ref": "#/$defs/optionalFile"},
+        "hydrogen_inventory": {"$ref": "#/$defs/optionalFile"},
+        "hydrogen_model_source_path": {"type": ["string", "null"]},
+        "reduce_execution": {"$ref": "#/$defs/optionalFile"}, "reduce_log": {"$ref": "#/$defs/optionalFile"},
+        "directions": {"type": "object", "additionalProperties": false, "required": ["forward", "reverse"],
+          "properties": {"forward": {"$ref": "#/$defs/direction"}, "reverse": {"$ref": "#/$defs/direction"}}}
+      }
+    }
+  }
+}

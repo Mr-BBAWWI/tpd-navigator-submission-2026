@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object","additionalProperties":false,
+  "required":["input_digest","verdict","evidence_ids","rationale","missing_fields"],
+  "properties":{
+    "input_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "verdict":{"enum":["supported","contradicted","insufficient"]},
+    "evidence_ids":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "rationale":{"type":"string","minLength":1,"maxLength":1600},
+    "missing_fields":{"type":"array","uniqueItems":true,"items":{"type":"string","maxLength":160}}
+  }
+}

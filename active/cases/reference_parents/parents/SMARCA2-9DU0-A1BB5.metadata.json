@@ -1,0 +1,3288 @@
+{
+  "alignment": {
+    "paired_CA": [
+      {
+        "moving": {
+          "atom_site_id": "16",
+          "auth_seq_id": "1378",
+          "label_comp_id": "PRO",
+          "label_seq_id": 7,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "P",
+        "reference": {
+          "atom_site_id": "2",
+          "auth_seq_id": "1378",
+          "label_comp_id": "PRO",
+          "label_seq_id": 8,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "23",
+          "auth_seq_id": "1379",
+          "label_comp_id": "ASN",
+          "label_seq_id": 8,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "N",
+        "reference": {
+          "atom_site_id": "16",
+          "auth_seq_id": "1379",
+          "label_comp_id": "ASN",
+          "label_seq_id": 9,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "31",
+          "auth_seq_id": "1380",
+          "label_comp_id": "PRO",
+          "label_seq_id": 9,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "P",
+        "reference": {
+          "atom_site_id": "30",
+          "auth_seq_id": "1380",
+          "label_comp_id": "PRO",
+          "label_seq_id": 10,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "38",
+          "auth_seq_id": "1381",
+          "label_comp_id": "PRO",
+          "label_seq_id": 10,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "P",
+        "reference": {
+          "atom_site_id": "44",
+          "auth_seq_id": "1381",
+          "label_comp_id": "PRO",
+          "label_seq_id": 11,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "45",
+          "auth_seq_id": "1382",
+          "label_comp_id": "LYS",
+          "label_seq_id": 11,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "58",
+          "auth_seq_id": "1382",
+          "label_comp_id": "LYS",
+          "label_seq_id": 12,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "54",
+          "auth_seq_id": "1383",
+          "label_comp_id": "LEU",
+          "label_seq_id": 12,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "80",
+          "auth_seq_id": "1383",
+          "label_comp_id": "LEU",
+          "label_seq_id": 13,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "62",
+          "auth_seq_id": "1384",
+          "label_comp_id": "THR",
+          "label_seq_id": 13,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "T",
+        "reference": {
+          "atom_site_id": "99",
+          "auth_seq_id": "1384",
+          "label_comp_id": "THR",
+          "label_seq_id": 14,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "69",
+          "auth_seq_id": "1385",
+          "label_comp_id": "LYS",
+          "label_seq_id": 14,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "113",
+          "auth_seq_id": "1385",
+          "label_comp_id": "LYS",
+          "label_seq_id": 15,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "78",
+          "auth_seq_id": "1386",
+          "label_comp_id": "GLN",
+          "label_seq_id": 15,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Q",
+        "reference": {
+          "atom_site_id": "135",
+          "auth_seq_id": "1386",
+          "label_comp_id": "GLN",
+          "label_seq_id": 16,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "87",
+          "auth_seq_id": "1387",
+          "label_comp_id": "MET",
+          "label_seq_id": 16,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "M",
+        "reference": {
+          "atom_site_id": "152",
+          "auth_seq_id": "1387",
+          "label_comp_id": "MET",
+          "label_seq_id": 17,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "95",
+          "auth_seq_id": "1388",
+          "label_comp_id": "ASN",
+          "label_seq_id": 17,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "N",
+        "reference": {
+          "atom_site_id": "169",
+          "auth_seq_id": "1388",
+          "label_comp_id": "ASN",
+          "label_seq_id": 18,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "103",
+          "auth_seq_id": "1389",
+          "label_comp_id": "ALA",
+          "label_seq_id": 18,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "A",
+        "reference": {
+          "atom_site_id": "183",
+          "auth_seq_id": "1389",
+          "label_comp_id": "ALA",
+          "label_seq_id": 19,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "108",
+          "auth_seq_id": "1390",
+          "label_comp_id": "ILE",
+          "label_seq_id": 19,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "193",
+          "auth_seq_id": "1390",
+          "label_comp_id": "ILE",
+          "label_seq_id": 20,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "116",
+          "auth_seq_id": "1391",
+          "label_comp_id": "ILE",
+          "label_seq_id": 20,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "212",
+          "auth_seq_id": "1391",
+          "label_comp_id": "ILE",
+          "label_seq_id": 21,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "124",
+          "auth_seq_id": "1392",
+          "label_comp_id": "ASP",
+          "label_seq_id": 21,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "D",
+        "reference": {
+          "atom_site_id": "231",
+          "auth_seq_id": "1392",
+          "label_comp_id": "ASP",
+          "label_seq_id": 22,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "132",
+          "auth_seq_id": "1393",
+          "label_comp_id": "THR",
+          "label_seq_id": 22,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "T",
+        "reference": {
+          "atom_site_id": "243",
+          "auth_seq_id": "1393",
+          "label_comp_id": "THR",
+          "label_seq_id": 23,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "139",
+          "auth_seq_id": "1394",
+          "label_comp_id": "VAL",
+          "label_seq_id": 23,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "V",
+        "reference": {
+          "atom_site_id": "257",
+          "auth_seq_id": "1394",
+          "label_comp_id": "VAL",
+          "label_seq_id": 24,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "146",
+          "auth_seq_id": "1395",
+          "label_comp_id": "ILE",
+          "label_seq_id": 24,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "273",
+          "auth_seq_id": "1395",
+          "label_comp_id": "ILE",
+          "label_seq_id": 25,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "154",
+          "auth_seq_id": "1396",
+          "label_comp_id": "ASN",
+          "label_seq_id": 25,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "N",
+        "reference": {
+          "atom_site_id": "292",
+          "auth_seq_id": "1396",
+          "label_comp_id": "ASN",
+          "label_seq_id": 26,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "162",
+          "auth_seq_id": "1397",
+          "label_comp_id": "TYR",
+          "label_seq_id": 26,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Y",
+        "reference": {
+          "atom_site_id": "306",
+          "auth_seq_id": "1397",
+          "label_comp_id": "TYR",
+          "label_seq_id": 27,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "174",
+          "auth_seq_id": "1398",
+          "label_comp_id": "LYS",
+          "label_seq_id": 27,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "327",
+          "auth_seq_id": "1398",
+          "label_comp_id": "LYS",
+          "label_seq_id": 28,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "183",
+          "auth_seq_id": "1399",
+          "label_comp_id": "ASP",
+          "label_seq_id": 28,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "D",
+        "reference": {
+          "atom_site_id": "349",
+          "auth_seq_id": "1399",
+          "label_comp_id": "ASP",
+          "label_seq_id": 29,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "191",
+          "auth_seq_id": "1400",
+          "label_comp_id": "SER",
+          "label_seq_id": 29,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "361",
+          "auth_seq_id": "1400",
+          "label_comp_id": "SER",
+          "label_seq_id": 30,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "197",
+          "auth_seq_id": "1401",
+          "label_comp_id": "SER",
+          "label_seq_id": 30,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "372",
+          "auth_seq_id": "1401",
+          "label_comp_id": "SER",
+          "label_seq_id": 31,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "203",
+          "auth_seq_id": "1402",
+          "label_comp_id": "GLY",
+          "label_seq_id": 31,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "G",
+        "reference": {
+          "atom_site_id": "383",
+          "auth_seq_id": "1402",
+          "label_comp_id": "GLY",
+          "label_seq_id": 32,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "207",
+          "auth_seq_id": "1403",
+          "label_comp_id": "ARG",
+          "label_seq_id": 32,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "R",
+        "reference": {
+          "atom_site_id": "390",
+          "auth_seq_id": "1403",
+          "label_comp_id": "ARG",
+          "label_seq_id": 33,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "218",
+          "auth_seq_id": "1404",
+          "label_comp_id": "GLN",
+          "label_seq_id": 33,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Q",
+        "reference": {
+          "atom_site_id": "414",
+          "auth_seq_id": "1404",
+          "label_comp_id": "GLN",
+          "label_seq_id": 34,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "227",
+          "auth_seq_id": "1405",
+          "label_comp_id": "LEU",
+          "label_seq_id": 34,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "431",
+          "auth_seq_id": "1405",
+          "label_comp_id": "LEU",
+          "label_seq_id": 35,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "235",
+          "auth_seq_id": "1406",
+          "label_comp_id": "SER",
+          "label_seq_id": 35,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "450",
+          "auth_seq_id": "1406",
+          "label_comp_id": "SER",
+          "label_seq_id": 36,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "241",
+          "auth_seq_id": "1407",
+          "label_comp_id": "GLU",
+          "label_seq_id": 36,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "461",
+          "auth_seq_id": "1407",
+          "label_comp_id": "GLU",
+          "label_seq_id": 37,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "250",
+          "auth_seq_id": "1408",
+          "label_comp_id": "VAL",
+          "label_seq_id": 37,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "V",
+        "reference": {
+          "atom_site_id": "476",
+          "auth_seq_id": "1408",
+          "label_comp_id": "VAL",
+          "label_seq_id": 38,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "257",
+          "auth_seq_id": "1409",
+          "label_comp_id": "PHE",
+          "label_seq_id": 38,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "F",
+        "reference": {
+          "atom_site_id": "492",
+          "auth_seq_id": "1409",
+          "label_comp_id": "PHE",
+          "label_seq_id": 39,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "268",
+          "auth_seq_id": "1410",
+          "label_comp_id": "ILE",
+          "label_seq_id": 39,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "512",
+          "auth_seq_id": "1410",
+          "label_comp_id": "ILE",
+          "label_seq_id": 40,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "276",
+          "auth_seq_id": "1411",
+          "label_comp_id": "GLN",
+          "label_seq_id": 40,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Q",
+        "reference": {
+          "atom_site_id": "531",
+          "auth_seq_id": "1411",
+          "label_comp_id": "GLN",
+          "label_seq_id": 41,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "285",
+          "auth_seq_id": "1412",
+          "label_comp_id": "LEU",
+          "label_seq_id": 41,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "548",
+          "auth_seq_id": "1412",
+          "label_comp_id": "LEU",
+          "label_seq_id": 42,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "293",
+          "auth_seq_id": "1413",
+          "label_comp_id": "PRO",
+          "label_seq_id": 42,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "P",
+        "reference": {
+          "atom_site_id": "567",
+          "auth_seq_id": "1413",
+          "label_comp_id": "PRO",
+          "label_seq_id": 43,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "300",
+          "auth_seq_id": "1414",
+          "label_comp_id": "SER",
+          "label_seq_id": 43,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "581",
+          "auth_seq_id": "1414",
+          "label_comp_id": "SER",
+          "label_seq_id": 44,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "306",
+          "auth_seq_id": "1415",
+          "label_comp_id": "ARG",
+          "label_seq_id": 44,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "R",
+        "reference": {
+          "atom_site_id": "592",
+          "auth_seq_id": "1415",
+          "label_comp_id": "ARG",
+          "label_seq_id": 45,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "317",
+          "auth_seq_id": "1416",
+          "label_comp_id": "LYS",
+          "label_seq_id": 45,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "616",
+          "auth_seq_id": "1416",
+          "label_comp_id": "LYS",
+          "label_seq_id": 46,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "326",
+          "auth_seq_id": "1417",
+          "label_comp_id": "GLU",
+          "label_seq_id": 46,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "638",
+          "auth_seq_id": "1417",
+          "label_comp_id": "GLU",
+          "label_seq_id": 47,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "335",
+          "auth_seq_id": "1418",
+          "label_comp_id": "LEU",
+          "label_seq_id": 47,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "653",
+          "auth_seq_id": "1418",
+          "label_comp_id": "LEU",
+          "label_seq_id": 48,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "343",
+          "auth_seq_id": "1419",
+          "label_comp_id": "PRO",
+          "label_seq_id": 48,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "P",
+        "reference": {
+          "atom_site_id": "672",
+          "auth_seq_id": "1419",
+          "label_comp_id": "PRO",
+          "label_seq_id": 49,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "350",
+          "auth_seq_id": "1420",
+          "label_comp_id": "GLU",
+          "label_seq_id": 49,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "686",
+          "auth_seq_id": "1420",
+          "label_comp_id": "GLU",
+          "label_seq_id": 50,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "359",
+          "auth_seq_id": "1421",
+          "label_comp_id": "TYR",
+          "label_seq_id": 50,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Y",
+        "reference": {
+          "atom_site_id": "701",
+          "auth_seq_id": "1421",
+          "label_comp_id": "TYR",
+          "label_seq_id": 51,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "371",
+          "auth_seq_id": "1422",
+          "label_comp_id": "TYR",
+          "label_seq_id": 51,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Y",
+        "reference": {
+          "atom_site_id": "722",
+          "auth_seq_id": "1422",
+          "label_comp_id": "TYR",
+          "label_seq_id": 52,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "383",
+          "auth_seq_id": "1423",
+          "label_comp_id": "GLU",
+          "label_seq_id": 52,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "743",
+          "auth_seq_id": "1423",
+          "label_comp_id": "GLU",
+          "label_seq_id": 53,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "392",
+          "auth_seq_id": "1424",
+          "label_comp_id": "LEU",
+          "label_seq_id": 53,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "758",
+          "auth_seq_id": "1424",
+          "label_comp_id": "LEU",
+          "label_seq_id": 54,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "400",
+          "auth_seq_id": "1425",
+          "label_comp_id": "ILE",
+          "label_seq_id": 54,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "777",
+          "auth_seq_id": "1425",
+          "label_comp_id": "ILE",
+          "label_seq_id": 55,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "408",
+          "auth_seq_id": "1426",
+          "label_comp_id": "ARG",
+          "label_seq_id": 55,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "R",
+        "reference": {
+          "atom_site_id": "796",
+          "auth_seq_id": "1426",
+          "label_comp_id": "ARG",
+          "label_seq_id": 56,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "419",
+          "auth_seq_id": "1427",
+          "label_comp_id": "LYS",
+          "label_seq_id": 56,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "820",
+          "auth_seq_id": "1427",
+          "label_comp_id": "LYS",
+          "label_seq_id": 57,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "428",
+          "auth_seq_id": "1428",
+          "label_comp_id": "PRO",
+          "label_seq_id": 57,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "P",
+        "reference": {
+          "atom_site_id": "842",
+          "auth_seq_id": "1428",
+          "label_comp_id": "PRO",
+          "label_seq_id": 58,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "435",
+          "auth_seq_id": "1429",
+          "label_comp_id": "VAL",
+          "label_seq_id": 58,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "V",
+        "reference": {
+          "atom_site_id": "856",
+          "auth_seq_id": "1429",
+          "label_comp_id": "VAL",
+          "label_seq_id": 59,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "442",
+          "auth_seq_id": "1430",
+          "label_comp_id": "ASP",
+          "label_seq_id": 59,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "D",
+        "reference": {
+          "atom_site_id": "872",
+          "auth_seq_id": "1430",
+          "label_comp_id": "ASP",
+          "label_seq_id": 60,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "450",
+          "auth_seq_id": "1431",
+          "label_comp_id": "PHE",
+          "label_seq_id": 60,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "F",
+        "reference": {
+          "atom_site_id": "884",
+          "auth_seq_id": "1431",
+          "label_comp_id": "PHE",
+          "label_seq_id": 61,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "461",
+          "auth_seq_id": "1432",
+          "label_comp_id": "LYS",
+          "label_seq_id": 61,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "904",
+          "auth_seq_id": "1432",
+          "label_comp_id": "LYS",
+          "label_seq_id": 62,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "470",
+          "auth_seq_id": "1433",
+          "label_comp_id": "LYS",
+          "label_seq_id": 62,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "926",
+          "auth_seq_id": "1433",
+          "label_comp_id": "LYS",
+          "label_seq_id": 63,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "479",
+          "auth_seq_id": "1434",
+          "label_comp_id": "ILE",
+          "label_seq_id": 63,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "948",
+          "auth_seq_id": "1434",
+          "label_comp_id": "ILE",
+          "label_seq_id": 64,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "487",
+          "auth_seq_id": "1435",
+          "label_comp_id": "LYS",
+          "label_seq_id": 64,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "967",
+          "auth_seq_id": "1435",
+          "label_comp_id": "LYS",
+          "label_seq_id": 65,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "496",
+          "auth_seq_id": "1436",
+          "label_comp_id": "GLU",
+          "label_seq_id": 65,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "989",
+          "auth_seq_id": "1436",
+          "label_comp_id": "GLU",
+          "label_seq_id": 66,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "505",
+          "auth_seq_id": "1437",
+          "label_comp_id": "ARG",
+          "label_seq_id": 66,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "R",
+        "reference": {
+          "atom_site_id": "1004",
+          "auth_seq_id": "1437",
+          "label_comp_id": "ARG",
+          "label_seq_id": 67,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "516",
+          "auth_seq_id": "1438",
+          "label_comp_id": "ILE",
+          "label_seq_id": 67,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "1028",
+          "auth_seq_id": "1438",
+          "label_comp_id": "ILE",
+          "label_seq_id": 68,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "524",
+          "auth_seq_id": "1439",
+          "label_comp_id": "ARG",
+          "label_seq_id": 68,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "R",
+        "reference": {
+          "atom_site_id": "1047",
+          "auth_seq_id": "1439",
+          "label_comp_id": "ARG",
+          "label_seq_id": 69,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "535",
+          "auth_seq_id": "1440",
+          "label_comp_id": "ASN",
+          "label_seq_id": 69,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "N",
+        "reference": {
+          "atom_site_id": "1071",
+          "auth_seq_id": "1440",
+          "label_comp_id": "ASN",
+          "label_seq_id": 70,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "543",
+          "auth_seq_id": "1441",
+          "label_comp_id": "HIS",
+          "label_seq_id": 70,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "H",
+        "reference": {
+          "atom_site_id": "1085",
+          "auth_seq_id": "1441",
+          "label_comp_id": "HIS",
+          "label_seq_id": 71,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "553",
+          "auth_seq_id": "1442",
+          "label_comp_id": "LYS",
+          "label_seq_id": 71,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "1102",
+          "auth_seq_id": "1442",
+          "label_comp_id": "LYS",
+          "label_seq_id": 72,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "562",
+          "auth_seq_id": "1443",
+          "label_comp_id": "TYR",
+          "label_seq_id": 72,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Y",
+        "reference": {
+          "atom_site_id": "1124",
+          "auth_seq_id": "1443",
+          "label_comp_id": "TYR",
+          "label_seq_id": 73,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "574",
+          "auth_seq_id": "1444",
+          "label_comp_id": "ARG",
+          "label_seq_id": 73,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "R",
+        "reference": {
+          "atom_site_id": "1145",
+          "auth_seq_id": "1444",
+          "label_comp_id": "ARG",
+          "label_seq_id": 74,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "585",
+          "auth_seq_id": "1445",
+          "label_comp_id": "SER",
+          "label_seq_id": 74,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "1169",
+          "auth_seq_id": "1445",
+          "label_comp_id": "SER",
+          "label_seq_id": 75,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "591",
+          "auth_seq_id": "1446",
+          "label_comp_id": "LEU",
+          "label_seq_id": 75,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "1180",
+          "auth_seq_id": "1446",
+          "label_comp_id": "LEU",
+          "label_seq_id": 76,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "599",
+          "auth_seq_id": "1447",
+          "label_comp_id": "GLY",
+          "label_seq_id": 76,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "G",
+        "reference": {
+          "atom_site_id": "1199",
+          "auth_seq_id": "1447",
+          "label_comp_id": "GLY",
+          "label_seq_id": 77,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "603",
+          "auth_seq_id": "1448",
+          "label_comp_id": "ASP",
+          "label_seq_id": 77,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "D",
+        "reference": {
+          "atom_site_id": "1206",
+          "auth_seq_id": "1448",
+          "label_comp_id": "ASP",
+          "label_seq_id": 78,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "611",
+          "auth_seq_id": "1449",
+          "label_comp_id": "LEU",
+          "label_seq_id": 78,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "1218",
+          "auth_seq_id": "1449",
+          "label_comp_id": "LEU",
+          "label_seq_id": 79,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "619",
+          "auth_seq_id": "1450",
+          "label_comp_id": "GLU",
+          "label_seq_id": 79,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "1237",
+          "auth_seq_id": "1450",
+          "label_comp_id": "GLU",
+          "label_seq_id": 80,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "628",
+          "auth_seq_id": "1451",
+          "label_comp_id": "LYS",
+          "label_seq_id": 80,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "1252",
+          "auth_seq_id": "1451",
+          "label_comp_id": "LYS",
+          "label_seq_id": 81,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "637",
+          "auth_seq_id": "1452",
+          "label_comp_id": "ASP",
+          "label_seq_id": 81,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "D",
+        "reference": {
+          "atom_site_id": "1274",
+          "auth_seq_id": "1452",
+          "label_comp_id": "ASP",
+          "label_seq_id": 82,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "645",
+          "auth_seq_id": "1453",
+          "label_comp_id": "VAL",
+          "label_seq_id": 82,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "V",
+        "reference": {
+          "atom_site_id": "1286",
+          "auth_seq_id": "1453",
+          "label_comp_id": "VAL",
+          "label_seq_id": 83,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "652",
+          "auth_seq_id": "1454",
+          "label_comp_id": "MET",
+          "label_seq_id": 83,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "M",
+        "reference": {
+          "atom_site_id": "1302",
+          "auth_seq_id": "1454",
+          "label_comp_id": "MET",
+          "label_seq_id": 84,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "660",
+          "auth_seq_id": "1455",
+          "label_comp_id": "LEU",
+          "label_seq_id": 84,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "1319",
+          "auth_seq_id": "1455",
+          "label_comp_id": "LEU",
+          "label_seq_id": 85,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "668",
+          "auth_seq_id": "1456",
+          "label_comp_id": "LEU",
+          "label_seq_id": 85,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "1338",
+          "auth_seq_id": "1456",
+          "label_comp_id": "LEU",
+          "label_seq_id": 86,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "676",
+          "auth_seq_id": "1457",
+          "label_comp_id": "CYS",
+          "label_seq_id": 86,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "C",
+        "reference": {
+          "atom_site_id": "1357",
+          "auth_seq_id": "1457",
+          "label_comp_id": "CYS",
+          "label_seq_id": 87,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "682",
+          "auth_seq_id": "1458",
+          "label_comp_id": "HIS",
+          "label_seq_id": 87,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "H",
+        "reference": {
+          "atom_site_id": "1368",
+          "auth_seq_id": "1458",
+          "label_comp_id": "HIS",
+          "label_seq_id": 88,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "692",
+          "auth_seq_id": "1459",
+          "label_comp_id": "ASN",
+          "label_seq_id": 88,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "N",
+        "reference": {
+          "atom_site_id": "1385",
+          "auth_seq_id": "1459",
+          "label_comp_id": "ASN",
+          "label_seq_id": 89,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "700",
+          "auth_seq_id": "1460",
+          "label_comp_id": "ALA",
+          "label_seq_id": 89,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "A",
+        "reference": {
+          "atom_site_id": "1399",
+          "auth_seq_id": "1460",
+          "label_comp_id": "ALA",
+          "label_seq_id": 90,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "705",
+          "auth_seq_id": "1461",
+          "label_comp_id": "GLN",
+          "label_seq_id": 90,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Q",
+        "reference": {
+          "atom_site_id": "1409",
+          "auth_seq_id": "1461",
+          "label_comp_id": "GLN",
+          "label_seq_id": 91,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "714",
+          "auth_seq_id": "1462",
+          "label_comp_id": "THR",
+          "label_seq_id": 91,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "T",
+        "reference": {
+          "atom_site_id": "1426",
+          "auth_seq_id": "1462",
+          "label_comp_id": "THR",
+          "label_seq_id": 92,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "721",
+          "auth_seq_id": "1463",
+          "label_comp_id": "PHE",
+          "label_seq_id": 92,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "F",
+        "reference": {
+          "atom_site_id": "1440",
+          "auth_seq_id": "1463",
+          "label_comp_id": "PHE",
+          "label_seq_id": 93,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "732",
+          "auth_seq_id": "1464",
+          "label_comp_id": "ASN",
+          "label_seq_id": 93,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "N",
+        "reference": {
+          "atom_site_id": "1460",
+          "auth_seq_id": "1464",
+          "label_comp_id": "ASN",
+          "label_seq_id": 94,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "740",
+          "auth_seq_id": "1465",
+          "label_comp_id": "LEU",
+          "label_seq_id": 94,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "1474",
+          "auth_seq_id": "1465",
+          "label_comp_id": "LEU",
+          "label_seq_id": 95,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "748",
+          "auth_seq_id": "1466",
+          "label_comp_id": "GLU",
+          "label_seq_id": 95,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "1493",
+          "auth_seq_id": "1466",
+          "label_comp_id": "GLU",
+          "label_seq_id": 96,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "757",
+          "auth_seq_id": "1467",
+          "label_comp_id": "GLY",
+          "label_seq_id": 96,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "G",
+        "reference": {
+          "atom_site_id": "1508",
+          "auth_seq_id": "1467",
+          "label_comp_id": "GLY",
+          "label_seq_id": 97,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "761",
+          "auth_seq_id": "1468",
+          "label_comp_id": "SER",
+          "label_seq_id": 97,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "1515",
+          "auth_seq_id": "1468",
+          "label_comp_id": "SER",
+          "label_seq_id": 98,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "767",
+          "auth_seq_id": "1469",
+          "label_comp_id": "GLN",
+          "label_seq_id": 98,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Q",
+        "reference": {
+          "atom_site_id": "1526",
+          "auth_seq_id": "1469",
+          "label_comp_id": "GLN",
+          "label_seq_id": 99,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "776",
+          "auth_seq_id": "1470",
+          "label_comp_id": "ILE",
+          "label_seq_id": 99,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "1543",
+          "auth_seq_id": "1470",
+          "label_comp_id": "ILE",
+          "label_seq_id": 100,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "784",
+          "auth_seq_id": "1471",
+          "label_comp_id": "TYR",
+          "label_seq_id": 100,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Y",
+        "reference": {
+          "atom_site_id": "1562",
+          "auth_seq_id": "1471",
+          "label_comp_id": "TYR",
+          "label_seq_id": 101,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "796",
+          "auth_seq_id": "1472",
+          "label_comp_id": "GLU",
+          "label_seq_id": 101,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "E",
+        "reference": {
+          "atom_site_id": "1583",
+          "auth_seq_id": "1472",
+          "label_comp_id": "GLU",
+          "label_seq_id": 102,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "805",
+          "auth_seq_id": "1473",
+          "label_comp_id": "ASP",
+          "label_seq_id": 102,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "D",
+        "reference": {
+          "atom_site_id": "1598",
+          "auth_seq_id": "1473",
+          "label_comp_id": "ASP",
+          "label_seq_id": 103,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "813",
+          "auth_seq_id": "1474",
+          "label_comp_id": "SER",
+          "label_seq_id": 103,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "1610",
+          "auth_seq_id": "1474",
+          "label_comp_id": "SER",
+          "label_seq_id": 104,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "819",
+          "auth_seq_id": "1475",
+          "label_comp_id": "ILE",
+          "label_seq_id": 104,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "1621",
+          "auth_seq_id": "1475",
+          "label_comp_id": "ILE",
+          "label_seq_id": 105,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "827",
+          "auth_seq_id": "1476",
+          "label_comp_id": "VAL",
+          "label_seq_id": 105,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "V",
+        "reference": {
+          "atom_site_id": "1640",
+          "auth_seq_id": "1476",
+          "label_comp_id": "VAL",
+          "label_seq_id": 106,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "834",
+          "auth_seq_id": "1477",
+          "label_comp_id": "LEU",
+          "label_seq_id": 106,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "L",
+        "reference": {
+          "atom_site_id": "1656",
+          "auth_seq_id": "1477",
+          "label_comp_id": "LEU",
+          "label_seq_id": 107,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "842",
+          "auth_seq_id": "1478",
+          "label_comp_id": "GLN",
+          "label_seq_id": 107,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Q",
+        "reference": {
+          "atom_site_id": "1675",
+          "auth_seq_id": "1478",
+          "label_comp_id": "GLN",
+          "label_seq_id": 108,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "851",
+          "auth_seq_id": "1479",
+          "label_comp_id": "SER",
+          "label_seq_id": 108,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "1692",
+          "auth_seq_id": "1479",
+          "label_comp_id": "SER",
+          "label_seq_id": 109,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "857",
+          "auth_seq_id": "1480",
+          "label_comp_id": "VAL",
+          "label_seq_id": 109,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "V",
+        "reference": {
+          "atom_site_id": "1703",
+          "auth_seq_id": "1480",
+          "label_comp_id": "VAL",
+          "label_seq_id": 110,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "864",
+          "auth_seq_id": "1481",
+          "label_comp_id": "PHE",
+          "label_seq_id": 110,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "F",
+        "reference": {
+          "atom_site_id": "1719",
+          "auth_seq_id": "1481",
+          "label_comp_id": "PHE",
+          "label_seq_id": 111,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "875",
+          "auth_seq_id": "1482",
+          "label_comp_id": "LYS",
+          "label_seq_id": 111,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "1739",
+          "auth_seq_id": "1482",
+          "label_comp_id": "LYS",
+          "label_seq_id": 112,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "884",
+          "auth_seq_id": "1483",
+          "label_comp_id": "SER",
+          "label_seq_id": 112,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "S",
+        "reference": {
+          "atom_site_id": "1761",
+          "auth_seq_id": "1483",
+          "label_comp_id": "SER",
+          "label_seq_id": 113,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "890",
+          "auth_seq_id": "1484",
+          "label_comp_id": "ALA",
+          "label_seq_id": 113,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "A",
+        "reference": {
+          "atom_site_id": "1772",
+          "auth_seq_id": "1484",
+          "label_comp_id": "ALA",
+          "label_seq_id": 114,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "895",
+          "auth_seq_id": "1485",
+          "label_comp_id": "ARG",
+          "label_seq_id": 114,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "R",
+        "reference": {
+          "atom_site_id": "1782",
+          "auth_seq_id": "1485",
+          "label_comp_id": "ARG",
+          "label_seq_id": 115,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "906",
+          "auth_seq_id": "1486",
+          "label_comp_id": "GLN",
+          "label_seq_id": 115,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "Q",
+        "reference": {
+          "atom_site_id": "1806",
+          "auth_seq_id": "1486",
+          "label_comp_id": "GLN",
+          "label_seq_id": 116,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "915",
+          "auth_seq_id": "1487",
+          "label_comp_id": "LYS",
+          "label_seq_id": 116,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "1823",
+          "auth_seq_id": "1487",
+          "label_comp_id": "LYS",
+          "label_seq_id": 117,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "924",
+          "auth_seq_id": "1488",
+          "label_comp_id": "ILE",
+          "label_seq_id": 117,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "I",
+        "reference": {
+          "atom_site_id": "1845",
+          "auth_seq_id": "1488",
+          "label_comp_id": "ILE",
+          "label_seq_id": 118,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "932",
+          "auth_seq_id": "1489",
+          "label_comp_id": "ALA",
+          "label_seq_id": 118,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "A",
+        "reference": {
+          "atom_site_id": "1864",
+          "auth_seq_id": "1489",
+          "label_comp_id": "ALA",
+          "label_seq_id": 119,
+          "pdbx_PDB_ins_code": null
+        }
+      },
+      {
+        "moving": {
+          "atom_site_id": "937",
+          "auth_seq_id": "1490",
+          "label_comp_id": "LYS",
+          "label_seq_id": 119,
+          "pdbx_PDB_ins_code": null
+        },
+        "one_letter": "K",
+        "reference": {
+          "atom_site_id": "1874",
+          "auth_seq_id": "1490",
+          "label_comp_id": "LYS",
+          "label_seq_id": 120,
+          "pdbx_PDB_ins_code": null
+        }
+      }
+    ],
+    "paired_identical_CA_count": 113,
+    "ready": true,
+    "reasons": [],
+    "reference_chain": "A",
+    "reference_entity_id": "1",
+    "sequence_alignment": {
+      "algorithm": "Needleman-Wunsch global alignment with forward/reverse optimal-edge analysis",
+      "aligned_residue_pair_count": 119,
+      "ambiguity_outside_used_core": true,
+      "excluded_moving_positions": [
+        {
+          "can_be_aligned_to_gap_in_an_optimal_path": false,
+          "moving_label_seq_id": 120,
+          "possible_reference_label_seq_ids": [
+            121,
+            122,
+            123
+          ]
+        }
+      ],
+      "excluded_reference_positions": [
+        {
+          "can_be_aligned_to_gap_in_an_optimal_path": true,
+          "possible_moving_label_seq_ids": [],
+          "reference_label_seq_id": 2
+        },
+        {
+          "can_be_aligned_to_gap_in_an_optimal_path": true,
+          "possible_moving_label_seq_ids": [
+            120
+          ],
+          "reference_label_seq_id": 121
+        },
+        {
+          "can_be_aligned_to_gap_in_an_optimal_path": true,
+          "possible_moving_label_seq_ids": [
+            120
+          ],
+          "reference_label_seq_id": 122
+        },
+        {
+          "can_be_aligned_to_gap_in_an_optimal_path": true,
+          "possible_moving_label_seq_ids": [
+            120
+          ],
+          "reference_label_seq_id": 123
+        }
+      ],
+      "identical_residue_pair_count": 119,
+      "moving_length": 120,
+      "optimal_alignment_ambiguous": true,
+      "pairs": [
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 1,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 1,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 2,
+          "moving_one_letter": "A",
+          "reference_label_seq_id": 3,
+          "reference_one_letter": "A",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 3,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 4,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 4,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 5,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 5,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 6,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 6,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 7,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 7,
+          "moving_one_letter": "P",
+          "reference_label_seq_id": 8,
+          "reference_one_letter": "P",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 8,
+          "moving_one_letter": "N",
+          "reference_label_seq_id": 9,
+          "reference_one_letter": "N",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 9,
+          "moving_one_letter": "P",
+          "reference_label_seq_id": 10,
+          "reference_one_letter": "P",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 10,
+          "moving_one_letter": "P",
+          "reference_label_seq_id": 11,
+          "reference_one_letter": "P",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 11,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 12,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 12,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 13,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 13,
+          "moving_one_letter": "T",
+          "reference_label_seq_id": 14,
+          "reference_one_letter": "T",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 14,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 15,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 15,
+          "moving_one_letter": "Q",
+          "reference_label_seq_id": 16,
+          "reference_one_letter": "Q",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 16,
+          "moving_one_letter": "M",
+          "reference_label_seq_id": 17,
+          "reference_one_letter": "M",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 17,
+          "moving_one_letter": "N",
+          "reference_label_seq_id": 18,
+          "reference_one_letter": "N",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 18,
+          "moving_one_letter": "A",
+          "reference_label_seq_id": 19,
+          "reference_one_letter": "A",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 19,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 20,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 20,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 21,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 21,
+          "moving_one_letter": "D",
+          "reference_label_seq_id": 22,
+          "reference_one_letter": "D",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 22,
+          "moving_one_letter": "T",
+          "reference_label_seq_id": 23,
+          "reference_one_letter": "T",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 23,
+          "moving_one_letter": "V",
+          "reference_label_seq_id": 24,
+          "reference_one_letter": "V",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 24,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 25,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 25,
+          "moving_one_letter": "N",
+          "reference_label_seq_id": 26,
+          "reference_one_letter": "N",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 26,
+          "moving_one_letter": "Y",
+          "reference_label_seq_id": 27,
+          "reference_one_letter": "Y",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 27,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 28,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 28,
+          "moving_one_letter": "D",
+          "reference_label_seq_id": 29,
+          "reference_one_letter": "D",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 29,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 30,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 30,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 31,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 31,
+          "moving_one_letter": "G",
+          "reference_label_seq_id": 32,
+          "reference_one_letter": "G",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 32,
+          "moving_one_letter": "R",
+          "reference_label_seq_id": 33,
+          "reference_one_letter": "R",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 33,
+          "moving_one_letter": "Q",
+          "reference_label_seq_id": 34,
+          "reference_one_letter": "Q",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 34,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 35,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 35,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 36,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 36,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 37,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 37,
+          "moving_one_letter": "V",
+          "reference_label_seq_id": 38,
+          "reference_one_letter": "V",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 38,
+          "moving_one_letter": "F",
+          "reference_label_seq_id": 39,
+          "reference_one_letter": "F",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 39,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 40,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 40,
+          "moving_one_letter": "Q",
+          "reference_label_seq_id": 41,
+          "reference_one_letter": "Q",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 41,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 42,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 42,
+          "moving_one_letter": "P",
+          "reference_label_seq_id": 43,
+          "reference_one_letter": "P",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 43,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 44,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 44,
+          "moving_one_letter": "R",
+          "reference_label_seq_id": 45,
+          "reference_one_letter": "R",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 45,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 46,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 46,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 47,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 47,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 48,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 48,
+          "moving_one_letter": "P",
+          "reference_label_seq_id": 49,
+          "reference_one_letter": "P",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 49,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 50,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 50,
+          "moving_one_letter": "Y",
+          "reference_label_seq_id": 51,
+          "reference_one_letter": "Y",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 51,
+          "moving_one_letter": "Y",
+          "reference_label_seq_id": 52,
+          "reference_one_letter": "Y",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 52,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 53,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 53,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 54,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 54,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 55,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 55,
+          "moving_one_letter": "R",
+          "reference_label_seq_id": 56,
+          "reference_one_letter": "R",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 56,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 57,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 57,
+          "moving_one_letter": "P",
+          "reference_label_seq_id": 58,
+          "reference_one_letter": "P",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 58,
+          "moving_one_letter": "V",
+          "reference_label_seq_id": 59,
+          "reference_one_letter": "V",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 59,
+          "moving_one_letter": "D",
+          "reference_label_seq_id": 60,
+          "reference_one_letter": "D",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 60,
+          "moving_one_letter": "F",
+          "reference_label_seq_id": 61,
+          "reference_one_letter": "F",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 61,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 62,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 62,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 63,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 63,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 64,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 64,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 65,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 65,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 66,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 66,
+          "moving_one_letter": "R",
+          "reference_label_seq_id": 67,
+          "reference_one_letter": "R",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 67,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 68,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 68,
+          "moving_one_letter": "R",
+          "reference_label_seq_id": 69,
+          "reference_one_letter": "R",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 69,
+          "moving_one_letter": "N",
+          "reference_label_seq_id": 70,
+          "reference_one_letter": "N",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 70,
+          "moving_one_letter": "H",
+          "reference_label_seq_id": 71,
+          "reference_one_letter": "H",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 71,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 72,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 72,
+          "moving_one_letter": "Y",
+          "reference_label_seq_id": 73,
+          "reference_one_letter": "Y",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 73,
+          "moving_one_letter": "R",
+          "reference_label_seq_id": 74,
+          "reference_one_letter": "R",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 74,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 75,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 75,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 76,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 76,
+          "moving_one_letter": "G",
+          "reference_label_seq_id": 77,
+          "reference_one_letter": "G",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 77,
+          "moving_one_letter": "D",
+          "reference_label_seq_id": 78,
+          "reference_one_letter": "D",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 78,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 79,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 79,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 80,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 80,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 81,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 81,
+          "moving_one_letter": "D",
+          "reference_label_seq_id": 82,
+          "reference_one_letter": "D",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 82,
+          "moving_one_letter": "V",
+          "reference_label_seq_id": 83,
+          "reference_one_letter": "V",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 83,
+          "moving_one_letter": "M",
+          "reference_label_seq_id": 84,
+          "reference_one_letter": "M",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 84,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 85,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 85,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 86,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 86,
+          "moving_one_letter": "C",
+          "reference_label_seq_id": 87,
+          "reference_one_letter": "C",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 87,
+          "moving_one_letter": "H",
+          "reference_label_seq_id": 88,
+          "reference_one_letter": "H",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 88,
+          "moving_one_letter": "N",
+          "reference_label_seq_id": 89,
+          "reference_one_letter": "N",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 89,
+          "moving_one_letter": "A",
+          "reference_label_seq_id": 90,
+          "reference_one_letter": "A",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 90,
+          "moving_one_letter": "Q",
+          "reference_label_seq_id": 91,
+          "reference_one_letter": "Q",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 91,
+          "moving_one_letter": "T",
+          "reference_label_seq_id": 92,
+          "reference_one_letter": "T",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 92,
+          "moving_one_letter": "F",
+          "reference_label_seq_id": 93,
+          "reference_one_letter": "F",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 93,
+          "moving_one_letter": "N",
+          "reference_label_seq_id": 94,
+          "reference_one_letter": "N",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 94,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 95,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 95,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 96,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 96,
+          "moving_one_letter": "G",
+          "reference_label_seq_id": 97,
+          "reference_one_letter": "G",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 97,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 98,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 98,
+          "moving_one_letter": "Q",
+          "reference_label_seq_id": 99,
+          "reference_one_letter": "Q",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 99,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 100,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 100,
+          "moving_one_letter": "Y",
+          "reference_label_seq_id": 101,
+          "reference_one_letter": "Y",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 101,
+          "moving_one_letter": "E",
+          "reference_label_seq_id": 102,
+          "reference_one_letter": "E",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 102,
+          "moving_one_letter": "D",
+          "reference_label_seq_id": 103,
+          "reference_one_letter": "D",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 103,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 104,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 104,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 105,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 105,
+          "moving_one_letter": "V",
+          "reference_label_seq_id": 106,
+          "reference_one_letter": "V",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 106,
+          "moving_one_letter": "L",
+          "reference_label_seq_id": 107,
+          "reference_one_letter": "L",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 107,
+          "moving_one_letter": "Q",
+          "reference_label_seq_id": 108,
+          "reference_one_letter": "Q",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 108,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 109,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 109,
+          "moving_one_letter": "V",
+          "reference_label_seq_id": 110,
+          "reference_one_letter": "V",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 110,
+          "moving_one_letter": "F",
+          "reference_label_seq_id": 111,
+          "reference_one_letter": "F",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 111,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 112,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 112,
+          "moving_one_letter": "S",
+          "reference_label_seq_id": 113,
+          "reference_one_letter": "S",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 113,
+          "moving_one_letter": "A",
+          "reference_label_seq_id": 114,
+          "reference_one_letter": "A",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 114,
+          "moving_one_letter": "R",
+          "reference_label_seq_id": 115,
+          "reference_one_letter": "R",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 115,
+          "moving_one_letter": "Q",
+          "reference_label_seq_id": 116,
+          "reference_one_letter": "Q",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 116,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 117,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 117,
+          "moving_one_letter": "I",
+          "reference_label_seq_id": 118,
+          "reference_one_letter": "I",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 118,
+          "moving_one_letter": "A",
+          "reference_label_seq_id": 119,
+          "reference_one_letter": "A",
+          "stable_across_all_optimal_alignments": true
+        },
+        {
+          "identity_match": true,
+          "moving_label_seq_id": 119,
+          "moving_one_letter": "K",
+          "reference_label_seq_id": 120,
+          "reference_one_letter": "K",
+          "stable_across_all_optimal_alignments": true
+        }
+      ],
+      "reference_length": 123,
+      "score": 234,
+      "scoring": {
+        "gap": -2,
+        "match": 2,
+        "mismatch": -1
+      },
+      "sequence_identity_over_aligned_residue_pairs": 1.0,
+      "stable_pair_policy": "A pair is retained only when each residue is paired exclusively to the other and neither residue can be gapped in any optimal alignment."
+    },
+    "source_chain": "A",
+    "source_entity_id": "1",
+    "technical_limits": {
+      "maximum_CA_RMSD_A": 3.0,
+      "minimum_paired_CA": 60,
+      "minimum_sequence_identity": 0.8,
+      "status": "developer review limits, not biological similarity cutoffs"
+    },
+    "transform": {
+      "rmsd_A": 0.6613898585426049,
+      "rotation_row_vectors": [
+        [
+          -0.46517784213606456,
+          0.5658687253414221,
+          -0.6807364841596993
+        ],
+        [
+          -0.6273473436183548,
+          0.3318079357037573,
+          0.704513168265154
+        ],
+        [
+          0.624535736079713,
+          0.7547821404117121,
+          0.20064654214534958
+        ]
+      ],
+      "translation_A": [
+        25.06687980081782,
+        -17.56930557485461,
+        37.55137024801343
+      ]
+    }
+  },
+  "atom_mapping": [
+    {
+      "altloc": null,
+      "atom_map": 1,
+      "atom_site_id": "2833",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "N1",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 0
+    },
+    {
+      "altloc": null,
+      "atom_map": 2,
+      "atom_site_id": "2834",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "N3",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 1
+    },
+    {
+      "altloc": null,
+      "atom_map": 3,
+      "atom_site_id": "2835",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C4",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 2
+    },
+    {
+      "altloc": null,
+      "atom_map": 4,
+      "atom_site_id": "2836",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C5",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 3
+    },
+    {
+      "altloc": null,
+      "atom_map": 5,
+      "atom_site_id": "2837",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C6",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 4
+    },
+    {
+      "altloc": null,
+      "atom_map": 6,
+      "atom_site_id": "2838",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C7",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 5
+    },
+    {
+      "altloc": null,
+      "atom_map": 7,
+      "atom_site_id": "2839",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C8",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 6
+    },
+    {
+      "altloc": null,
+      "atom_map": 8,
+      "atom_site_id": "2840",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C10",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 7
+    },
+    {
+      "altloc": null,
+      "atom_map": 9,
+      "atom_site_id": "2841",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C13",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 8
+    },
+    {
+      "altloc": null,
+      "atom_map": 10,
+      "atom_site_id": "2842",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C15",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 9
+    },
+    {
+      "altloc": null,
+      "atom_map": 11,
+      "atom_site_id": "2843",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "O",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 10
+    },
+    {
+      "altloc": null,
+      "atom_map": 12,
+      "atom_site_id": "2844",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C1",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 11
+    },
+    {
+      "altloc": null,
+      "atom_map": 13,
+      "atom_site_id": "2845",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C2",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 12
+    },
+    {
+      "altloc": null,
+      "atom_map": 14,
+      "atom_site_id": "2846",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C3",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 13
+    },
+    {
+      "altloc": null,
+      "atom_map": 15,
+      "atom_site_id": "2847",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C9",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 14
+    },
+    {
+      "altloc": null,
+      "atom_map": 16,
+      "atom_site_id": "2848",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "N2",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 15
+    },
+    {
+      "altloc": null,
+      "atom_map": 17,
+      "atom_site_id": "2849",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C11",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 16
+    },
+    {
+      "altloc": null,
+      "atom_map": 18,
+      "atom_site_id": "2850",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C12",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 17
+    },
+    {
+      "altloc": null,
+      "atom_map": 19,
+      "atom_site_id": "2851",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "N4",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 18
+    },
+    {
+      "altloc": null,
+      "atom_map": 20,
+      "atom_site_id": "2852",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "C14",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 19
+    },
+    {
+      "altloc": null,
+      "atom_map": 21,
+      "atom_site_id": "2853",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "ccd_atom_id": "N5",
+      "label_asym_id": "D",
+      "occupancy": 1.0,
+      "rdkit_index_zero_based": 20
+    }
+  ],
+  "canonical_isomeric_smiles": "Oc1ccccc1-c1cc2c(nn1)NC[C@@H]1CNCCN21",
+  "ccd": "A1BB5",
+  "chemical_state_policy": "This aligned co-crystal record preserves the deposited ligand graph and charge. It does not replace the platform's separately defined explicitly neutral original default.",
+  "curated_metadata_source": null,
+  "evidence_tier": "co_crystal",
+  "format_version": "reference-parents-v1",
+  "id": "SMARCA2-9DU0-A1BB5",
+  "identity": {
+    "canonical_isomeric_smiles": "Oc1ccccc1-c1cc2c(nn1)NC[C@@H]1CNCCN21",
+    "formal_charge": 0,
+    "formula": "C15H17N5O",
+    "heavy_atom_count": 21,
+    "inchikey": "ITVIJNLODUWYKZ-JTQLQIEISA-N",
+    "properties": {
+      "HBA": 6,
+      "HBD": 3,
+      "TPSA_A2": 73.31,
+      "cLogP_RDKit": 1.0528999999999997,
+      "molecular_weight_Da": 283.33500000000004,
+      "rotatable_bonds_RDKit_strict": 1
+    },
+    "stereocenters": [
+      [
+        15,
+        "S"
+      ]
+    ]
+  },
+  "limitations": [
+    "No atom-specific SAR was curated; strict design has zero approved modifiable sites and requires expert review.",
+    "UNKNOWN sites remain UNKNOWN and may only be explored under an explicitly exploratory policy.",
+    "A co-crystal pose and receptor-frame comparison do not establish affinity, selectivity, or attachment tolerance.",
+    "Coordinates are a rigidly transformed deposited ligand pose, not a docking result.",
+    "Alignment limits are technical developer-review limits, not biological acceptance criteria.",
+    "The fixed 6HAZ receptor enables pose comparison and hypothesis generation only.",
+    "The requested two SAR-qualified sites, each with 20 valid graphs, remain unmet unless explicit evidence is curated later."
+  ],
+  "measured_evidence": {
+    "IC50": null,
+    "Kd": null,
+    "Ki": null,
+    "join_policy": "Stored separately; no cross-assay potency ordering or medchem graph join is performed here."
+  },
+  "observed_source_chemical_state": {
+    "coordinate_provenance": "source bound-ligand coordinates after receptor-frame rigid transformation",
+    "formal_charge": 0,
+    "label": "deposited source state",
+    "neutral_parent_handling": "Handled separately by the platform; this builder does not claim or emit a neutralized state."
+  },
+  "pdb": "9DU0",
+  "protected_maps": [],
+  "reference_chain": "A",
+  "sar": {},
+  "source_chain": "A",
+  "source_chain_selection": {
+    "ambiguous_tie": false,
+    "criterion": "maximum deposited ligand-protein heavy-atom contact_pair_count",
+    "maximum_contact_pair_count": 115,
+    "selected": "A",
+    "tie_break": "lexicographically first label_asym_id",
+    "tied_source_chains": [
+      "A"
+    ]
+  },
+  "source_group_id": "ligand-51a78e29a5b61382",
+  "source_input_hashes": {
+    "bound_sdf_sha256": "371ed79b04ec24924db1fb912f2ad66aadd9349ea28e390f9f0193d336e5199a",
+    "catalog_json_sha256": "f432fbb0b2d3f548f4bdb1eff788f5da482b13af1ccc158939d8b5601c5a4acd",
+    "reference_6HAZ_mmcif_sha256": "7752dda8c54b7e56ab45c84e03ca544e383d834fb30e4c0849fc3544278e2c9d",
+    "source_pdb_mmcif_sha256": "6d67316686c45cb4fe28025a21123668733a5aabcd6161776d58e4498de45fb3"
+  },
+  "source_record_id": "9DU0:D:A1BB5",
+  "suitability": {
+    "exploratory_design": true,
+    "fixed_receptor_pose_comparison": true,
+    "strict_design": false,
+    "strict_modifiable_site_explanation": "No SAR-qualified modifiable site is supplied; expert curation is required rather than treating this as an error."
+  },
+  "target": "SMARCA2",
+  "unknown_site_policy": "No missing or UNKNOWN SAR state is promoted to MODIFIABLE."
+}

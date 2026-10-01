@@ -1,0 +1,16 @@
+"""Ports implemented by M2/infrastructure and injected into M3/M4."""
+from typing import Protocol
+from packages.transport import Fetch
+
+
+class Artifacts(Protocol):
+    project: str
+
+    def read(self, reference: dict) -> bytes: ...
+    def json(self, reference: dict) -> dict: ...
+    def put_raw(self, data: bytes, media: str = "application/json", provenance: str = "source", schema: str = "urn:tpd-navigator:raw:1") -> dict: ...
+    def put_json(self, value: dict, kind: str | None = None, provenance: str = "computed") -> dict: ...
+
+
+class SourceTransport(Protocol):
+    def get(self, url: str, params: dict | None = None, max_bytes: int = 2_000_000) -> Fetch: ...

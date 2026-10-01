@@ -1,0 +1,16 @@
+{
+  "test_fixture": true,
+  "blocks": [
+    {
+      "block_id": "b001",
+      "text_ref": {
+        "artifact_id": "fixture-segment-text",
+        "version": 1,
+        "sha256": "d6fa5da4645eae3609718e7909f858f90e330fdb634aa79aae63637d17ae863f",
+        "media_type": "text/plain",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      }
+    }
+  ]
+}

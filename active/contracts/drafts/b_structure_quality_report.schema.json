@@ -1,0 +1,343 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-structure-quality:0.1.0-draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "data_mode",
+    "binding",
+    "request_sha256",
+    "method",
+    "preparation_notes",
+    "analyses",
+    "summary",
+    "provenance",
+    "human_review",
+    "efficacy_established",
+    "digest"
+  ],
+  "properties": {
+    "format": {
+      "const": "tpd-structure-quality/0.1.0-draft"
+    },
+    "data_mode": {
+      "enum": [
+        "real",
+        "synthetic_test"
+      ]
+    },
+    "binding": {
+      "$ref": "urn:tpd-navigator:b-structure-quality-request:0.1.0-draft#/$defs/binding"
+    },
+    "request_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "method": {
+      "$ref": "urn:tpd-navigator:b-structure-quality-request:0.1.0-draft#/properties/method"
+    },
+    "preparation_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "analyses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/analysis"
+      }
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "provenance": {
+      "const": "caller_reported_tool_execution_and_preparation_not_authenticated"
+    },
+    "human_review": {
+      "const": "pending"
+    },
+    "efficacy_established": {
+      "const": false
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "$defs": {
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "has_findings",
+        "has_incomplete_checks",
+        "has_failed_checks",
+        "has_unrun_checks",
+        "interpretation_status",
+        "automatic_acceptance",
+        "whole_structure_validated"
+      ],
+      "properties": {
+        "has_findings": {
+          "type": "boolean"
+        },
+        "has_incomplete_checks": {
+          "type": "boolean"
+        },
+        "has_failed_checks": {
+          "type": "boolean"
+        },
+        "has_unrun_checks": {
+          "type": "boolean"
+        },
+        "interpretation_status": {
+          "enum": [
+            "review_required",
+            "no_findings_in_declared_scope"
+          ]
+        },
+        "automatic_acceptance": {
+          "const": false
+        },
+        "whole_structure_validated": {
+          "const": false
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "analysis_id",
+        "scope",
+        "hydrogen_convention",
+        "execution_status",
+        "coverage",
+        "directions",
+        "hydrogens_added",
+        "unplaced_hydrogens",
+        "preparation_error",
+        "preparation_status",
+        "finding_status",
+        "bad_overlap_pair_count",
+        "bad_overlap_pairs",
+        "limitations",
+        "atom_namespace"
+      ],
+      "properties": {
+        "analysis_id": {
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "urn:tpd-navigator:b-structure-quality-request:0.1.0-draft#/$defs/analysis/properties/scope"
+        },
+        "hydrogen_convention": {
+          "enum": [
+            "xray",
+            "nuclear"
+          ]
+        },
+        "execution_status": {
+          "enum": [
+            "not_run",
+            "completed",
+            "partial",
+            "failed"
+          ]
+        },
+        "coverage": {
+          "enum": [
+            "incomplete",
+            "declared_scope_only"
+          ]
+        },
+        "directions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "forward",
+            "reverse"
+          ],
+          "properties": {
+            "forward": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "reason"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "not_run",
+                    "completed",
+                    "failed"
+                  ]
+                },
+                "reason": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            },
+            "reverse": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "reason"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "not_run",
+                    "completed",
+                    "failed"
+                  ]
+                },
+                "reason": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "hydrogens_added": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unplaced_hydrogens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preparation_status": {"enum": ["completed", "not_run", "failed"]},
+        "preparation_error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "finding_status": {
+          "enum": [
+            "findings",
+            "none_observed",
+            "not_assessed"
+          ]
+        },
+        "bad_overlap_pair_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bad_overlap_pairs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "atoms",
+              "types",
+              "gap_A",
+              "directions"
+            ],
+            "properties": {
+              "atoms": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "array",
+                  "minItems": 6,
+                  "maxItems": 6,
+                  "prefixItems": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "types": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "wc",
+                    "cc",
+                    "so",
+                    "bo",
+                    "hb",
+                    "wh"
+                  ]
+                }
+              },
+              "gap_A": {
+                "type": "number"
+              },
+              "directions": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "forward",
+                    "reverse"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "atom_namespace": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

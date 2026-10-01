@@ -1,0 +1,39 @@
+{
+  "payload_type": "TargetQuery",
+  "payload_version": "0.1.0",
+  "query": "FIXTURE_ALPHA (not a real biological target)",
+  "query_kind": "name",
+  "taxon_id": 9606,
+  "isoform": {
+    "state": "not_reported",
+    "value": null,
+    "reason": "Not reported in this synthetic example."
+  },
+  "mutation": {
+    "state": "not_reported",
+    "value": null,
+    "reason": "Not reported in this synthetic example."
+  },
+  "construct": {
+    "state": "not_reported",
+    "value": null,
+    "reason": "Not reported in this synthetic example."
+  },
+  "research_context": {
+    "objective": {
+      "state": "not_provided",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    },
+    "cell_line": {
+      "state": "not_provided",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    },
+    "tissue": {
+      "state": "not_provided",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "files": [
+    {
+      "bytes": 12201,
+      "path": "index.json",
+      "sha256": "f861ffc654fd94ce460e59aaf7e4c70b2782b750de196bb98c40333cd544a268"
+    },
+    {
+      "bytes": 92324,
+      "path": "parents/SMARCA2-5DKC-5BW.metadata.json",
+      "sha256": "1c95c4d2654e4af80a77b6abdd4ee1d5fc7cde099baeed3eb165926c009fa347"
+    },
+    {
+      "bytes": 2111,
+      "path": "parents/SMARCA2-5DKC-5BW.sdf",
+      "sha256": "b828379aa84dba8ebfaf333f8cdc8a48fc9950ee5770b41168e5aa89ff5c4b23"
+    },
+    {
+      "bytes": 94435,
+      "path": "parents/SMARCA2-5DKH-5C0.metadata.json",
+      "sha256": "48e5dfb8c421394c6bce4c16970b6f3b3420ba42b28bd9b22c005674c603c680"
+    },
+    {
+      "bytes": 2373,
+      "path": "parents/SMARCA2-5DKH-5C0.sdf",
+      "sha256": "64121aaa647f15f3f1aa77f4cadd20e32ae2b7ee6edc91eda239aa3f70d8c4f8"
+    },
+    {
+      "bytes": 94678,
+      "path": "parents/SMARCA2-7Z78-IF8.metadata.json",
+      "sha256": "4ac15b62dde66f10277856a6af0ff1da1fab942c2db3ce380cff5775759d966c"
+    },
+    {
+      "bytes": 2635,
+      "path": "parents/SMARCA2-7Z78-IF8.sdf",
+      "sha256": "27b450ed4aca3f2fa91ce9e6ea5ec731f9176c181b3644faad304bed9c6256c1"
+    },
+    {
+      "bytes": 95096,
+      "path": "parents/SMARCA2-8QJT-VLC.metadata.json",
+      "sha256": "2ff90c68da4daa3277294af0138b5e5b033dba2d411e0c270693fadf1f9c99ca"
+    },
+    {
+      "bytes": 2871,
+      "path": "parents/SMARCA2-8QJT-VLC.sdf",
+      "sha256": "2eb30d4e47a63617b51ae1a043421517292f645ef0d0d54ac6b02c6ce6a24ec4"
+    },
+    {
+      "bytes": 94298,
+      "path": "parents/SMARCA2-9D12-A1A1P.metadata.json",
+      "sha256": "b2e675d644c9103074c0cdedad086189fc6a0d8a3de67d9ebec52dedb9f12147"
+    },
+    {
+      "bytes": 2637,
+      "path": "parents/SMARCA2-9D12-A1A1P.sdf",
+      "sha256": "ad4d407f9e69827270e97bee1f8f1dba2e21352f21ed4ff841ea3f2829c1969d"
+    },
+    {
+      "bytes": 92746,
+      "path": "parents/SMARCA2-9DU0-A1BB5.metadata.json",
+      "sha256": "4ce9893a30ecdd9a6faa8324140d0f9ad75185bb9192823d043b1f4316e1fd07"
+    },
+    {
+      "bytes": 1864,
+      "path": "parents/SMARCA2-9DU0-A1BB5.sdf",
+      "sha256": "c8ea6839a636edc61c5d29f25fb9062b98bca42bd8d348896cf9769ad1c8042a"
+    },
+    {
+      "bytes": 90049,
+      "path": "parents/SMARCA2-9QAC-A1I5P.metadata.json",
+      "sha256": "15a502e5dd22998b0af9d9943fa8ca7b182c124ea889617b0e40ca00fb551130"
+    },
+    {
+      "bytes": 1257,
+      "path": "parents/SMARCA2-9QAC-A1I5P.sdf",
+      "sha256": "cbb4dfde80896f8c0a5f917da36dc3474df6157afb2cd395521cd67503273d19"
+    },
+    {
+      "bytes": 92595,
+      "path": "parents/SMARCA2-9QAD-A1I45.metadata.json",
+      "sha256": "6f4fc3195a02b7ef3e3e6ce0d9e86a1172cdae72c2e0680f104c4d6aa750b11c"
+    },
+    {
+      "bytes": 1947,
+      "path": "parents/SMARCA2-9QAD-A1I45.sdf",
+      "sha256": "28ce4221fc4811595a560eee26b8631de12768ff754929b3b1fecee3d75f3baa"
+    },
+    {
+      "bytes": 96677,
+      "path": "parents/SMARCA2-9S3R-A1JLV.metadata.json",
+      "sha256": "f54bd9bae7d2b5b88287a01b89c2ff4ce2535b168f5823e9befd37bab6e20369"
+    },
+    {
+      "bytes": 3301,
+      "path": "parents/SMARCA2-9S3R-A1JLV.sdf",
+      "sha256": "ece80f284ff81d5bc7eb23b59f267aa8844fa02d02f77b98b93ecd355e1c8b03"
+    }
+  ],
+  "format_version": "reference-parents-v1",
+  "hash_algorithm": "sha256",
+  "manifest_self_hash_policy": "manifest.json is excluded because a file cannot contain its own stable cryptographic hash"
+}

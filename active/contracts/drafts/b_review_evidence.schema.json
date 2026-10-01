@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-review-evidence:0.1.0-draft",
+  "title": "B candidate facts and stage-scoped preparation/contact review evidence",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "data_mode", "case_id", "base_quality_digest", "base_manifest_sha256", "source_roots", "starting_ligand", "shared_hypothesis", "literature_reconciliation", "candidates", "summary", "authority", "meaning", "digest"],
+  "properties": {
+    "format": {"const": "tpd-b-review-evidence/0.1.0-draft"},
+    "data_mode": {"enum": ["real", "synthetic_test"]}, "case_id": {"type": "string"},
+    "base_quality_digest": {"$ref": "#/$defs/hash"}, "base_manifest_sha256": {"$ref": "#/$defs/hash"}, "digest": {"$ref": "#/$defs/hash"},
+    "source_roots": {"const": {"candidate_evidence": "source/quality/evidence", "prior_quality": "source/quality"}},
+    "starting_ligand": {"type": "object"}, "shared_hypothesis": {"type": "object"},
+    "literature_reconciliation": {"$ref": "urn:tpd-navigator:b-candidate-evidence:0.1.0-draft#/properties/literature_reconciliation"},
+    "authority": {"$ref": "urn:tpd-navigator:b-candidate-evidence:0.1.0-draft#/properties/authority"},
+    "meaning": {"type": "string"},
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_count", "sample_count", "structures", "preparations", "contacts"],
+      "properties": {
+        "candidate_count": {"type": "integer", "minimum": 1}, "sample_count": {"$ref": "#/$defs/count"},
+        "structures": {"type": "object", "additionalProperties": false, "required": ["parsed", "missing", "invalid"], "properties": {"parsed": {"$ref": "#/$defs/count"}, "missing": {"$ref": "#/$defs/count"}, "invalid": {"$ref": "#/$defs/count"}}},
+        "preparations": {"type": "object", "additionalProperties": false, "required": ["not_provided", "prepared_for_review", "not_prepared"], "properties": {"not_provided": {"$ref": "#/$defs/count"}, "prepared_for_review": {"$ref": "#/$defs/count"}, "not_prepared": {"$ref": "#/$defs/count"}}},
+        "contacts": {"type": "object", "additionalProperties": false, "required": ["not_provided", "completed_with_limits", "failed_or_partial"], "properties": {"not_provided": {"$ref": "#/$defs/count"}, "completed_with_limits": {"$ref": "#/$defs/count"}, "failed_or_partial": {"$ref": "#/$defs/count"}}}
+      }
+    },
+    "candidates": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["compound_id", "molecule_id", "evidence", "samples", "synthesis_assessment", "review_status"],
+        "properties": {
+          "compound_id": {"type": "string"}, "molecule_id": {"type": "string"},
+          "evidence": {"$ref": "urn:tpd-navigator:b-candidate-evidence:0.1.0-draft#/properties/candidates/items"},
+          "review_status": {"const": "review_required"},
+          "synthesis_assessment": {"const": {"status": "not_assessed", "reason": "NO_DEDICATED_SYNTHESIS_ASSESSMENT_IN_SOURCE_CONTRACT"}},
+          "samples": {"type": "array", "items": {"$ref": "#/$defs/sample"}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "count": {"type": "integer", "minimum": 0},
+    "ref": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "digest"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "digest": {"$ref": "#/$defs/hash"}}},
+    "sample": {
+      "type": "object", "additionalProperties": false,
+      "required": ["run_id", "rank", "binding", "prior_quality", "ligand_preparation", "ligand_contacts", "review_status", "review_issues"],
+      "properties": {
+        "run_id": {"type": "string"}, "rank": {"$ref": "#/$defs/count"},
+        "binding": {"anyOf": [{"type": "null"}, {"$ref": "urn:tpd-navigator:b-ligand-preparation-report:0.1.0-draft#/$defs/binding"}]},
+        "prior_quality": {"$ref": "urn:tpd-navigator:b-quality-evidence:0.1.0-draft#/properties/candidates/items/properties/samples/items"},
+        "ligand_preparation": {
+          "type": "object", "additionalProperties": false, "required": ["status", "report_ref", "report"],
+          "properties": {
+            "status": {"enum": ["not_provided", "prepared_for_review", "not_prepared"]},
+            "report_ref": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/ref"}]},
+            "report": {"anyOf": [{"type": "null"}, {"$ref": "urn:tpd-navigator:b-ligand-preparation-report:0.1.0-draft"}]}
+          }
+        },
+        "ligand_contacts": {
+          "type": "object", "additionalProperties": false, "required": ["status", "report_ref", "report"],
+          "properties": {
+            "status": {"enum": ["not_provided", "completed_with_limits", "failed_or_partial"]},
+            "report_ref": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/ref"}]},
+            "report": {"anyOf": [{"type": "null"}, {"$ref": "urn:tpd-navigator:b-ligand-contacts:0.1.0-draft"}]}
+          }
+        },
+        "review_status": {"const": "review_required"},
+        "review_issues": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false, "required": ["code", "stage", "detail", "mode", "direction"],
+          "properties": {
+            "code": {"type": "string", "minLength": 1}, "stage": {"enum": ["prediction", "prior_quality", "ligand_preparation", "ligand_contacts", "review"]},
+            "detail": {"type": "string"}, "mode": {"enum": [null, "xray", "nuclear"]}, "direction": {"enum": [null, "forward", "reverse"]}
+          }
+        }}
+      }
+    }
+  },
+  "$comment": "Nested reports preserve their original versions and stage meanings. Reader validates every source archive and exactly reproduces JSON and Markdown, including bindings and prerequisite digests. Paths within evidence/prior_quality use source_roots; new report_ref paths use the bundle root. No default scientific acceptance."
+}

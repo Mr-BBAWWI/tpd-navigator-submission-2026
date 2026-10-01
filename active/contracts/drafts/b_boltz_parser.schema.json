@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:b-boltz-parser:0.1.0-draft",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "case_id", "material_digest", "official_release", "official_commit", "installed_source_sha256", "ccd", "runtime", "candidates", "parser_validation", "prediction_status", "execution_readiness", "blockers", "symmetry_policy", "coordinate_kind", "gpu_used", "network_used_during_parse", "digest"],
+  "properties": {
+    "format": {"const": "tpd-boltz-parser/0.1.0-draft"},
+    "case_id": {"type": "string"}, "material_digest": {"$ref": "#/$defs/hash"},
+    "official_release": {"const": "v2.2.1"},
+    "official_commit": {"const": "cb04aeccdd480fd4db707f0bbafde538397fa2ac"},
+    "installed_source_sha256": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "ccd": {"type": "object", "additionalProperties": false, "required": ["url", "archive_sha256", "files"], "properties": {
+      "url": {"type": "string"}, "archive_sha256": {"$ref": "#/$defs/hash"},
+      "files": {"type": "object", "minProperties": 20, "additionalProperties": {"$ref": "#/$defs/hash"}}
+    }},
+    "runtime": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "string"}},
+    "candidates": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/candidate"}},
+    "parser_validation": {"const": "passed"}, "prediction_status": {"const": "not_run"},
+    "execution_readiness": {"const": "blocked"}, "blockers": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "symmetry_policy": {"type": "string"}, "coordinate_kind": {"const": "parser_reference_conformer_not_prediction"},
+    "gpu_used": {"const": false}, "network_used_during_parse": {"const": false}, "digest": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "atom": {"type": "object", "additionalProperties": false, "required": ["boltz_atom_name", "ccd_atom_id", "atom_map", "element"], "properties": {
+      "boltz_atom_name": {"type": "string", "minLength": 1}, "ccd_atom_id": {"type": "string", "minLength": 1},
+      "atom_map": {"type": "integer", "minimum": 1}, "element": {"type": "string", "minLength": 1}
+    }},
+    "candidate": {"type": "object", "additionalProperties": false,
+      "required": ["compound_id", "molecule_id", "input_name", "input_sha256", "record_id", "chain_index_to_id", "proteins", "ligand_chain", "ligand_component", "ligand_mappings", "mapping_count", "parsed_atom_count", "parsed_residue_count"],
+      "properties": {
+        "compound_id": {"type": "string"}, "molecule_id": {"type": "string"},
+        "input_name": {"type": "string"}, "input_sha256": {"$ref": "#/$defs/hash"}, "record_id": {"type": "string"},
+        "chain_index_to_id": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+        "proteins": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$"}},
+        "ligand_chain": {"const": "L"}, "ligand_component": {"type": "string"},
+        "ligand_mappings": {"type": "array", "minItems": 1, "maxItems": 256, "items": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/atom"}}},
+        "mapping_count": {"type": "integer", "minimum": 1, "maximum": 256},
+        "parsed_atom_count": {"type": "integer", "minimum": 1}, "parsed_residue_count": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

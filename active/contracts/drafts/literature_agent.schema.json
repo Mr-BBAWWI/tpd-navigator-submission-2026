@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:literature-agent:0.1.0",
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 4000},
+    "optional_text": {"anyOf": [{"$ref": "#/$defs/text"}, {"type": "null"}]},
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis_kind", "statement", "segment_id", "quote", "compound_label", "reported_target", "assay_context", "observations", "limitations"],
+      "properties": {
+        "basis_kind": {"enum": ["experiment", "computation", "author_interpretation", "researcher_hypothesis"]},
+        "statement": {"$ref": "#/$defs/text"},
+        "segment_id": {"$ref": "#/$defs/text"},
+        "quote": {"$ref": "#/$defs/text"},
+        "compound_label": {"$ref": "#/$defs/optional_text"},
+        "reported_target": {"$ref": "#/$defs/optional_text"},
+        "assay_context": {"$ref": "urn:tpd-navigator:payloads:0.1.0#/$defs/AssayContext"},
+        "observations": {"type": "array", "maxItems": 4, "items": {"$ref": "urn:tpd-navigator:payloads:0.1.0#/$defs/Observation"}},
+        "limitations": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "analysis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_digest", "records", "limitations"],
+      "properties": {
+        "input_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "records": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/record"}},
+        "limitations": {"type": "array", "maxItems": 12, "items": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "critic": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_digest", "reviewed_claim_ids", "findings", "limitations"],
+      "properties": {
+        "input_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "reviewed_claim_ids": {"type": "array", "uniqueItems": true, "maxItems": 8, "items": {"$ref": "#/$defs/text"}},
+        "findings": {"type": "array", "maxItems": 16, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["severity", "message", "claim_ids"],
+          "properties": {
+            "severity": {"enum": ["blocking", "warning", "info"]},
+            "message": {"$ref": "#/$defs/text"},
+            "claim_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}
+          }
+        }},
+        "limitations": {"type": "array", "maxItems": 12, "items": {"$ref": "#/$defs/text"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+SYNTHETIC: compound C1 has IC50 >1000 nM. R1 is mentioned; its chemical structure is unavailable.

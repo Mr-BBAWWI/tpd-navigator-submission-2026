@@ -1,0 +1,45 @@
+{
+  "contract_version": "0.1.0",
+  "project_id": "fixture-project",
+  "run_id": "fixture-run",
+  "job_id": "fixture-job-literature",
+  "attempt": 1,
+  "input_revision": 1,
+  "input_digest": "13a26d3e58d842233cd9ff96a120a67435e68566c6eb2bd4eafefc0dc7580c34",
+  "operation_id": "collect_literature",
+  "data_mode": "test_fixture",
+  "status": "partial",
+  "output_artifacts": [
+    {
+      "artifact_id": "fixture-evidence-bundle",
+      "version": 1,
+      "sha256": "fbb79506ae152217713113f35df3dac1789a5c0d23f443a1bd5ad249a74b59a1",
+      "media_type": "application/json",
+      "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/EvidenceBundle",
+      "provenance": "test_fixture"
+    }
+  ],
+  "issues": [
+    {
+      "code": "PDF_EXTRACTION_FAILED",
+      "category": "invalid_output",
+      "message": "Synthetic extraction failure; no real PDF was processed.",
+      "affected_artifact_ids": [
+        "fixture-upload"
+      ],
+      "retry_hint": "requires_changed_input"
+    }
+  ],
+  "actual_usage": {
+    "wall_time_ms": null,
+    "llm_requests": null,
+    "llm_tokens": null,
+    "gpu_seconds": null,
+    "usage_complete": false
+  },
+  "producer": {
+    "module": "literature",
+    "code_version": "synthetic-fixture-only",
+    "tool_versions_ref": null
+  }
+}

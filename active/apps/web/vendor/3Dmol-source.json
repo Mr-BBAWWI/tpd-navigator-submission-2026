@@ -1,0 +1,8 @@
+{
+  "package": "3dmol",
+  "version": "2.5.5",
+  "source": "https://cdn.jsdelivr.net/npm/3dmol@2.5.5/build/3Dmol-min.js",
+  "sha256": "f7cc78921ae72e7623e89cdd111434f58c2efddd2ffda1cd212644b406fb8016",
+  "license": "BSD-3-Clause",
+  "runtime_external_requests": false
+}

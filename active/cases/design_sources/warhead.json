@@ -1,0 +1,321 @@
+{
+  "id": "SMARCA2-FX5",
+  "target": "SMARCA2",
+  "pdb": "6HAZ",
+  "ccd": "FX5",
+  "target_chain": "A",
+  "ligand_chain": "C",
+  "evidence_tier": "co_crystal",
+  "parent_identity": {
+    "canonical_isomeric_smiles": "Nc1nnc(-c2ccccc2O)cc1N1CC[NH2+]CC1",
+    "inchikey": "SZKHGLTYXIDOFH-UHFFFAOYSA-O",
+    "formula": "C14H18N5O+",
+    "formal_charge": 1,
+    "heavy_atom_count": 20,
+    "stereocenters": [],
+    "properties": {
+      "molecular_weight_Da": 272.33200000000005,
+      "TPSA_A2": 91.88,
+      "cLogP_RDKit": -0.18520000000000025,
+      "HBD": 3,
+      "HBA": 5,
+      "rotatable_bonds_RDKit_strict": 2
+    }
+  },
+  "design_identity": {
+    "canonical_isomeric_smiles": "Nc1nnc(-c2ccccc2O)cc1N1CCNCC1",
+    "inchikey": "SZKHGLTYXIDOFH-UHFFFAOYSA-N",
+    "formula": "C14H17N5O",
+    "formal_charge": 0,
+    "heavy_atom_count": 20,
+    "stereocenters": [],
+    "properties": {
+      "molecular_weight_Da": 271.324,
+      "TPSA_A2": 87.3,
+      "cLogP_RDKit": 0.8409999999999996,
+      "HBD": 3,
+      "HBA": 6,
+      "rotatable_bonds_RDKit_strict": 2
+    }
+  },
+  "atom_mapping": [
+    {
+      "atom_map": 1,
+      "rdkit_index_zero_based": 0,
+      "ccd_atom_id": "C4",
+      "atom_site_id": "3789",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 2,
+      "rdkit_index_zero_based": 1,
+      "ccd_atom_id": "C5",
+      "atom_site_id": "3790",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 3,
+      "rdkit_index_zero_based": 2,
+      "ccd_atom_id": "C6",
+      "atom_site_id": "3791",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 4,
+      "rdkit_index_zero_based": 3,
+      "ccd_atom_id": "C7",
+      "atom_site_id": "3792",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 5,
+      "rdkit_index_zero_based": 4,
+      "ccd_atom_id": "C8",
+      "atom_site_id": "3793",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 6,
+      "rdkit_index_zero_based": 5,
+      "ccd_atom_id": "C10",
+      "atom_site_id": "3794",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 7,
+      "rdkit_index_zero_based": 6,
+      "ccd_atom_id": "N12",
+      "atom_site_id": "3795",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 8,
+      "rdkit_index_zero_based": 7,
+      "ccd_atom_id": "C17",
+      "atom_site_id": "3796",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 9,
+      "rdkit_index_zero_based": 8,
+      "ccd_atom_id": "C20",
+      "atom_site_id": "3797",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 10,
+      "rdkit_index_zero_based": 9,
+      "ccd_atom_id": "C1",
+      "atom_site_id": "3798",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 11,
+      "rdkit_index_zero_based": 10,
+      "ccd_atom_id": "C16",
+      "atom_site_id": "3799",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 12,
+      "rdkit_index_zero_based": 11,
+      "ccd_atom_id": "C19",
+      "atom_site_id": "3800",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 13,
+      "rdkit_index_zero_based": 12,
+      "ccd_atom_id": "C2",
+      "atom_site_id": "3801",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 14,
+      "rdkit_index_zero_based": 13,
+      "ccd_atom_id": "C3",
+      "atom_site_id": "3802",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 15,
+      "rdkit_index_zero_based": 14,
+      "ccd_atom_id": "C9",
+      "atom_site_id": "3803",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 16,
+      "rdkit_index_zero_based": 15,
+      "ccd_atom_id": "N11",
+      "atom_site_id": "3804",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 17,
+      "rdkit_index_zero_based": 16,
+      "ccd_atom_id": "N14",
+      "atom_site_id": "3805",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 18,
+      "rdkit_index_zero_based": 17,
+      "ccd_atom_id": "N15",
+      "atom_site_id": "3806",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 19,
+      "rdkit_index_zero_based": 18,
+      "ccd_atom_id": "N18",
+      "atom_site_id": "3807",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    },
+    {
+      "atom_map": 20,
+      "rdkit_index_zero_based": 19,
+      "ccd_atom_id": "O13",
+      "atom_site_id": "3808",
+      "label_asym_id": "C",
+      "auth_asym_id": "A",
+      "auth_seq_id": "1501",
+      "occupancy": 1.0,
+      "altloc": null
+    }
+  ],
+  "protected_maps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20
+  ],
+  "known_attachment_map": 19,
+  "protected_basis": {
+    "source": "https://doi.org/10.1038/s41589-019-0294-6",
+    "locator": "Results: Identification of a partial SMARCA2/4 degrader; Figure 1a",
+    "key_interactions": [
+      "phenol / Y1421",
+      "aminopyridazine / N1464"
+    ],
+    "scope": "The whole aminopyridazine/phenol binding scaffold and its connecting N are conservatively protected; not every atom is claimed essential."
+  },
+  "chemical_state": {
+    "source_charge": 1,
+    "design_charge": 0,
+    "modified_map": 19,
+    "operation": "explicit deprotonation of terminal piperazinium to secondary amine",
+    "status": "declared_design_microstate_not_pH_prediction",
+    "source_unchanged": true,
+    "rationale": "Graph derivatization requires an explicit free-base model. Binding and population of this state remain unvalidated."
+  },
+  "sar": {
+    "19": {
+      "status": "known_attachment_precedent",
+      "source": "https://doi.org/10.1038/s41589-019-0294-6",
+      "locator": "Results / Identification of a partial SMARCA2/4 degrader; Fig. 1a; compounds 1 and 2",
+      "allowed_transformations": [
+        "linker_handle_introduction"
+      ],
+      "limitation": "Known N-substitution precedent is not proof that all substitutions retain activity."
+    }
+  },
+  "unknown_sites": [
+    8,
+    9,
+    11,
+    12
+  ],
+  "new_activity_values": null,
+  "limitations": [
+    "Only one atom-specific attachment precedent is curated. Two SAR-qualified sites have not been established.",
+    "No target-wide 5–10 experimentally supported parent ligands are claimed from this single registered case."
+  ]
+}

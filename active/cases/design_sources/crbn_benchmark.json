@@ -1,0 +1,23 @@
+{
+  "id": "CRBN-dBET6-6BOY",
+  "target": "BRD4_BD1",
+  "e3_type": "CRBN",
+  "recruiter_id": "CRBN-RN6-O",
+  "pdb": "6BOY",
+  "ccd": "RN6",
+  "reference_target_chain": "C",
+  "reference_e3_chain": "B",
+  "reference_ligand_chain": "E",
+  "source_url": "https://www.rcsb.org/structure/6BOY",
+  "doi": "10.1038/s41589-018-0055-y",
+  "role": "independently retrieved CRBN calibration reference; not legacy BRD4 data or model reuse",
+  "prediction_status": "not_run",
+  "calibration_status": "reference_ready_prediction_pending",
+  "comparison_metrics": [
+    "target_CA_RMSD_A",
+    "e3_CA_RMSD_after_target_alignment_A",
+    "ligand_RMSD_after_target_alignment_A",
+    "seed_consistency"
+  ],
+  "prohibited_inference": "CRBN versus VHL efficacy or raw-confidence ranking"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:tpd-navigator:b-boltz-run-archive:0.1.0-draft",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "run_id", "compound_id", "molecule_id", "receipt_digest", "input_sha256", "files", "execution_provenance", "digest"],
+  "properties": {
+    "format": {"const": "tpd-boltz-run-archive/0.1.0-draft"}, "run_id": {"type": "string"}, "compound_id": {"type": "string"}, "molecule_id": {"type": "string"},
+    "receipt_digest": {"$ref": "#/$defs/hash"}, "input_sha256": {"$ref": "#/$defs/hash"}, "digest": {"$ref": "#/$defs/hash"},
+    "execution_provenance": {"const": "caller_reported_not_authenticated"},
+    "files": {"type": "object", "required": ["run-info.json", "input.yaml"], "additionalProperties": {
+      "type": "object", "additionalProperties": false, "required": ["sha256", "bytes"], "properties": {
+        "sha256": {"$ref": "#/$defs/hash"}, "bytes": {"type": "integer", "minimum": 0}
+      }
+    }}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

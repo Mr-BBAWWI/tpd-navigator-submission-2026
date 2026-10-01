@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:protocol-evidence:v0.1.0",
+  "title": "Protocol diagnostic record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "project_id", "job_id", "protocol_id", "kind", "created_at",
+    "source_binding", "assessment_link", "summary", "measurement_verification",
+    "pack_manifest_sha256", "compact_sha256", "archive_ref", "verification_engine",
+    "scientific_approved", "formal_acceptance", "gates_affected", "status",
+    "operator_kind"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^pdiag-[0-9a-f]{32}$"},
+    "project_id": {"type": "string", "minLength": 1},
+    "job_id": {"type": "string", "minLength": 1},
+    "protocol_id": {"type": "string", "minLength": 1},
+    "kind": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "source_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project", "job_id", "input_sha256", "result_sha256", "result_binding_kind", "parent_id"],
+      "properties": {
+        "project": {"type": "string", "minLength": 1},
+        "job_id": {"type": "string", "minLength": 1},
+        "input_sha256": {"$ref": "#/$defs/sha256"},
+        "result_sha256": {"$ref": "#/$defs/sha256"},
+        "result_binding_kind": {"const": "exact_archived_design_json_bytes"},
+        "parent_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "assessment_link": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["assessment_id", "revision", "original_status_summary"],
+          "properties": {
+            "assessment_id": {"type": "string", "minLength": 1},
+            "revision": {"type": "integer", "minimum": 1},
+            "original_status_summary": {"type": ["string", "null"]}
+          }
+        }
+      ]
+    },
+    "summary": {"$ref": "#/$defs/strictJsonObject"},
+    "measurement_verification": {"$ref": "#/$defs/strictJsonObject"},
+    "pack_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "compact_sha256": {"$ref": "#/$defs/sha256"},
+    "archive_ref": {"$ref": "#/$defs/artifactRef"},
+    "verification_engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "source_hashes"],
+      "properties": {
+        "version": {"const": 1},
+        "source_hashes": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/sha256"},
+          "required": [
+            "packages/platform/protocol_evidence.py",
+            "packages/science/protocol_evidence.py",
+            "contracts/protocol-evidence/v0.1.0/schema.json"
+          ]
+        }
+      }
+    },
+    "scientific_approved": {"const": false},
+    "formal_acceptance": {"const": false},
+    "gates_affected": {"const": false},
+    "status": {"const": "computed_diagnostic_unreviewed"},
+    "operator_kind": {"const": "explicit_local_cli"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "strictJsonObject": {
+      "type": "object",
+      "propertyNames": {"type": "string"},
+      "additionalProperties": {"$ref": "#/$defs/jsonValue"}
+    },
+    "jsonValue": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "boolean"},
+        {"type": "string"},
+        {"type": "number"},
+        {"type": "array", "items": {"$ref": "#/$defs/jsonValue"}},
+        {"$ref": "#/$defs/strictJsonObject"}
+      ]
+    },
+    "artifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "version", "sha256", "media_type", "schema_id", "provenance"],
+      "properties": {
+        "artifact_id": {"type": "string", "pattern": "^a-[0-9a-f]{32}$"},
+        "version": {"const": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "media_type": {"const": "application/zip"},
+        "schema_id": {"const": "urn:tpd-navigator:raw:1"},
+        "provenance": {"const": "computed"}
+      }
+    }
+  }
+}

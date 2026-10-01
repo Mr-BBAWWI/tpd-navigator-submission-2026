@@ -1,0 +1,181 @@
+{
+  "data_mode": "test_fixture",
+  "artifacts": [
+    {
+      "reference": {
+        "artifact_id": "fixture-parameters",
+        "version": 1,
+        "sha256": "ffd85ccf315853b9d8bfd3bdb3f0a83b8fbebdf8115768da862b996b16513dad",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/OperationParameters",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/parameters.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-target-policy",
+        "version": 1,
+        "sha256": "946189674dddeb308c295dea4e0f4fb83116d65f6a5e7a7f6b0b682b64279dde",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/target-policy.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-target-query",
+        "version": 1,
+        "sha256": "da2efeb9be0c1f9c704faff343d59b24323f1f677cedc553536ddc6defd6df80",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetQuery",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/target-query.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-target-source",
+        "version": 1,
+        "sha256": "d5c1c43525efba6226f21ca7f2c5b9a1a2a9b4ec1c5021fb0c98acc148ec70cd",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/target-source.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-target-resolution",
+        "version": 1,
+        "sha256": "013d67a4492cfd8e4cad33ccf88fe9fb4125abc087ab1a2a54eac43e1cf22868",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetResolution",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/target-resolution.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-target-manifest",
+        "version": 1,
+        "sha256": "61222ae39d3b24e0fd686c2300a1faaef8eeb109a1f91e0cb401e66bc6bab157",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/InputManifest",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/target-manifest.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-collection-policy",
+        "version": 1,
+        "sha256": "d940948f5809a68b98fd194f85e0628e936f6bd38746a80eb7254af8fc234b7b",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/CollectionPolicy",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/collection-policy.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-upload",
+        "version": 1,
+        "sha256": "38d5412d9f47309e099b71db57b9fbc52b5f10ffbceea3851bbade117144d180",
+        "media_type": "application/pdf",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/upload.pdf"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-collection-request",
+        "version": 1,
+        "sha256": "30fe6248fa48ee22635dd4f42c349856155e9f6ccfb8024405afe4ad934eda8f",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/LiteratureCollectionRequest",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/collection-request.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-literature-manifest",
+        "version": 1,
+        "sha256": "13a26d3e58d842233cd9ff96a120a67435e68566c6eb2bd4eafefc0dc7580c34",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/InputManifest",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/literature-manifest.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-article",
+        "version": 1,
+        "sha256": "5cf2473400c1cf10c2f3cf8ea03f31e243bc10aa3522296507470bb4b5eccf1c",
+        "media_type": "application/xml",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/article.xml"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-segment-text",
+        "version": 1,
+        "sha256": "d6fa5da4645eae3609718e7909f858f90e330fdb634aa79aae63637d17ae863f",
+        "media_type": "text/plain",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/segment-text.txt"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-extraction",
+        "version": 1,
+        "sha256": "39416f362baac2f1f8c5ed39a48526519f7ebff98b10705784865b26ddb67a44",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/extraction.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-extraction-activity",
+        "version": 1,
+        "sha256": "790c2ae74e643fb515014fa3a4b3a4ff36baa4d1595ade06607a272c23ab59b3",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/extraction-activity.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-search-response",
+        "version": 1,
+        "sha256": "7848ef629ce683324edec75cf8ac91e6e62b0d37acfe0269bc67d62d0ea5785d",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/search-response.json"
+    },
+    {
+      "reference": {
+        "artifact_id": "fixture-evidence-bundle",
+        "version": 1,
+        "sha256": "fbb79506ae152217713113f35df3dac1789a5c0d23f443a1bd5ad249a74b59a1",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/EvidenceBundle",
+        "provenance": "test_fixture"
+      },
+      "path": "artifacts/evidence-bundle.json"
+    }
+  ]
+}

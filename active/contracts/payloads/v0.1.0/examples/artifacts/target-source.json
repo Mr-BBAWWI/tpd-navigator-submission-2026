@@ -1,0 +1,28 @@
+{
+  "test_fixture": true,
+  "identity": {
+    "uniprot_accession": "FIXTURE_ALPHA",
+    "taxon_id": 9606,
+    "label": "Synthetic target Alpha",
+    "gene_symbol": {
+      "state": "known",
+      "value": "FIXTURE_ALPHA",
+      "reason": null
+    },
+    "isoform": {
+      "state": "not_reported",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    },
+    "mutation": {
+      "state": "not_reported",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    },
+    "construct": {
+      "state": "not_reported",
+      "value": null,
+      "reason": "Not reported in this synthetic example."
+    }
+  }
+}

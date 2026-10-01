@@ -1,0 +1,9 @@
+{
+  "payload_type": "CollectionPolicy",
+  "payload_version": "0.1.0",
+  "provider": "europe_pmc",
+  "max_records": 100,
+  "max_documents": 3,
+  "max_segments": 20,
+  "max_source_bytes": 10000
+}

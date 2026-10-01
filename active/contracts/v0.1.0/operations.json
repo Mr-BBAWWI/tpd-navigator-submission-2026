@@ -1,0 +1,137 @@
+{
+  "contract_version": "0.1.0",
+  "status": "two_operations_locally_verified_i2",
+  "operations": [
+    {
+      "operation_id": "resolve_target",
+      "module": "science",
+      "input_payload": "TargetQuery",
+      "output_payload": "TargetResolution",
+      "payload_schema_status": "schema_validated",
+      "input_schema": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetQuery",
+      "output_schema": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetResolution",
+      "schema_file": "../payloads/v0.1.0/domain.schema.json",
+      "live_execution_ready": true,
+      "execution_profiles": ["local-single-user-i2"],
+      "verification_file": "../../verification/i2_live.json",
+      "public_dispatch_ready": false
+    },
+    {
+      "operation_id": "collect_literature",
+      "module": "literature",
+      "input_payload": "LiteratureCollectionRequest",
+      "output_payload": "EvidenceBundle",
+      "payload_schema_status": "schema_validated",
+      "input_schema": "urn:tpd-navigator:payloads:0.1.0#/$defs/LiteratureCollectionRequest",
+      "output_schema": "urn:tpd-navigator:payloads:0.1.0#/$defs/EvidenceBundle",
+      "schema_file": "../payloads/v0.1.0/domain.schema.json",
+      "live_execution_ready": true,
+      "execution_profiles": ["local-single-user-i2"],
+      "verification_file": "../../verification/i2_live.json",
+      "public_dispatch_ready": false
+    },
+    {
+      "operation_id": "assess_literature",
+      "module": "literature",
+      "input_payload": "LiteratureAssessmentRequest",
+      "output_payload": "LiteratureAssessment",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "screen_warheads",
+      "module": "science",
+      "input_payload": "WarheadSearchRequest",
+      "output_payload": "WarheadSet",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "assess_exit_vectors",
+      "module": "science",
+      "input_payload": "ExitVectorRequest",
+      "output_payload": "ExitVectorAssessment",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "assemble_candidates",
+      "module": "science",
+      "input_payload": "AssemblyRequest",
+      "output_payload": "CandidateSet",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "prepare_structure_inputs",
+      "module": "science",
+      "input_payload": "StructurePreparationRequest",
+      "output_payload": "StructureInputBundle",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "predict_warhead_affinity",
+      "module": "gpu",
+      "input_payload": "AffinityJobInput",
+      "output_payload": "AffinityObservationSet",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "predict_ternary",
+      "module": "gpu",
+      "input_payload": "TernaryJobInput",
+      "output_payload": "TernaryObservationSet",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "evaluate_linkers",
+      "module": "science",
+      "input_payload": "LinkerEvaluationRequest",
+      "output_payload": "LinkerAssessment",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "evaluate_synthesis",
+      "module": "science",
+      "input_payload": "SynthesisReviewRequest",
+      "output_payload": "SynthesisAssessment",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "compute_properties",
+      "module": "science",
+      "input_payload": "PropertyRequest",
+      "output_payload": "PropertyTable",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "review_claims",
+      "module": "review_reporting",
+      "input_payload": "ReviewRequest",
+      "output_payload": "ReviewRecord",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    },
+    {
+      "operation_id": "compose_report",
+      "module": "review_reporting",
+      "input_payload": "ReportFacts",
+      "output_payload": "ReportDraft",
+      "payload_schema_status": "pending",
+      "live_execution_ready": false
+    }
+  ],
+  "notes": [
+    "Operation IDs identify module capabilities, not workflow order; S4/S5 are not renumbered.",
+    "Live dispatch requires a registered schema, an explicitly allowed execution profile and the approvals/resources required by that profile; schema validation alone never authorizes dispatch.",
+    "public_replay reads stored artifacts through the application and dispatches no new module jobs.",
+    "I2 verified resolve_target and collect_literature with real UniProt/Europe PMC reads in a local single-user CPU profile. Other operations and public dispatch remain disabled. This profile grants no LLM/GPU capability and requires no scientific-policy approval or paid-resource reservation.",
+    "InputManifest is urn:tpd-navigator:payloads:0.1.0#/$defs/InputManifest; approval_ref, attempts, limits and reservation_id remain in JobSpec to avoid circular approval hashes."
+  ]
+}

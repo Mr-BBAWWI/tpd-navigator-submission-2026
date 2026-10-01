@@ -1,0 +1,453 @@
+{
+  "payload_type": "EvidenceBundle",
+  "payload_version": "0.1.0",
+  "project_id": "fixture-project",
+  "request_ref": {
+    "artifact_id": "fixture-collection-request",
+    "version": 1,
+    "sha256": "30fe6248fa48ee22635dd4f42c349856155e9f6ccfb8024405afe4ad934eda8f",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/LiteratureCollectionRequest",
+    "provenance": "test_fixture"
+  },
+  "target_resolution_ref": {
+    "artifact_id": "fixture-target-resolution",
+    "version": 1,
+    "sha256": "013d67a4492cfd8e4cad33ccf88fe9fb4125abc087ab1a2a54eac43e1cf22868",
+    "media_type": "application/json",
+    "schema_id": "urn:tpd-navigator:payloads:0.1.0#/$defs/TargetResolution",
+    "provenance": "test_fixture"
+  },
+  "documents": [
+    {
+      "document_id": "document-article",
+      "revision": 1,
+      "project_id": "fixture-project",
+      "title": {
+        "state": "known",
+        "value": "Synthetic attachment example",
+        "reason": null
+      },
+      "identifiers": [],
+      "acquisition_paths": [
+        {
+          "kind": "search",
+          "provider": "europe_pmc",
+          "acquired_at": "2026-09-11T00:00:00Z",
+          "external_uri": null
+        }
+      ],
+      "acquisition_status": "retrieved",
+      "access_level": "fulltext",
+      "format": "jats_xml",
+      "source_artifact_ref": {
+        "artifact_id": "fixture-article",
+        "version": 1,
+        "sha256": "5cf2473400c1cf10c2f3cf8ea03f31e243bc10aa3522296507470bb4b5eccf1c",
+        "media_type": "application/xml",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "extraction": {
+        "status": "complete",
+        "extractor_version": "fixture-extractor-1",
+        "snapshot_ref": {
+          "artifact_id": "fixture-extraction",
+          "version": 1,
+          "sha256": "39416f362baac2f1f8c5ed39a48526519f7ebff98b10705784865b26ddb67a44",
+          "media_type": "application/json",
+          "schema_id": "urn:tpd-navigator:raw:test-fixture",
+          "provenance": "test_fixture"
+        },
+        "issues": []
+      },
+      "relations": [],
+      "replay_rights": {
+        "status": "undetermined",
+        "basis_ref": null,
+        "reason": "Fixture only; not a public replay source."
+      },
+      "issues": []
+    },
+    {
+      "document_id": "document-upload",
+      "revision": 1,
+      "project_id": "fixture-project",
+      "title": {
+        "state": "known",
+        "value": "Intentionally corrupt PDF fixture",
+        "reason": null
+      },
+      "identifiers": [],
+      "acquisition_paths": [
+        {
+          "kind": "upload",
+          "provider": "researcher",
+          "acquired_at": "2026-09-11T00:00:00Z",
+          "external_uri": null
+        }
+      ],
+      "acquisition_status": "retrieved",
+      "access_level": "unverified",
+      "format": "pdf",
+      "source_artifact_ref": {
+        "artifact_id": "fixture-upload",
+        "version": 1,
+        "sha256": "38d5412d9f47309e099b71db57b9fbc52b5f10ffbceea3851bbade117144d180",
+        "media_type": "application/pdf",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "extraction": {
+        "status": "failed",
+        "extractor_version": "fixture-extractor-1",
+        "snapshot_ref": null,
+        "issues": [
+          {
+            "code": "PDF_EXTRACTION_FAILED",
+            "category": "invalid_output",
+            "message": "Synthetic extraction failure; no real PDF was processed.",
+            "affected_artifact_ids": [
+              "fixture-upload"
+            ],
+            "retry_hint": "requires_changed_input"
+          }
+        ]
+      },
+      "relations": [],
+      "replay_rights": {
+        "status": "undetermined",
+        "basis_ref": null,
+        "reason": "Fixture only; not a public replay source."
+      },
+      "issues": []
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "segment-b001",
+      "locator": {
+        "document_id": "document-article",
+        "document_revision": 1,
+        "source_artifact_ref": {
+          "artifact_id": "fixture-article",
+          "version": 1,
+          "sha256": "5cf2473400c1cf10c2f3cf8ea03f31e243bc10aa3522296507470bb4b5eccf1c",
+          "media_type": "application/xml",
+          "schema_id": "urn:tpd-navigator:raw:test-fixture",
+          "provenance": "test_fixture"
+        },
+        "extraction_snapshot_ref": {
+          "artifact_id": "fixture-extraction",
+          "version": 1,
+          "sha256": "39416f362baac2f1f8c5ed39a48526519f7ebff98b10705784865b26ddb67a44",
+          "media_type": "application/json",
+          "schema_id": "urn:tpd-navigator:raw:test-fixture",
+          "provenance": "test_fixture"
+        },
+        "extractor_version": "fixture-extractor-1",
+        "kind": "jats_xml",
+        "block_id": "b001",
+        "xpath": "/article/body/p[@id='b001']",
+        "table_id": null,
+        "figure_id": null
+      },
+      "text_artifact_ref": {
+        "artifact_id": "fixture-segment-text",
+        "version": 1,
+        "sha256": "d6fa5da4645eae3609718e7909f858f90e330fdb634aa79aae63637d17ae863f",
+        "media_type": "text/plain",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "content_kind": "text",
+      "read_events": []
+    }
+  ],
+  "compounds": [
+    {
+      "compound_id": "compound-c1",
+      "document_id": "document-article",
+      "source_label": "C1",
+      "structure_state": "unavailable",
+      "structure_ref": null,
+      "structure_locators": [],
+      "reason": "Not available in synthetic source."
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_id": "evidence-c1",
+      "basis_kind": "experiment",
+      "statement": "Synthetic reported IC50; no mapped atom or degradation result.",
+      "source_locators": [
+        {
+          "document_id": "document-article",
+          "document_revision": 1,
+          "source_artifact_ref": {
+            "artifact_id": "fixture-article",
+            "version": 1,
+            "sha256": "5cf2473400c1cf10c2f3cf8ea03f31e243bc10aa3522296507470bb4b5eccf1c",
+            "media_type": "application/xml",
+            "schema_id": "urn:tpd-navigator:raw:test-fixture",
+            "provenance": "test_fixture"
+          },
+          "extraction_snapshot_ref": {
+            "artifact_id": "fixture-extraction",
+            "version": 1,
+            "sha256": "39416f362baac2f1f8c5ed39a48526519f7ebff98b10705784865b26ddb67a44",
+            "media_type": "application/json",
+            "schema_id": "urn:tpd-navigator:raw:test-fixture",
+            "provenance": "test_fixture"
+          },
+          "extractor_version": "fixture-extractor-1",
+          "kind": "jats_xml",
+          "block_id": "b001",
+          "xpath": "/article/body/p[@id='b001']",
+          "table_id": null,
+          "figure_id": null
+        }
+      ],
+      "producer": {
+        "kind": "adapter",
+        "version": "fixture-extractor-1",
+        "activity_ref": {
+          "artifact_id": "fixture-extraction-activity",
+          "version": 1,
+          "sha256": "790c2ae74e643fb515014fa3a4b3a4ff36baa4d1595ade06607a272c23ab59b3",
+          "media_type": "application/json",
+          "schema_id": "urn:tpd-navigator:raw:test-fixture",
+          "provenance": "test_fixture"
+        }
+      },
+      "review": {
+        "state": "unreviewed",
+        "activity_ref": null,
+        "reason": null
+      },
+      "target": {
+        "reported_label": {
+          "state": "known",
+          "value": "Synthetic target Alpha",
+          "reason": null
+        },
+        "identity": {
+          "uniprot_accession": "FIXTURE_ALPHA",
+          "taxon_id": 9606,
+          "label": "Synthetic target Alpha",
+          "gene_symbol": {
+            "state": "known",
+            "value": "FIXTURE_ALPHA",
+            "reason": null
+          },
+          "isoform": {
+            "state": "not_reported",
+            "value": null,
+            "reason": "Not reported in this synthetic example."
+          },
+          "mutation": {
+            "state": "not_reported",
+            "value": null,
+            "reason": "Not reported in this synthetic example."
+          },
+          "construct": {
+            "state": "not_reported",
+            "value": null,
+            "reason": "Not reported in this synthetic example."
+          }
+        },
+        "resolution_state": "resolved",
+        "reason": null
+      },
+      "compound_ids": [
+        "compound-c1"
+      ],
+      "assay_context": {
+        "assay_id": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        },
+        "assay_type": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        },
+        "cell_line": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        },
+        "tissue": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        },
+        "duration": {
+          "kind": "missing",
+          "state": "not_reported",
+          "value": null,
+          "reason": "Synthetic example has no value."
+        },
+        "conditions": []
+      },
+      "observations": [
+        {
+          "endpoint": "IC50",
+          "endpoint_label": "IC50",
+          "measurement": {
+            "kind": "scalar",
+            "value": 1000,
+            "relation": ">",
+            "unit": {
+              "state": "known",
+              "value": "nM",
+              "reason": null
+            },
+            "raw_text": ">1000 nM"
+          },
+          "replicate_description": {
+            "state": "not_reported",
+            "value": null,
+            "reason": "Not reported in this synthetic example."
+          },
+          "uncertainty_description": {
+            "state": "not_reported",
+            "value": null,
+            "reason": "Not reported in this synthetic example."
+          }
+        }
+      ],
+      "attachment": {
+        "compound_id": "compound-c1",
+        "side": "warhead",
+        "source_position_label": {
+          "state": "known",
+          "value": "R1",
+          "reason": null
+        },
+        "position_description": {
+          "state": "not_reported",
+          "value": null,
+          "reason": "Not reported in this synthetic example."
+        },
+        "source_locators": [
+          {
+            "document_id": "document-article",
+            "document_revision": 1,
+            "source_artifact_ref": {
+              "artifact_id": "fixture-article",
+              "version": 1,
+              "sha256": "5cf2473400c1cf10c2f3cf8ea03f31e243bc10aa3522296507470bb4b5eccf1c",
+              "media_type": "application/xml",
+              "schema_id": "urn:tpd-navigator:raw:test-fixture",
+              "provenance": "test_fixture"
+            },
+            "extraction_snapshot_ref": {
+              "artifact_id": "fixture-extraction",
+              "version": 1,
+              "sha256": "39416f362baac2f1f8c5ed39a48526519f7ebff98b10705784865b26ddb67a44",
+              "media_type": "application/json",
+              "schema_id": "urn:tpd-navigator:raw:test-fixture",
+              "provenance": "test_fixture"
+            },
+            "extractor_version": "fixture-extractor-1",
+            "kind": "jats_xml",
+            "block_id": "b001",
+            "xpath": "/article/body/p[@id='b001']",
+            "table_id": null,
+            "figure_id": null
+          }
+        ]
+      },
+      "comparison_links": [],
+      "experiment_origin": {
+        "state": "unknown",
+        "origin_id": null,
+        "basis_locators": [
+          {
+            "document_id": "document-article",
+            "document_revision": 1,
+            "source_artifact_ref": {
+              "artifact_id": "fixture-article",
+              "version": 1,
+              "sha256": "5cf2473400c1cf10c2f3cf8ea03f31e243bc10aa3522296507470bb4b5eccf1c",
+              "media_type": "application/xml",
+              "schema_id": "urn:tpd-navigator:raw:test-fixture",
+              "provenance": "test_fixture"
+            },
+            "extraction_snapshot_ref": {
+              "artifact_id": "fixture-extraction",
+              "version": 1,
+              "sha256": "39416f362baac2f1f8c5ed39a48526519f7ebff98b10705784865b26ddb67a44",
+              "media_type": "application/json",
+              "schema_id": "urn:tpd-navigator:raw:test-fixture",
+              "provenance": "test_fixture"
+            },
+            "extractor_version": "fixture-extractor-1",
+            "kind": "jats_xml",
+            "block_id": "b001",
+            "xpath": "/article/body/p[@id='b001']",
+            "table_id": null,
+            "figure_id": null
+          }
+        ],
+        "reason": "Not independently verified in this fixture."
+      },
+      "limitations": [
+        "No chemical structure; no atom mapping; no degradation observation; entirely synthetic."
+      ]
+    }
+  ],
+  "searches": [
+    {
+      "question_id": "q-attachment",
+      "query": "FIXTURE_ALPHA attachment",
+      "provider": "europe_pmc",
+      "status": "completed",
+      "total_hits": {
+        "state": "known",
+        "value": 1,
+        "reason": null
+      },
+      "search_result_ref": {
+        "artifact_id": "fixture-search-response",
+        "version": 1,
+        "sha256": "7848ef629ce683324edec75cf8ac91e6e62b0d37acfe0269bc67d62d0ea5785d",
+        "media_type": "application/json",
+        "schema_id": "urn:tpd-navigator:raw:test-fixture",
+        "provenance": "test_fixture"
+      },
+      "retrieved_document_ids": [
+        "document-article"
+      ],
+      "termination": "source_exhausted",
+      "issues": []
+    }
+  ],
+  "coverage": {
+    "stored_document_count": 2,
+    "fulltext_acquired_count": 1,
+    "extracted_segment_count": 1,
+    "llm_read_segment_count": 0,
+    "evidence_record_count": 1,
+    "reviewed_record_count": 0,
+    "unavailable_document_count": 0,
+    "independent_experiment_count": {
+      "state": "unknown",
+      "value": null,
+      "reason": "Experiment origin unresolved."
+    }
+  },
+  "issues": [
+    {
+      "code": "PDF_EXTRACTION_FAILED",
+      "category": "invalid_output",
+      "message": "Synthetic extraction failure; no real PDF was processed.",
+      "affected_artifact_ids": [
+        "fixture-upload"
+      ],
+      "retry_hint": "requires_changed_input"
+    }
+  ]
+}

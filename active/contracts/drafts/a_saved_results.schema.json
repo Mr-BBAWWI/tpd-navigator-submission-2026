@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tpd-navigator:a-saved-results:0.1.0-draft",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "project_id",
+    "dossier_id",
+    "run_id",
+    "created_at",
+    "dossier_ref",
+    "projection_ref",
+    "snapshot",
+    "summary",
+    "bundle_digest",
+    "manifest_sha256",
+    "files",
+    "authority"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "dossier_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "dossier_ref": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "version",
+        "sha256",
+        "media_type",
+        "schema_id",
+        "provenance"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^a-[a-f0-9]{32}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "version": {
+          "const": 1
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "schema_id": {
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "computed",
+            "source"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "projection_ref": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "version",
+        "sha256",
+        "media_type",
+        "schema_id",
+        "provenance"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^a-[a-f0-9]{32}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "version": {
+          "const": 1
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "schema_id": {
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "computed",
+            "source"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "bundle_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "files": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "artifact_id",
+          "version",
+          "sha256",
+          "media_type",
+          "schema_id",
+          "provenance"
+        ],
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "pattern": "^a-[a-f0-9]{32}$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "version": {
+            "const": 1
+          },
+          "media_type": {
+            "type": "string"
+          },
+          "schema_id": {
+            "type": "string"
+          },
+          "provenance": {
+            "enum": [
+              "computed",
+              "source"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "authority": {
+      "const": {
+        "human_approved": false,
+        "dispatch_authorized": false,
+        "efficacy_claim": "not_established",
+        "public_release_ready": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

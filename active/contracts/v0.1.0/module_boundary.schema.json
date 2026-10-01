@@ -1,0 +1,553 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TPD Navigator module boundary v0.1.0",
+  "description": "Working interface baseline. Validates envelopes only; operation payloads and runtime authorization require separate validation.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/JobSpec"
+    },
+    {
+      "$ref": "#/$defs/ModuleResult"
+    }
+  ],
+  "$defs": {
+    "ArtifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "enum": [
+            "source",
+            "computed",
+            "model_output",
+            "human_annotation",
+            "test_fixture"
+          ]
+        }
+      },
+      "required": [
+        "artifact_id",
+        "version",
+        "sha256",
+        "media_type",
+        "schema_id",
+        "provenance"
+      ]
+    },
+    "Issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "category": {
+          "enum": [
+            "transient",
+            "missing_input",
+            "unsupported_input",
+            "invalid_output",
+            "capacity",
+            "authorization",
+            "internal_error"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affected_artifact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          }
+        },
+        "retry_hint": {
+          "enum": [
+            "same_input_may_retry",
+            "requires_changed_input",
+            "do_not_retry"
+          ]
+        }
+      },
+      "required": [
+        "code",
+        "category",
+        "message",
+        "affected_artifact_ids",
+        "retry_hint"
+      ]
+    },
+    "JobSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "job_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "input_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "input_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "operation_id": {
+          "enum": [
+            "resolve_target",
+            "collect_literature",
+            "assess_literature",
+            "screen_warheads",
+            "assess_exit_vectors",
+            "assemble_candidates",
+            "prepare_structure_inputs",
+            "predict_warhead_affinity",
+            "predict_ternary",
+            "evaluate_linkers",
+            "evaluate_synthesis",
+            "compute_properties",
+            "review_claims",
+            "compose_report"
+          ]
+        },
+        "execution_mode": {
+          "enum": [
+            "development_live",
+            "public_explore"
+          ]
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "input_manifest": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "input_artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ArtifactRef"
+          }
+        },
+        "parameters_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "policy_ref": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "approval_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reservation_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "limits": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "wall_time_seconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_llm_requests": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_llm_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_gpu_seconds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_output_bytes": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "wall_time_seconds",
+            "max_llm_requests",
+            "max_llm_tokens",
+            "max_gpu_seconds",
+            "max_output_bytes"
+          ]
+        }
+      },
+      "required": [
+        "contract_version",
+        "project_id",
+        "run_id",
+        "job_id",
+        "attempt",
+        "input_revision",
+        "input_digest",
+        "operation_id",
+        "execution_mode",
+        "data_mode",
+        "input_manifest",
+        "input_artifacts",
+        "parameters_ref",
+        "policy_ref",
+        "approval_ref",
+        "reservation_id",
+        "limits"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "execution_mode": {
+                "const": "public_explore"
+              }
+            },
+            "required": [
+              "execution_mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "limits": {
+                "properties": {
+                  "max_gpu_seconds": {
+                    "const": 0
+                  }
+                }
+              },
+              "operation_id": {
+                "not": {
+                  "enum": [
+                    "predict_warhead_affinity",
+                    "predict_ternary"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation_id": {
+                "enum": [
+                  "predict_warhead_affinity",
+                  "predict_ternary"
+                ]
+              }
+            },
+            "required": [
+              "operation_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "execution_mode": {
+                "const": "development_live"
+              },
+              "approval_ref": {
+                "$ref": "#/$defs/ArtifactRef"
+              },
+              "reservation_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+              },
+              "limits": {
+                "properties": {
+                  "max_gpu_seconds": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ModuleResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "0.1.0"
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "job_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "input_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "input_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "operation_id": {
+          "enum": [
+            "resolve_target",
+            "collect_literature",
+            "assess_literature",
+            "screen_warheads",
+            "assess_exit_vectors",
+            "assemble_candidates",
+            "prepare_structure_inputs",
+            "predict_warhead_affinity",
+            "predict_ternary",
+            "evaluate_linkers",
+            "evaluate_synthesis",
+            "compute_properties",
+            "review_claims",
+            "compose_report"
+          ]
+        },
+        "data_mode": {
+          "enum": [
+            "real",
+            "test_fixture"
+          ]
+        },
+        "status": {
+          "enum": [
+            "succeeded",
+            "partial",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "output_artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ArtifactRef"
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Issue"
+          }
+        },
+        "actual_usage": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "wall_time_ms": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "llm_requests": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "llm_tokens": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "gpu_seconds": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "usage_complete": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "wall_time_ms",
+            "llm_requests",
+            "llm_tokens",
+            "gpu_seconds",
+            "usage_complete"
+          ]
+        },
+        "producer": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "module": {
+              "type": "string",
+              "minLength": 1
+            },
+            "code_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "tool_versions_ref": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/ArtifactRef"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "module",
+            "code_version",
+            "tool_versions_ref"
+          ]
+        }
+      },
+      "required": [
+        "contract_version",
+        "project_id",
+        "run_id",
+        "job_id",
+        "attempt",
+        "input_revision",
+        "input_digest",
+        "operation_id",
+        "data_mode",
+        "status",
+        "output_artifacts",
+        "issues",
+        "actual_usage",
+        "producer"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "succeeded",
+                  "partial"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "output_artifacts": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "partial",
+                  "failed"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "issues": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

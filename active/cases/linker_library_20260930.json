@@ -1,0 +1,18 @@
+{
+  "version": "linker-design/20260930.1",
+  "scope": "Developer-defined motif hypotheses, not extracted complete synthetic reagents or validated SMARCA2 designs",
+  "review_source_sha256": "26cc175fe52a91a6c5c1925ec9c3d81fc19520142c991f95c54908557dd99281",
+  "sources": [
+    {"id":"farnaby2019","doi":"10.1038/s41589-019-0294-6","url":"https://pubmed.ncbi.nlm.nih.gov/31178587/","basis":"First-case paper and registered C01/C02 CCD fragments; exact SI routes remain uncurated"},
+    {"id":"piperazine2022","doi":"10.1039/D2RA03761K","url":"https://pubs.rsc.org/en/content/articlehtml/2022/ra/d2ra03761k","basis":"Primary study of piperazine linker protonation; retrieved abstract/indexed text only, not a route validation for these templates"},
+    {"id":"triazole2024","doi":"10.1016/j.xcrp.2024.102139","url":"https://www.sciencedirect.com/science/article/pii/S2666386424004235","basis":"Primary linkerology study; retrieved abstract/indexed text only, not exact reproduction of a paper compound"}
+  ],
+  "templates": [
+    {"id":"alkyl_c6","label":"Alkyl · 탄소 사슬 6개","family":"alkyl","smiles":"[*:1001]CCCCCC[*:1002]","rationale":"산소 없는 유연한 사슬로 치환해 부모 대비 극성·회전 결합 변화를 비교합니다. 투과성 개선은 검증되지 않았습니다.","source_ids":["piperazine2022"],"state_review":"결합 환경과 전체 분자의 화학 상태 검토 필요"},
+    {"id":"peg3","label":"PEG · ether 산소 3개","family":"PEG","smiles":"[*:1001]CCOCCOCCOCC[*:1002]","rationale":"ether 산소를 포함한 사슬로 길이·극성·유연성을 함께 비교합니다. 용해도·효능 개선을 뜻하지 않습니다.","source_ids":["farnaby2019","piperazine2022"],"state_review":"ether의 기하와 결합 환경 검토 필요"},
+    {"id":"peg_alkyl","label":"PEG–alkyl · 비대칭 혼합","family":"PEG-alkyl","smiles":"[*:1001]CCOCCCC[*:1002]","rationale":"ether 위치와 비극성 사슬의 배치를 바꿉니다. 정방향/역방향을 서로 다른 연결 가설로 비교합니다.","source_ids":["piperazine2022"],"state_review":"연결 방향별 접촉·구조 검토 필요"},
+    {"id":"piperazine","label":"Piperazine · 고리와 질소","family":"piperazine","smiles":"[*:1001]CCN1CCN(CC[*:1002])CC1","rationale":"사슬 일부를 piperazine 고리로 제한하는 가설입니다. 새 염기성 질소의 protonation과 결합 환경을 별도로 검토해야 합니다.","source_ids":["piperazine2022"],"state_review":"추가 질소의 protonation 미선정; 중성 그래프는 실제 pH 상태 예측이 아님"},
+    {"id":"triazole","label":"Triazole · 방향성 고리","family":"triazole","smiles":"[*:1001]CCn1cc(CC[*:1002])nn1","rationale":"triazole을 포함한 방향성 연결 가설입니다. 고리 위치·연결 방향·합성 반응의 적용성을 별도로 확인해야 합니다.","source_ids":["triazole2024"],"state_review":"고리 원자 역할·연결 위치·protonation 검토 필요"},
+    {"id":"aryl_para","label":"Aromatic · para phenylene","family":"rigid-aromatic","smiles":"[*:1001]CCc1ccc(CC[*:1002])cc1","rationale":"방향족 고리를 포함해 사슬의 기하를 제한하는 가설입니다. C02의 방향족 linker 사례를 참고하지만 동일 구조나 효능을 주장하지 않습니다.","source_ids":["farnaby2019"],"state_review":"방향족 부위의 입체 충돌·attachment geometry 검토 필요"}
+  ]
+}
