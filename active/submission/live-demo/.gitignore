@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.dist-build-*/
+.dist-backup-*/
+.env
+.env.*
+*.log
+*credential*
+private-audit-cache/
+privateauditcache/
+.cache/

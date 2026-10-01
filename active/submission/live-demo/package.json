@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test backend.test.mjs",
+    "dev": "node local-server.mjs --port 8826"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.11"
+  }
+}

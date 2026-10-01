@@ -16,7 +16,7 @@ def main():
         parser.error("port must be between 1 and 65535")
     handler = lambda *a, **kw: SimpleHTTPRequestHandler(*a, directory=str(DEMO), **kw)
     server = ThreadingHTTPServer(("127.0.0.1", args.port), handler)
-    print(f"http://127.0.0.1:{args.port}/", flush=True)
+    print(f"http://127.0.0.1:{args.port}/stored-results.html", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
