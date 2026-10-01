@@ -1,0 +1,240 @@
+{
+  "format": "tpd-public-live-release/1",
+  "verified_at": "2026-10-01T16:43:37.931308+00:00",
+  "public_demo_url": "https://mr-bbawwi.github.io/tpd-navigator-submission-2026/",
+  "stored_results_url": "https://mr-bbawwi.github.io/tpd-navigator-submission-2026/stored-results.html",
+  "deployment": {
+    "site_project_id": "appgprj_6abe82b4c5788191b7216f9bf0c1b3ea",
+    "source_commit_sha": "4adb6970c40c2b6babcb4f99f976acf09ed66460",
+    "version_id": "appgprj_6abe82b4c5788191b7216f9bf0c1b3ea~appgver_8f968b30326c81918af153000bde6d83",
+    "deployment_id": "appgdep_6abe8c9fb97481918d68d872e97a8947",
+    "deployment_status": "succeeded",
+    "deployment_url": "https://tpd-navigator-live.wlgudyun.chatgpt.site",
+    "deployed_at": "2026-10-01T16:39:08.361857+00:00",
+    "environment_revision": 1,
+    "public": true
+  },
+  "pages_ui_commit": "b83c427deebdd032e4ccb1d490ab01b32a61dcdd",
+  "verification": {
+    "backend_tests": {
+      "passed": 18,
+      "failed": 0
+    },
+    "public_examples": [
+      {
+        "operation": "candidate_compare",
+        "verification": "public_page_button_to_new_model_answer",
+        "request_id": "67aba704-6fcc-45d7-b29e-f89ff7603b60",
+        "response_id": "resp_0ad32bb71f02dd5e016abe8cbcfc108194bc734a12eddd8004",
+        "model": "gpt-5.6-sol",
+        "usage": {
+          "input_tokens": 1403,
+          "output_tokens": 512,
+          "total_tokens": 1915
+        },
+        "started_at": "2026-10-01T16:39:24.848Z",
+        "completed_at": "2026-10-01T16:39:30.943Z",
+        "server_elapsed_seconds": 6.09,
+        "evidence_sha256": "c563106ed0169d0f5c03a39c8e4bb6c9e4f4c8ad6915f63175950c90fac5536d",
+        "scientific_approval": false,
+        "source": "browser rendered response metadata"
+      },
+      {
+        "operation": "failure_analysis",
+        "verification": "public_page_button_to_new_model_answer",
+        "request_id": "13217cac-95a0-4bf1-8b84-bc0df34a334c",
+        "response_id": "resp_013ef54ac5f72a88016abe8d321fa88193971eb0615e155492",
+        "model": "gpt-5.6-sol",
+        "usage": {
+          "input_tokens": 744,
+          "output_tokens": 539,
+          "total_tokens": 1283
+        },
+        "started_at": "2026-10-01T16:41:22.060Z",
+        "completed_at": "2026-10-01T16:41:27.926Z",
+        "server_elapsed_seconds": 5.87,
+        "evidence_sha256": "15a7fab95551ff953dd318afb9f6e805d186d7900769731ab46cb65a5c5ee09c",
+        "scientific_approval": false,
+        "source": "browser rendered response metadata"
+      },
+      {
+        "operation": "acceptance_plan",
+        "verification": "public_page_button_to_new_model_answer",
+        "request_id": "43520257-79fe-4cf7-bac1-418681249ef2",
+        "response_id": "resp_059870473385cbd8016abe8d58ffe0819492d6421713556e54",
+        "model": "gpt-5.6-sol",
+        "usage": {
+          "input_tokens": 2329,
+          "output_tokens": 635,
+          "total_tokens": 2964
+        },
+        "started_at": "2026-10-01T16:42:00.942Z",
+        "completed_at": "2026-10-01T16:42:06.985Z",
+        "server_elapsed_seconds": 6.04,
+        "evidence_sha256": "bbb22fdebc71b420053bd2fb81b88da4059efc42eacdf01d3fa92197d84f6605",
+        "scientific_approval": false,
+        "source": "browser rendered response metadata"
+      }
+    ],
+    "old_static_bytes_preserved_sha256": "0f0cb90c707675496287a3fb23af8c160e111936e5c46eef567e19e944e15b19",
+    "download_button_browser_validation": "not verified: browser automation download event did not resolve"
+  },
+  "scope": "Live deterministic analysis of saved public evidence and new model interpretation; no new GPU/docking or scientific approval.",
+  "api_usage": {
+    "development_calls": 23,
+    "development_tokens_known": 188973,
+    "local_validation_tokens_known": 6075,
+    "public_browser_validation_tokens_known": 6162,
+    "failed_public_attempts_without_provider_usage": 3,
+    "account_remaining_tokens_verified": null,
+    "note": "Unknown provider usage is not treated as zero; this ledger covers this live demo update only.",
+    "total_observed_tokens": 201210
+  },
+  "previous_manifests": "source-export-manifest.json and public-demo/manifest.json remain V1 historical snapshots.",
+  "reviewed_changed_payload": [
+    {
+      "path": "README.md",
+      "git_content_sha256": "801b902300cc4fea823360092bb6d5179e5640a0837812b616ad819db7cd7031",
+      "git_content_bytes": 5872,
+      "reviewed_worktree_sha256": "801b902300cc4fea823360092bb6d5179e5640a0837812b616ad819db7cd7031"
+    },
+    {
+      "path": "active/docs/public_live_execution_20261002.md",
+      "git_content_sha256": "2b12f79f323acd2be366a36550d5bc1452927f4d0403022be278de67ac7a5948",
+      "git_content_bytes": 5049,
+      "reviewed_worktree_sha256": "2b12f79f323acd2be366a36550d5bc1452927f4d0403022be278de67ac7a5948"
+    },
+    {
+      "path": "active/submission/live-demo/.gitignore",
+      "git_content_sha256": "5c3064970790bd716cda2e45933dcdc58712e6d23a8f3aca1bdbc4eee4787ae0",
+      "git_content_bytes": 130,
+      "reviewed_worktree_sha256": "5c3064970790bd716cda2e45933dcdc58712e6d23a8f3aca1bdbc4eee4787ae0"
+    },
+    {
+      "path": "active/submission/live-demo/.openai/hosting.json",
+      "git_content_sha256": "7ac4982e328a0feb8ac1685f901bff1fc80df570d02fedba920c84578d3bd7e0",
+      "git_content_bytes": 199,
+      "reviewed_worktree_sha256": "7ac4982e328a0feb8ac1685f901bff1fc80df570d02fedba920c84578d3bd7e0"
+    },
+    {
+      "path": "active/submission/live-demo/README.md",
+      "git_content_sha256": "15eb195f3d378f11c6731b9bcdfa419a780f721d1815c969c70c377aa72b8b97",
+      "git_content_bytes": 6518,
+      "reviewed_worktree_sha256": "15eb195f3d378f11c6731b9bcdfa419a780f721d1815c969c70c377aa72b8b97"
+    },
+    {
+      "path": "active/submission/live-demo/backend.test.mjs",
+      "git_content_sha256": "3741fd5d5c772c81b96b9370db19d76b9167a07cecdafef17a9c8cf3dcf23802",
+      "git_content_bytes": 24395,
+      "reviewed_worktree_sha256": "3741fd5d5c772c81b96b9370db19d76b9167a07cecdafef17a9c8cf3dcf23802"
+    },
+    {
+      "path": "active/submission/live-demo/build.mjs",
+      "git_content_sha256": "2c4b861683863714077ce834b30bf524253521ca2e186faccddcd6b5c4330ad3",
+      "git_content_bytes": 18525,
+      "reviewed_worktree_sha256": "2c4b861683863714077ce834b30bf524253521ca2e186faccddcd6b5c4330ad3"
+    },
+    {
+      "path": "active/submission/live-demo/campaign-public.json",
+      "git_content_sha256": "7786398f4ff620f32725123da8cd91c1acf1104db9b4c6b68d4e3eeac4b6f21a",
+      "git_content_bytes": 729459,
+      "reviewed_worktree_sha256": "7786398f4ff620f32725123da8cd91c1acf1104db9b4c6b68d4e3eeac4b6f21a"
+    },
+    {
+      "path": "active/submission/live-demo/evidence-tools.mjs",
+      "git_content_sha256": "99950c974d8184cd1ee90c4d115cc1960a6f015f33de2535a73e15465c764d71",
+      "git_content_bytes": 18590,
+      "reviewed_worktree_sha256": "99950c974d8184cd1ee90c4d115cc1960a6f015f33de2535a73e15465c764d71"
+    },
+    {
+      "path": "active/submission/live-demo/local-server.mjs",
+      "git_content_sha256": "bdc02d2836214d731999420e77aba7fe25137f0107d589b2c48069fac5c7810c",
+      "git_content_bytes": 11625,
+      "reviewed_worktree_sha256": "bdc02d2836214d731999420e77aba7fe25137f0107d589b2c48069fac5c7810c"
+    },
+    {
+      "path": "active/submission/live-demo/package-lock.json",
+      "git_content_sha256": "843525d994a928f0975a5996e564bf71645b630a61845ef8695f49ceca2cebb7",
+      "git_content_bytes": 14469,
+      "reviewed_worktree_sha256": "843525d994a928f0975a5996e564bf71645b630a61845ef8695f49ceca2cebb7"
+    },
+    {
+      "path": "active/submission/live-demo/package.json",
+      "git_content_sha256": "4d08b234f516a52a8c33f7fce9505fa3968a60a44414e02fc7678a01447dd950",
+      "git_content_bytes": 237,
+      "reviewed_worktree_sha256": "4d08b234f516a52a8c33f7fce9505fa3968a60a44414e02fc7678a01447dd950"
+    },
+    {
+      "path": "active/submission/live-demo/public/app.js",
+      "git_content_sha256": "feedf47937f2cca4be2faa327da2b9502cb48327eff0ea375b730c8c75a19367",
+      "git_content_bytes": 27687,
+      "reviewed_worktree_sha256": "feedf47937f2cca4be2faa327da2b9502cb48327eff0ea375b730c8c75a19367"
+    },
+    {
+      "path": "active/submission/live-demo/public/index.html",
+      "git_content_sha256": "acd7c66d4a880465785759454eb9d172a952b1ff418aca3b20c5b51bc3fe1483",
+      "git_content_bytes": 6978,
+      "reviewed_worktree_sha256": "acd7c66d4a880465785759454eb9d172a952b1ff418aca3b20c5b51bc3fe1483"
+    },
+    {
+      "path": "active/submission/live-demo/public/public-config.json",
+      "git_content_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "git_content_bytes": 2,
+      "reviewed_worktree_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "active/submission/live-demo/public/styles.css",
+      "git_content_sha256": "d549407aa4b448c9a6af959fcb16cf5097efe63e7a5b1e14d35da6721367c3ab",
+      "git_content_bytes": 12383,
+      "reviewed_worktree_sha256": "d549407aa4b448c9a6af959fcb16cf5097efe63e7a5b1e14d35da6721367c3ab"
+    },
+    {
+      "path": "active/submission/live-demo/worker.mjs",
+      "git_content_sha256": "78786c95f74d2693491a034bdf23971516f0042ce0ad6fdb5f7d0bee38a61cc4",
+      "git_content_bytes": 23297,
+      "reviewed_worktree_sha256": "78786c95f74d2693491a034bdf23971516f0042ce0ad6fdb5f7d0bee38a61cc4"
+    },
+    {
+      "path": "active/submission/public-demo/README.md",
+      "git_content_sha256": "78323050b91441dee9ffca0fd7fa9fc523eae46a480d771a150dec065acabe78",
+      "git_content_bytes": 3396,
+      "reviewed_worktree_sha256": "78323050b91441dee9ffca0fd7fa9fc523eae46a480d771a150dec065acabe78"
+    },
+    {
+      "path": "active/submission/public-demo/app.js",
+      "git_content_sha256": "feedf47937f2cca4be2faa327da2b9502cb48327eff0ea375b730c8c75a19367",
+      "git_content_bytes": 27687,
+      "reviewed_worktree_sha256": "feedf47937f2cca4be2faa327da2b9502cb48327eff0ea375b730c8c75a19367"
+    },
+    {
+      "path": "active/submission/public-demo/index.html",
+      "git_content_sha256": "acd7c66d4a880465785759454eb9d172a952b1ff418aca3b20c5b51bc3fe1483",
+      "git_content_bytes": 6978,
+      "reviewed_worktree_sha256": "acd7c66d4a880465785759454eb9d172a952b1ff418aca3b20c5b51bc3fe1483"
+    },
+    {
+      "path": "active/submission/public-demo/public-config.json",
+      "git_content_sha256": "1c2b7ca9d982ae547b2b95b8b4eab25c88bce1d2e1a1dca5831225f6d6607a2b",
+      "git_content_bytes": 62,
+      "reviewed_worktree_sha256": "1c2b7ca9d982ae547b2b95b8b4eab25c88bce1d2e1a1dca5831225f6d6607a2b"
+    },
+    {
+      "path": "active/submission/public-demo/stored-results.html",
+      "git_content_sha256": "0f0cb90c707675496287a3fb23af8c160e111936e5c46eef567e19e944e15b19",
+      "git_content_bytes": 760820,
+      "reviewed_worktree_sha256": "0f0cb90c707675496287a3fb23af8c160e111936e5c46eef567e19e944e15b19"
+    },
+    {
+      "path": "active/submission/public-demo/styles.css",
+      "git_content_sha256": "d549407aa4b448c9a6af959fcb16cf5097efe63e7a5b1e14d35da6721367c3ab",
+      "git_content_bytes": 12383,
+      "reviewed_worktree_sha256": "d549407aa4b448c9a6af959fcb16cf5097efe63e7a5b1e14d35da6721367c3ab"
+    },
+    {
+      "path": "launch_public_demo.py",
+      "git_content_sha256": "dc1a8513385158fd9e1426acee5ece14c7d462b690e107894978725e3a344c7d",
+      "git_content_bytes": 913,
+      "reviewed_worktree_sha256": "dc1a8513385158fd9e1426acee5ece14c7d462b690e107894978725e3a344c7d"
+    }
+  ]
+}
